@@ -20,3 +20,11 @@
     width: 50%;
   }
 }
+.last-7-days .width-100 {
+  padding-right: 16px;
+}
+@media (max-width: 768px) {
+  .last-7-days .width-100 {
+    padding: 5px;
+  }
+}

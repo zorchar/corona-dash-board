@@ -1,5 +1,8 @@
 .traffic-light-upper-division {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
 }
 
 .upper-division__right-side {
@@ -10,14 +13,31 @@
 .upper-division__right-side > div {
   width: 100%;
 }
+@media (min-width: 550px) {
+  .upper-division__right-side {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+  .upper-division__right-side > div {
+    width: fit-content;
+  }
+}
 
 .upper-division__left-side {
   display: flex;
-  flex-wrap: wrap;
   width: 30%;
 }
 .upper-division__left-side > div {
   width: 100%;
+}
+@media (max-width: 650px) {
+  .upper-division__left-side {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .upper-division__left-side > div {
+    margin: auto;
+  }
 }
 
 .svg-container {
@@ -25,4 +45,10 @@
   height: 24px;
   border: solid #808080 1px;
   border-radius: 50%;
+}
+
+@media (min-width: 1200px) {
+  #traffic-light-in-settlements .larger-container {
+    width: 70%;
+  }
 }

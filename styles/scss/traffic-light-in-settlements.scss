@@ -1,5 +1,8 @@
 .traffic-light-upper-division {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
 }
 
 .upper-division__right-side {
@@ -9,14 +12,27 @@
     > div {
         width: 100%;
     }
+    @media (min-width: 550px) {
+        width: 100%;
+        flex-wrap: nowrap;
+        > div {
+            width: fit-content;
+        }
+    }
 }
 
 .upper-division__left-side {
     display: flex;
-    flex-wrap: wrap;
     width: 30%;
     > div {
         width: 100%;
+    }
+    @media (max-width: 650px) {
+        justify-content: center;
+        flex-direction: column;
+        > div {
+            margin: auto;
+        }
     }
 }
 
@@ -28,4 +44,12 @@
     height: 24px;
     border: solid #808080 1px;
     border-radius: 50%;
+}
+
+#traffic-light-in-settlements {
+    .larger-container {
+        @media (min-width: 1200px) {
+            width: 70%;
+        }
+    }
 }

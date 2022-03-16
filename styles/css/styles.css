@@ -132,6 +132,14 @@ header {
     width: 50%;
   }
 }
+.last-7-days .width-100 {
+  padding-right: 16px;
+}
+@media (max-width: 768px) {
+  .last-7-days .width-100 {
+    padding: 5px;
+  }
+}
 
 .search-bar-container {
   width: 100%;
@@ -146,6 +154,9 @@ header {
 
 .traffic-light-upper-division {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
 }
 
 .upper-division__right-side {
@@ -156,14 +167,31 @@ header {
 .upper-division__right-side > div {
   width: 100%;
 }
+@media (min-width: 550px) {
+  .upper-division__right-side {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+  .upper-division__right-side > div {
+    width: fit-content;
+  }
+}
 
 .upper-division__left-side {
   display: flex;
-  flex-wrap: wrap;
   width: 30%;
 }
 .upper-division__left-side > div {
   width: 100%;
+}
+@media (max-width: 650px) {
+  .upper-division__left-side {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .upper-division__left-side > div {
+    margin: auto;
+  }
 }
 
 .svg-container {
@@ -171,6 +199,12 @@ header {
   height: 24px;
   border: solid #808080 1px;
   border-radius: 50%;
+}
+
+@media (min-width: 1200px) {
+  #traffic-light-in-settlements .larger-container {
+    width: 70%;
+  }
 }
 
 * {
@@ -209,7 +243,6 @@ header {
 }
 
 .larger-container {
-  display: flex;
   width: 100%;
   height: 350px;
 }
@@ -272,4 +305,12 @@ header {
 
 .wrap {
   flex-wrap: wrap;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.width-100 {
+  width: 100%;
 }
