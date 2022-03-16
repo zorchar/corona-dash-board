@@ -2,6 +2,7 @@
 @use "./info-squares.scss";
 @use "./overview.scss";
 @use "./vaccination-by-settlement.scss";
+@use "./traffic-light-in-settlements";
 
 * {
     box-sizing: border-box;
@@ -16,4 +17,84 @@
     @media (max-width: 768px) {
         padding: 0;
     }
+}
+
+.grid-cell {
+    border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+.grid-cell__text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    @media (max-width: 550px) {
+        font-size: 0.7rem;
+    }
+}
+
+.larger-container {
+    display: flex;
+    width: 100%;
+    height: 350px;
+    .info-square {
+        position: relative;
+    }
+    > .info-square {
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+    button {
+        border: none;
+        background: none;
+        position: absolute;
+        left: 16px;
+        top: 16px;
+    }
+    .info-square__main-header {
+        margin-bottom: 10px;
+    }
+}
+
+.grid-ltr-container {
+    width: 100%;
+    direction: ltr;
+    overflow: auto;
+}
+
+.grid {
+    max-height: 270px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.25fr repeat(5, 1fr);
+    > div:nth-child(-n + 6) {
+        background: #e6f1f3;
+    }
+    @media (max-width: 550px) {
+        padding: 0;
+        > div:nth-child(5) {
+            background: #daeaee;
+        }
+        > div:nth-child(6) {
+            background: #daeaee;
+        }
+    }
+}
+
+.flex-box {
+    display: flex;
+}
+
+.fit-content {
+    width: fit-content;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
 }

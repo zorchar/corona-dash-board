@@ -26,6 +26,11 @@
   padding: 16px;
   overflow: auto;
 }
+@media (max-width: 550px) {
+  .info-square {
+    padding: 5px;
+  }
+}
 
 .info-square__main-header {
   display: flex;

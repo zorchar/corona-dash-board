@@ -1,21 +1,10 @@
-.vaccination-by-settlement {
-    display: flex;
+.search-bar-container {
     width: 100%;
-    .info-square {
-        position: relative;
-    }
-    button {
-        border: none;
-        background: none;
-        position: absolute;
-        left: 16px;
-        top: 16px;
-    }
+    padding: 5px;
 }
 
 .search-bar {
+    width: fit-content;
     border: solid 2px green;
-}
-
-.by-settlement-grid {
+    border-radius: 10px;
 }

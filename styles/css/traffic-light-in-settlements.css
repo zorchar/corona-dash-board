@@ -1,0 +1,28 @@
+.traffic-light-upper-division {
+  display: flex;
+}
+
+.upper-division__right-side {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+}
+.upper-division__right-side > div {
+  width: 100%;
+}
+
+.upper-division__left-side {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+}
+.upper-division__left-side > div {
+  width: 100%;
+}
+
+.svg-container {
+  width: 24px;
+  height: 24px;
+  border: solid #808080 1px;
+  border-radius: 50%;
+}

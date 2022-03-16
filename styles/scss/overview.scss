@@ -1,11 +1,18 @@
+.overview__header {
+    padding: 16px;
+    @media (max-width: 768px) {
+        padding: 5px;
+    }
+}
+
 .last-7-days {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     .info-square-container {
-        width: 50%;
-        @media (min-width: 768px) {
-            width: 25%;
+        width: 25%;
+        @media (max-width: 768px) {
+            width: 50%;
         }
     }
 }
