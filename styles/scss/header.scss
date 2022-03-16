@@ -1,0 +1,54 @@
+header {
+    height: fit-content; // maybe
+    display: flex;
+    flex-wrap: wrap; //maybe
+    width: 100vw;
+}
+
+.main-header__container-upper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hamburger-and-logo-container {
+}
+
+.hamburger-container {
+}
+
+.logo-container {
+}
+
+.header-and-update-container {
+}
+
+.theme-switch-container {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 53px;
+    height: 44px;
+}
+
+.theme-switch-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: transparent;
+    width: 100%;
+    height: 100%;
+    background: #39475d;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    &:hover {
+        cursor: pointer;
+    }
+    i {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.main-header__container-lower {
+    display: flex;
+}

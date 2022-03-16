@@ -1,0 +1,18 @@
+@use "./header.scss";
+@use "./info-squares.scss";
+@use "./vaccination-by-settlement.scss";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+.section-container {
+    padding: 5px 32px;
+    width: 100%;
+    @media (max-width: 768px) {
+        padding: 0;
+    }
+}
