@@ -1,0 +1,13 @@
+.last-7-days {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.last-7-days .info-square-container {
+  width: 50%;
+}
+@media (min-width: 768px) {
+  .last-7-days .info-square-container {
+    width: 25%;
+  }
+}

@@ -59,20 +59,6 @@ header {
   }
 }
 
-.last-7-days {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.last-7-days .info-square-container {
-  width: 50%;
-}
-@media (min-width: 768px) {
-  .last-7-days .info-square-container {
-    width: 25%;
-  }
-}
-
 .info-square {
   display: flex;
   flex-wrap: wrap;
@@ -81,6 +67,7 @@ header {
   border: solid 1px red;
   border-radius: 10px;
   padding: 16px;
+  overflow: auto;
 }
 
 .info-square__main-header {
@@ -118,9 +105,37 @@ header {
   padding-left: 5px;
 }
 
-.vaccination-by-settlement-container {
+.last-7-days {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.last-7-days .info-square-container {
+  width: 50%;
+}
+@media (min-width: 768px) {
+  .last-7-days .info-square-container {
+    width: 25%;
+  }
+}
+
+.vaccination-by-settlement {
   display: flex;
   width: 100%;
+}
+.vaccination-by-settlement .info-square {
+  position: relative;
+}
+.vaccination-by-settlement button {
+  border: none;
+  background: none;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+}
+
+.search-bar {
+  border: solid 2px green;
 }
 
 * {

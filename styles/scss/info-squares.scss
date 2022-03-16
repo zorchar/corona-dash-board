@@ -16,18 +16,6 @@
     }
 }
 
-.last-7-days {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    .info-square-container {
-        width: 50%;
-        @media (min-width: 768px) {
-            width: 25%;
-        }
-    }
-}
-
 .info-square {
     display: flex;
     flex-wrap: wrap;
@@ -36,6 +24,7 @@
     border: solid 1px red;
     border-radius: 10px;
     padding: 16px;
+    overflow: auto;
 }
 
 .info-square__main-header {

@@ -1,4 +1,18 @@
-.vaccination-by-settlement-container {
+.vaccination-by-settlement {
   display: flex;
   width: 100%;
+}
+.vaccination-by-settlement .info-square {
+  position: relative;
+}
+.vaccination-by-settlement button {
+  border: none;
+  background: none;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+}
+
+.search-bar {
+  border: solid 2px green;
 }
