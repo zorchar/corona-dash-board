@@ -1,9 +1,9 @@
 .overview__header {
-  padding: 16px;
+  padding-right: 16px;
 }
 @media (max-width: 768px) {
   .overview__header {
-    padding: 5px;
+    padding-right: 5px;
   }
 }
 
@@ -25,6 +25,6 @@
 }
 @media (max-width: 768px) {
   .last-7-days .width-100 {
-    padding: 5px;
+    padding-right: 5px;
   }
 }

@@ -8,3 +8,12 @@
     border: solid 2px green;
     border-radius: 10px;
 }
+
+#vaccination-of-population {
+    .grid-ltr-container {
+        max-height: 80%;
+    }
+    .info-square {
+        row-gap: 5px;
+    }
+}

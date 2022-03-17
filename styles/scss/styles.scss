@@ -42,8 +42,8 @@
         position: relative;
     }
     > .info-square {
-        overflow-y: hidden;
-        overflow-x: auto;
+        // overflow-y: hidden;
+        // overflow-x: auto;
     }
     button {
         border: none;
@@ -59,8 +59,18 @@
 
 .grid-ltr-container {
     width: 100%;
+    // max-height: fit-content;
     direction: ltr;
-    overflow: auto;
+    overflow-y: scroll;
+    @media (max-width: 650px) {
+        max-height: 25%;
+    }
+    @media (max-width: 550px) {
+        max-height: 50%;
+    }
+    @media (min-width: 651px) {
+        max-height: 65%;
+    }
 }
 
 .grid {
@@ -68,6 +78,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1.25fr repeat(5, 1fr);
+    overflow: visible;
     > div:nth-child(-n + 6) {
         background: #e6f1f3;
     }
@@ -104,4 +115,18 @@
 
 .width-100 {
     width: 100%;
+}
+
+.background-red {
+    background: #ff0000;
+}
+
+.background-orange {
+    background: #ffa500;
+}
+.background-yellow {
+    background: #ffff00;
+}
+.background-light-green {
+    background: #90ee90;
 }
