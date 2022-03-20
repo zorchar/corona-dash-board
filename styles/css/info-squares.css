@@ -109,3 +109,7 @@
 #new-isolated-yesterday .info-square__main-number {
   margin-bottom: 16px;
 }
+
+.first-info-square {
+  padding: 7px;
+}

@@ -10,9 +10,6 @@
   border-radius: 10px;
 }
 
-#vaccination-of-population .grid-ltr-container {
-  max-height: 62%;
-}
 @media (min-width: 550px) and (max-width: 650px) {
   #vaccination-of-population .grid-ltr-container {
     max-height: 62%;
@@ -20,7 +17,7 @@
 }
 @media (max-width: 550px) {
   #vaccination-of-population .grid-ltr-container {
-    max-height: 54%;
+    max-height: 57%;
   }
 }
 #vaccination-of-population .info-square {

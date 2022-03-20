@@ -12,14 +12,14 @@
 
 #vaccination-of-population {
     .grid-ltr-container {
-        max-height: 62%;
+        // max-height: 55%;
         @media (min-width: 550px) {
             @media (max-width: 650px) {
                 max-height: 62%;
             }
         }
         @media (max-width: 550px) {
-            max-height: 54%;
+            max-height: 57%;
         }
     }
     .info-square {
