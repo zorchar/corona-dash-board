@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="styles/css/styles.css">
     <title>Document</title>
     <script src="main.js" defer></script>
+    <script src="https://kit.fontawesome.com/a7a77a6418.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -35,35 +37,208 @@
         <div id="overview" class="section-container">
             <h1 class="overview__header">מבט על</h1>
             <div class="info-squares-container">
-                <div class="info-square-container">
-                    <div class="info-square"></div>
+                <div id="verified-yesterday" class="info-square-container">
+                    <div class="info-square">
+                        <div class="info-square__main-header">
+                            <h3 class="info-square-main-header__headline">מאומתים אתמול</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+                                height="1em" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h2 class="info-square__main-number">6,775</h2>
+                        <div class="info-square__secondary-info">
+                            <h4 class="secondary-info-number">5,227</h4>
+                            <h4 class="secondary-info-text">מחצות</h4>
+                            <h4 class="secondary-info-number">3,745,408</h4>
+                            <h4 class="secondary-info-text">סה"כ</h4>
+                        </div>
+                        <h3 id="active-sick" class="info-square-main-header__headline">חולים פעילים</h3>
+                        <h2 class="info-square__main-number">42,000</h2>
+                        <div class="info-square__secondary-info">
+                            <h4 class="secondary-info-number">6+</h4>
+                            <h4 class="secondary-info-text">מחצות</h4>
+                            <h4 class="secondary-info-number">751</h4>
+                            <h4 class="secondary-info-text">בבי"ח</h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="hard-patients" class="info-square-container">
+                    <div class="info-square">
+                        <div class="info-square__main-header">
+                            <h3 class="info-square-main-header__headline">חולים קשה</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+                                height="1em" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h2 class="info-square__main-number">291</h2>
+                        <div class="info-square__secondary-info">
+                            <div class="small-circle"></div>
+                            <h4 class="secondary-info-text">מתוכם קריטי</h4>
+                            <h4 class="secondary-info-number">5,227</h4>
+                        </div>
+                        <div class="info-square__secondary-info">
+                            <div class="small-circle"></div>
+                            <h4 class="secondary-info-text">מחוברים לאקמו</h4>
+                            <h4 class="secondary-info-number">5,227</h4>
+                        </div>
+                        <div id="inhalated" class="info-square__secondary-info">
+                            <div class="small-circle"></div>
+                            <h4 class="secondary-info-text">מונשמים</h4>
+                            <h4 class="secondary-info-number">5,227</h4>
+                        </div>
+                        <div class="info-square__secondary-info">
+                            <h4 class="secondary-info-text">חולים בינוני</h4>
+                            <h4 class="secondary-info-number">5,227</h4>
+                        </div>
+                        <div class="info-square__secondary-info">
+                            <h4 class="secondary-info-text">חולים קל</h4>
+                            <h4 class="secondary-info-number">5,227</h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="vaccinated" class="info-square-container">
+                    <div class="info-square">
+                        <div class="info-square__main-header">
+                            <h3 class="info-square-main-header__headline">מתחסנים</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+                                height="1em" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="info-square__secondary-info">
+                            <h4 class="secondary-info-text">מנה 1</h4>
+                            <h4 class="info-square__main-number">6,227,532</h4>
+                        </div>
+                        <div class="info-square__secondary-info">
+                            <h4 class="secondary-info-text">מנה 2</h4>
+                            <h4 class="info-square__main-number">6,227,542</h4>
+                        </div>
+                        <div class="info-square__secondary-info">
+                            <h4 class="secondary-info-text">מנה 3</h4>
+                            <h4 class="info-square__main-number">4,227,231</h4>
+                        </div>
+                        <div class="info-square__secondary-info">
+                            <h4 class="secondary-info-text">מנה 4</h4>
+                            <h4 class="info-square__main-number">3,227,123</h4>
+                        </div>
+                    </div>
                 </div>
                 <div class="info-square-container">
-                    <div class="info-square"></div>
+                    <div class="info-square">
+                        <div class="info-square__main-header">
+                            <h3 class="info-square-main-header__headline">נפטרים מצטבר</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+                                height="1em" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h2 class="info-square__main-number">11,291</h2>
+                    </div>
                 </div>
                 <div class="info-square-container">
-                    <div class="info-square"></div>
+                    <div class="info-square">
+                        <div class="info-square__main-header">
+                            <h3 class="info-square-main-header__headline">אחוז נבדקים חיוביים אתמול</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+                                height="1em" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h2 class="info-square__main-number">12.7%</h2>
+                        <div class="info-square__secondary-info">
+                            <h4 class="secondary-info-number">55,227</h4>
+                            <h4 class="secondary-info-text">נבדקים לגילוי הנגיף אתמול</h4>
+                        </div>
+                        <div class="info-square__secondary-info">
+                            <h4 class="secondary-info-number">65,227</h4>
+                            <h4 class="secondary-info-text">כלל הבדיקות אתמול</h4>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-square-container">
-                    <div class="info-square"></div>
-                </div>
-                <div class="info-square-container">
-                    <div class="info-square"></div>
-                </div>
-                <div class="info-square-container">
-                    <div class="info-square"></div>
+                <div id="new-isolated-yesterday" class="info-square-container">
+                    <div class="info-square">
+                        <div class="info-square__main-header">
+                            <h3 class="info-square-main-header__headline">מבודדים חדשים אתמול</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+                                height="1em" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h2 class="info-square__main-number">16,291</h2>
+                        <h3 class="info-square-main-header__headline">סה"כ שוהים בבידוד</h3>
+                        <h2 class="info-square__main-number">19,291</h2>
+                    </div>
                 </div>
                 <div class="info-square-container last-7-days">
                     <div class="info-square">
                         <h3 class="width-100">סיכום 7 ימים אחרונים</h3>
                         <div class="info-square-container">
-                            <div class="info-square"></div>
+                            <div class="info-square">
+                                <div class="info-square__main-header">
+                                    <h3 class="info-square-main-header__headline">מספר המאומתים</h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+                                        height="1em" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h2 class="info-square__main-number">41,000</h2>
+                                <div class="info-square__secondary-info">
+                                    <h4 class="secondary-info-number">-7.1%</h4>
+                                    <h4 class="secondary-info-text">משבעה ימים קודמים</h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="info-square-container">
-                            <div class="info-square"></div>
+                            <div class="info-square">
+                                <div class="info-square__main-header">
+                                    <h3 class="info-square-main-header__headline">מספר חולים קשה</h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+                                        height="1em" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h2 class="info-square__main-number">114</h2>
+                                <div class="info-square__secondary-info">
+                                    <h4 class="secondary-info-number">-37.1%</h4>
+                                    <h4 class="secondary-info-text">משבעה ימים קודמים</h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="info-square-container">
-                            <div class="info-square"></div>
+                            <div class="info-square">
+                                <div class="info-square__main-header">
+                                    <h3 class="info-square-main-header__headline">מספר נפטרים</h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+                                        height="1em" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h2 class="info-square__main-number">41</h2>
+                                <div class="info-square__secondary-info">
+                                    <h4 class="secondary-info-number">-72.1%</h4>
+                                    <h4 class="secondary-info-text">משבעה ימים קודמים</h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="info-square-container">
                             <div class="info-square">
@@ -78,11 +253,11 @@
                                 </div>
                                 <h2 class="info-square__main-number">124,54</h2>
                                 <div class="info-square__secondary-info">
-                                    <h4 class="secondary-info__number">3.3%</h4>
+                                    <h4 class="secondary-info-number">3.3%</h4>
                                     <h4 class="secondary-info-text">משבעה ימים קודמים</h4>
                                 </div>
                                 <div class="info-square__secondary-info">
-                                    <h4 class="secondary-info__number">7.71%</h4>
+                                    <h4 class="secondary-info-number">7.71%</h4>
                                     <h4 class="secondary-info-text">נבדקים חיוביים</h4>
                                 </div>
                             </div>
@@ -97,7 +272,7 @@
         <div id="vaccination-of-population" class="section-container">
             <div class="info-square-container larger-container">
                 <div class="info-square">
-                    <button>
+                    <button class="dotted-hamburger">
                         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em"
                             viewBox="0 0 16 16">
                             <path
@@ -115,7 +290,36 @@
                         </svg>
                     </div>
                     <div class="search-bar-container">
-                        <div class="search-bar">this will be the search bar</div>
+                        <!-- <div class="search-bar">this will be the search bar</div> -->
+                        <button class="vaccine-by-settlement-button">
+                            <span>כלל היישובים</span>
+                            <svg class="angle-down" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                width="1em" height="1em" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 15.5a1 1 0 0 1-.71-.29l-4-4a1 1 0 1 1 1.42-1.42L12 13.1l3.3-3.18a1 1 0 1 1 1.38 1.44l-4 3.86a1 1 0 0 1-.68.28z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="grid first-grid">
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">ישוב</div>
+                        </div>
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">% מתחסנים מנה ראשונה</div>
+                        </div>
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">% מתחסנים מנה שנייה</div>
+                        </div>
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">% מתחסנים מנה שלישית</div>
+                        </div>
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">חולים פעילים לכל 10,000 נפש</div>
+                        </div>
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">ציון יומי מחושב</div>
+                        </div>
                     </div>
                     <div class="grid-ltr-container">
                         <div class="grid">
@@ -260,7 +464,7 @@
                                 </div>
                                 <h4>* מרכיבי ציון הרמזור (לפי נתוני השבוע האחרון)</h4>
                             </div>
-                            <div class="flex-box">
+                            <div class="data-date flex-box">
                                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
                                     height="1em" viewBox="0 0 24 24">
                                     <path
@@ -323,6 +527,26 @@
                                     <h4 class="grading-text">ציון עד 4.5</h4>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="grid first-grid">
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">ישוב</div>
+                        </div>
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">% מתחסנים מנה ראשונה</div>
+                        </div>
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">% מתחסנים מנה שנייה</div>
+                        </div>
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">% מתחסנים מנה שלישית</div>
+                        </div>
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">חולים פעילים לכל 10,000 נפש</div>
+                        </div>
+                        <div class="grid-cell">
+                            <div class="grid-cell__text">ציון יומי מחושב</div>
                         </div>
                     </div>
                     <div class="grid-ltr-container">

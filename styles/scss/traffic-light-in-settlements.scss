@@ -10,6 +10,12 @@
     flex-wrap: wrap;
     width: 70%;
     column-gap: 10px;
+    font-size: 13px;
+    h4 {
+        @media (max-width: 550px) {
+            font-size: 10px;
+        }
+    }
     > div {
         display: flex;
         column-gap: 10px;
@@ -43,6 +49,11 @@
             @media (max-width: 650px) {
                 font-size: 2.8vw;
             }
+            @media (min-width: 550px) {
+                @media (max-width: 650px) {
+                    font-size: 13px;
+                }
+            }
         }
         h4 {
             font-size: 0.7rem;
@@ -51,6 +62,11 @@
             color: #808080;
             @media (max-width: 650px) {
                 font-size: 2.8vw;
+            }
+            @media (min-width: 550px) {
+                @media (max-width: 650px) {
+                    font-size: 13px;
+                }
             }
         }
     }
@@ -65,8 +81,8 @@
     }
 }
 
-.traffic-light-search-bar {
-}
+// .traffic-light-search-bar {
+// }
 
 .svg-container-outer {
     display: flex;
@@ -92,6 +108,18 @@
     .info-square {
         row-gap: 5px;
     }
+    // .first-info-square {
+    //     padding-right: 0;
+    //     padding-left: 0;
+    // }
+    .first-grid {
+        min-width: calc(100% + 16px);
+        margin-right: -8px;
+    }
+    .grid-ltr-container {
+        min-width: calc(100% + 16px);
+        margin-right: -8px;
+    }
 }
 
 .left-side-div {
@@ -106,5 +134,18 @@
     @media (min-width: 800px) {
         width: 32px;
         height: 32px;
+    }
+}
+
+.upper-division__right-side {
+    .data-date {
+        @media (min-width: 550px) {
+            @media (max-width: 650px) {
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 550px) {
+            font-size: 10px;
+        }
     }
 }

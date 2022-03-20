@@ -1,29 +1,42 @@
 @use "./header.scss";
 @use "./info-squares.scss";
+@use "./grid.scss";
 @use "./overview.scss";
 @use "./vaccination-by-settlement.scss";
 @use "./traffic-light-in-settlements";
+@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     direction: rtl;
+    color: #222b45;
+    font-family: "Open Sans Hebrew", serif;
+}
+
+body {
+    background: #edf1f7;
 }
 
 .section-container {
-    padding: 5px 32px;
     width: 100%;
     @media (max-width: 768px) {
         padding: 0;
+        padding: 5px 0;
     }
 }
 
 .grid-cell {
-    border: 1px solid blue;
+    // border: 1px solid blue;
     display: flex;
     align-items: center;
     padding: 2px;
+}
+
+.grid-cell:nth-child(6n + 1) {
+    padding-right: 8px;
 }
 
 .grid-cell__text {
@@ -45,7 +58,7 @@
         // overflow-y: hidden;
         // overflow-x: auto;
     }
-    button {
+    .dotted-hamburger {
         border: none;
         background: none;
         position: absolute;
@@ -54,42 +67,6 @@
     }
     .info-square__main-header {
         margin-bottom: 10px;
-    }
-}
-
-.grid-ltr-container {
-    width: 100%;
-    // max-height: fit-content;
-    direction: ltr;
-    overflow-y: scroll;
-    @media (max-width: 650px) {
-        max-height: 25%;
-    }
-    @media (max-width: 550px) {
-        max-height: 50%;
-    }
-    @media (min-width: 651px) {
-        max-height: 65%;
-    }
-}
-
-.grid {
-    max-height: 270px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1.25fr repeat(5, 1fr);
-    overflow: visible;
-    > div:nth-child(-n + 6) {
-        background: #e6f1f3;
-    }
-    @media (max-width: 550px) {
-        padding: 0;
-        > div:nth-child(5) {
-            background: #daeaee;
-        }
-        > div:nth-child(6) {
-            background: #daeaee;
-        }
     }
 }
 
@@ -129,4 +106,13 @@
 }
 .background-light-green {
     background: #90ee90;
+}
+
+.small-circle {
+    margin-left: 5px;
+    min-width: 9px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: red; //temp
 }
