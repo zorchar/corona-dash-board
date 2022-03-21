@@ -226,6 +226,19 @@ header {
   }
 }
 
+.first-grid button {
+  background: #e6f1f3;
+  font-size: 15px;
+  border: none;
+}
+.first-grid button:active {
+  border: solid #000000 2px;
+  border-radius: 4px;
+}
+.first-grid button:hover {
+  cursor: pointer;
+}
+
 .overview__header {
   font-size: 19px;
   padding-right: 16px;
@@ -509,6 +522,7 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
+  margin: 4px;
 }
 @media (max-width: 550px) {
   .grid-cell__text {

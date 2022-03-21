@@ -61,3 +61,21 @@
         }
     }
 }
+
+#vaccination__settlement-button {
+}
+
+.first-grid {
+    button {
+        background: #e6f1f3;
+        font-size: 15px;
+        border: none;
+        &:active {
+            border: solid #000000 2px;
+            border-radius: 4px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
