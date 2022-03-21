@@ -226,16 +226,19 @@ header {
   }
 }
 
-.first-grid button {
+.grid .grid-cell:nth-child(6n+1) {
+  justify-content: start;
+}
+.grid button {
   background: #e6f1f3;
   font-size: 15px;
   border: none;
 }
-.first-grid button:active {
+.grid button:active {
   border: solid #000000 2px;
   border-radius: 4px;
 }
-.first-grid button:hover {
+.grid button:hover {
   cursor: pointer;
 }
 
@@ -511,6 +514,7 @@ body {
 .grid-cell {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 2px;
 }
 

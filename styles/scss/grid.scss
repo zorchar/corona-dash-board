@@ -62,10 +62,10 @@
     }
 }
 
-#vaccination__settlement-button {
-}
-
-.first-grid {
+.grid {
+    & .grid-cell:nth-child(6n + 1) {
+        justify-content: start;
+    }
     button {
         background: #e6f1f3;
         font-size: 15px;
