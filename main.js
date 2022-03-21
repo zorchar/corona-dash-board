@@ -317,38 +317,83 @@ const fillVaccinationTable = () =>
 let ascendingVaccination = true
 let lastFieldVaccination = 'settlement'
 
-vaccinationSettlementButtons = document.querySelectorAll('.vaccination-grid-button')
-vaccinationSettlementButtons.forEach(el => {
-    el.addEventListener('click', (event) => {
-        if (event.target.parentElement.name === lastFieldVaccination)
-            ascendingVaccination = !ascendingVaccination
-        else
-            ascendingVaccination = true
-        lastFieldVaccination = event.target.parentElement.name
-        sortByParam(event.target.parentElement.name, settlementsDataVaccination, ascendingVaccination === true ? true : false)
-        vaccinationTable.replaceChildren()
-        fillVaccinationTable()
-    })
-})
+const vaccinationSettlementButtons = document.querySelectorAll('.vaccination-grid-button')
 
 let ascendingTrafficLight = true
 let lastFieldTrafficLight = 'settlement'
 
-TrafficLightSettlementButtons = document.querySelectorAll('.traffic-light-grid-button')
-TrafficLightSettlementButtons.forEach(el => {
-    el.addEventListener('click', (event) => {
-        if (event.target.parentElement.name === lastFieldTrafficLight)
-            ascendingTrafficLight = !ascendingTrafficLight
-        else
-            ascendingTrafficLight = true
-        lastFieldTrafficLight = event.target.parentElement.name
-        sortByParam(event.target.parentElement.name, settlementsDataTrafficLight, ascendingTrafficLight === true ? true : false)
-        trafficLightTable.replaceChildren()
-        fillTrafficLightTable()
+const addGradeStyle = () => {
+
+    const gridCellsVaccination = vaccinationTable.querySelectorAll('.grid-cell')
+    for (let i = 5; i < gridCellsVaccination.length; i += 6) {
+        const firstChild = gridCellsVaccination[i].firstChild
+        firstChild.classList.add('grade')
+        if (firstChild.innerText > 7.5)
+            firstChild.classList.add('background-red')
+        if (firstChild.innerText <= 7.5 && firstChild.innerText > 6)
+            firstChild.classList.add('background-orange')
+        if (firstChild.innerText <= 6 && firstChild.innerText > 4.5)
+            firstChild.classList.add('background-yellow')
+        if (firstChild.innerText <= 4.5)
+            firstChild.classList.add('background-light-green')
+    }
+
+    const gridCellsTrafficLight = trafficLightTable.querySelectorAll('.grid-cell')
+    for (let i = 1; i < gridCellsTrafficLight.length; i += 6) {
+        const firstChild = gridCellsTrafficLight[i].firstChild
+        firstChild.classList.add('grade')
+        if (firstChild.innerText > 7.5)
+            firstChild.classList.add('background-red')
+        if (firstChild.innerText <= 7.5 && firstChild.innerText > 6)
+            firstChild.classList.add('background-orange')
+        if (firstChild.innerText <= 6 && firstChild.innerText > 4.5)
+            firstChild.classList.add('background-yellow')
+        if (firstChild.innerText <= 4.5)
+            firstChild.classList.add('background-light-green')
+    }
+}
+
+
+const trafficLightSettlementButtons = document.querySelectorAll('.traffic-light-grid-button')
+
+const addGridButtonsEventListener = () => {
+
+    trafficLightSettlementButtons.forEach(el => {
+        el.addEventListener('click', (event) => {
+            if (event.target.parentElement.name === lastFieldTrafficLight)
+                ascendingTrafficLight = !ascendingTrafficLight
+            else
+                ascendingTrafficLight = true
+            lastFieldTrafficLight = event.target.parentElement.name
+            sortByParam(event.target.parentElement.name, settlementsDataTrafficLight, ascendingTrafficLight === true ? true : false)
+            trafficLightTable.replaceChildren()
+            fillTrafficLightTable()
+            addGradeStyle()
+        })
     })
-})
+
+    vaccinationSettlementButtons.forEach(el => {
+        el.addEventListener('click', (event) => {
+            if (event.target.parentElement.name === lastFieldVaccination)
+                ascendingVaccination = !ascendingVaccination
+            else
+                ascendingVaccination = true
+            lastFieldVaccination = event.target.parentElement.name
+            sortByParam(event.target.parentElement.name, settlementsDataVaccination, ascendingVaccination === true ? true : false)
+            vaccinationTable.replaceChildren()
+            fillVaccinationTable()
+            addGradeStyle()
+        })
+    })
+
+}
+
+sortByParam('settlement', settlementsDataVaccination, true)
+sortByParam('settlement', settlementsDataTrafficLight, true)
+fillVaccinationTable()
+fillTrafficLightTable()
 
 
 
-
-
+addGridButtonsEventListener()
+addGradeStyle()

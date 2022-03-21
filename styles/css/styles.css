@@ -519,9 +519,8 @@ body {
 }
 
 .grid-cell__text {
-  display: flex;
-  align-items: center;
   text-align: center;
+  min-width: 2rem;
   margin: 4px;
 }
 @media (max-width: 550px) {
@@ -572,22 +571,6 @@ body {
   width: 100%;
 }
 
-.background-red {
-  background: #ff0000;
-}
-
-.background-orange {
-  background: #ffa500;
-}
-
-.background-yellow {
-  background: #ffff00;
-}
-
-.background-light-green {
-  background: #90ee90;
-}
-
 .small-circle {
   margin-left: 5px;
   min-width: 9px;
@@ -595,4 +578,26 @@ body {
   height: 9px;
   border-radius: 50%;
   background: red;
+}
+
+.background-red {
+  background: #fa9e8f;
+}
+
+.background-orange {
+  background: #f2c580;
+}
+
+.background-yellow {
+  background: #fcfc70;
+}
+
+.background-light-green {
+  background: #b8de92;
+}
+
+.grade {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
 }
