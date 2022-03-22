@@ -322,13 +322,13 @@ const fillVaccinationTable = () =>
 
 // id="vaccination__settlement-button"
 
-let isAscendingVaccination = true
-let lastFieldVaccination = 'settlement'
+let isAscendingVaccination = false
+let lastFieldVaccination = 'firstShotPercentage'
 
 const vaccinationSettlementButtons = document.querySelectorAll('.vaccination-grid-button')
 
-let isAscendingTrafficLight = true
-let lastFieldTrafficLight = 'settlement'
+let isAscendingTrafficLight = false
+let lastFieldTrafficLight = 'dailyCalculatedGrade'
 
 const addGradeStyle = () => {
 
@@ -368,11 +368,12 @@ const addGridButtonsEventListener = () => {
 
     trafficLightSettlementButtons.forEach(el => {
         el.addEventListener('click', (event) => {
+            const trafficLightSection = document.querySelector('#traffic-light-in-settlements')
             if (event.target.parentElement.name === lastFieldTrafficLight) {
                 isAscendingTrafficLight = !isAscendingTrafficLight
-                if (document.querySelector('.display') != null) {
-                    document.querySelector('.display').classList.add('display-none')
-                    document.querySelector('.display').classList.remove('display')
+                if (trafficLightSection.querySelector('.display') != null) {
+                    trafficLightSection.querySelector('.display').classList.add('display-none')
+                    trafficLightSection.querySelector('.display').classList.remove('display')
                 }
                 if (!isAscendingTrafficLight) {
                     event.target.parentNode.querySelector('.fa-sort-down').classList.remove('display-none')
@@ -381,14 +382,13 @@ const addGridButtonsEventListener = () => {
                 else {
                     event.target.parentNode.querySelector('.fa-sort-up').classList.remove('display-none')
                     event.target.parentNode.querySelector('.fa-sort-up').classList.add('display')
-
                 }
             }
             else {
                 isAscendingTrafficLight = false
-                if (document.querySelector('.display') != null) {
-                    document.querySelector('.display').classList.add('display-none')
-                    document.querySelector('.display').classList.remove('display')
+                if (trafficLightSection.querySelector('.display') != null) {
+                    trafficLightSection.querySelector('.display').classList.add('display-none')
+                    trafficLightSection.querySelector('.display').classList.remove('display')
                 }
                 event.target.parentNode.querySelector('.fa-sort-down').classList.remove('display-none')
                 event.target.parentNode.querySelector('.fa-sort-down').classList.add('display')
@@ -416,10 +416,31 @@ const addGridButtonsEventListener = () => {
 
     vaccinationSettlementButtons.forEach(el => {
         el.addEventListener('click', (event) => {
-            if (event.target.parentElement.name === lastFieldVaccination)
+            const vaccinationSection = document.querySelector('#vaccination-of-population')
+            if (event.target.parentElement.name === lastFieldVaccination) {
                 isAscendingVaccination = !isAscendingVaccination
-            else
-                isAscendingVaccination = true
+                if (vaccinationSection.querySelector('.display') != null) {
+                    vaccinationSection.querySelector('.display').classList.add('display-none')
+                    vaccinationSection.querySelector('.display').classList.remove('display')
+                }
+                if (!isAscendingVaccination) {
+                    event.target.parentNode.querySelector('.fa-sort-down').classList.remove('display-none')
+                    event.target.parentNode.querySelector('.fa-sort-down').classList.add('display')
+                }
+                else {
+                    event.target.parentNode.querySelector('.fa-sort-up').classList.remove('display-none')
+                    event.target.parentNode.querySelector('.fa-sort-up').classList.add('display')
+                }
+            }
+            else {
+                isAscendingVaccination = false
+                if (vaccinationSection.querySelector('.display') != null) {
+                    vaccinationSection.querySelector('.display').classList.add('display-none')
+                    vaccinationSection.querySelector('.display').classList.remove('display')
+                }
+                event.target.parentNode.querySelector('.fa-sort-down').classList.remove('display-none')
+                event.target.parentNode.querySelector('.fa-sort-down').classList.add('display')
+            }
             lastFieldVaccination = event.target.parentElement.name
             sortByParam(event.target.parentElement.name, settlementsDataVaccination, isAscendingVaccination === true ? true : false)
             vaccinationTable.replaceChildren()
@@ -430,8 +451,8 @@ const addGridButtonsEventListener = () => {
 
 }
 
-sortByParam('firstShotPercentage', settlementsDataVaccination, true)
-sortByParam('dailyCalculatedGrade', settlementsDataTrafficLight, true)
+sortByParam('firstShotPercentage', settlementsDataVaccination, false)
+sortByParam('dailyCalculatedGrade', settlementsDataTrafficLight, false)
 fillVaccinationTable()
 fillTrafficLightTable()
 
