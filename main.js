@@ -365,84 +365,63 @@ const addGradeStyle = () => {
 const trafficLightSettlementButtons = document.querySelectorAll('.traffic-light-grid-button')
 
 const addGridButtonsEventListener = () => {
-
     trafficLightSettlementButtons.forEach(el => {
-        el.addEventListener('click', (event) => {
+        el.addEventListener('click', function (event) {
             const trafficLightSection = document.querySelector('#traffic-light-in-settlements')
-            if (event.target.parentElement.name === lastFieldTrafficLight) {
+            if (this.name === lastFieldTrafficLight) {
                 isAscendingTrafficLight = !isAscendingTrafficLight
-                if (trafficLightSection.querySelector('.display') != null) {
-                    trafficLightSection.querySelector('.display').classList.add('display-none')
-                    trafficLightSection.querySelector('.display').classList.remove('display')
-                }
+                trafficLightSection.querySelector('.display').classList.add('display-none')
+                trafficLightSection.querySelector('.display').classList.remove('display')
                 if (!isAscendingTrafficLight) {
-                    event.target.parentNode.querySelector('.fa-sort-down').classList.remove('display-none')
-                    event.target.parentNode.querySelector('.fa-sort-down').classList.add('display')
+                    this.querySelector('.fa-sort-down').classList.remove('display-none')
+                    this.querySelector('.fa-sort-down').classList.add('display')
                 }
                 else {
-                    event.target.parentNode.querySelector('.fa-sort-up').classList.remove('display-none')
-                    event.target.parentNode.querySelector('.fa-sort-up').classList.add('display')
+                    this.querySelector('.fa-sort-up').classList.remove('display-none')
+                    this.querySelector('.fa-sort-up').classList.add('display')
                 }
             }
             else {
                 isAscendingTrafficLight = false
-                if (trafficLightSection.querySelector('.display') != null) {
-                    trafficLightSection.querySelector('.display').classList.add('display-none')
-                    trafficLightSection.querySelector('.display').classList.remove('display')
-                }
-                event.target.parentNode.querySelector('.fa-sort-down').classList.remove('display-none')
-                event.target.parentNode.querySelector('.fa-sort-down').classList.add('display')
+                trafficLightSection.querySelector('.display').classList.add('display-none')
+                trafficLightSection.querySelector('.display').classList.remove('display')
+                this.querySelector('.fa-sort-down').classList.remove('display-none')
+                this.querySelector('.fa-sort-down').classList.add('display')
             }
-            lastFieldTrafficLight = event.target.parentElement.name
-            sortByParam(event.target.parentElement.name, settlementsDataTrafficLight, isAscendingTrafficLight === true ? true : false)
+            lastFieldTrafficLight = this.name
+            sortByParam(this.name, settlementsDataTrafficLight, isAscendingTrafficLight === true ? true : false)
             trafficLightTable.replaceChildren()
             fillTrafficLightTable()
             addGradeStyle()
-
-            // let arrow
-            // if (isAscendingTrafficLight)
-            //     arrow = event.target.parentNode.querySelector('.fa-sort-up')
-            // else
-            //     arrow = event.target.parentNode.querySelector('.fa-sort-down')
-
-            // arrow.classList.toggle('display-none')
-            // const test = upArrow.querySelector('.fa-sort-up')
-            // console.log('fsdf');
-
-            // .classList.toggle('display-none') // .querySelector('.fa-sort-up')
-
         })
     })
 
     vaccinationSettlementButtons.forEach(el => {
-        el.addEventListener('click', (event) => {
+        el.addEventListener('click', function (event) {
+            event.stopPropagation()
             const vaccinationSection = document.querySelector('#vaccination-of-population')
-            if (event.target.parentElement.name === lastFieldVaccination) {
+            if (this.name === lastFieldVaccination) {
                 isAscendingVaccination = !isAscendingVaccination
-                if (vaccinationSection.querySelector('.display') != null) {
-                    vaccinationSection.querySelector('.display').classList.add('display-none')
-                    vaccinationSection.querySelector('.display').classList.remove('display')
-                }
+                vaccinationSection.querySelector('.display').classList.add('display-none')
+                vaccinationSection.querySelector('.display').classList.remove('display')
                 if (!isAscendingVaccination) {
-                    event.target.parentNode.querySelector('.fa-sort-down').classList.remove('display-none')
-                    event.target.parentNode.querySelector('.fa-sort-down').classList.add('display')
+                    this.querySelector('.fa-sort-down').classList.remove('display-none')
+                    this.querySelector('.fa-sort-down').classList.add('display')
                 }
                 else {
-                    event.target.parentNode.querySelector('.fa-sort-up').classList.remove('display-none')
-                    event.target.parentNode.querySelector('.fa-sort-up').classList.add('display')
+                    this.querySelector('.fa-sort-up').classList.remove('display-none')
+                    this.querySelector('.fa-sort-up').classList.add('display')
                 }
             }
             else {
                 isAscendingVaccination = false
-                if (vaccinationSection.querySelector('.display') != null) {
-                    vaccinationSection.querySelector('.display').classList.add('display-none')
-                    vaccinationSection.querySelector('.display').classList.remove('display')
-                }
-                event.target.parentNode.querySelector('.fa-sort-down').classList.remove('display-none')
-                event.target.parentNode.querySelector('.fa-sort-down').classList.add('display')
+                vaccinationSection.querySelector('.display').classList.add('display-none')
+                vaccinationSection.querySelector('.display').classList.remove('display')
+                this.querySelector('.fa-sort-down').classList.remove('display-none')
+                this.querySelector('.fa-sort-down').classList.add('display')
             }
-            lastFieldVaccination = event.target.parentElement.name
-            sortByParam(event.target.parentElement.name, settlementsDataVaccination, isAscendingVaccination === true ? true : false)
+            lastFieldVaccination = this.name
+            sortByParam(this.name, settlementsDataVaccination, isAscendingVaccination === true ? true : false)
             vaccinationTable.replaceChildren()
             fillVaccinationTable()
             addGradeStyle()
