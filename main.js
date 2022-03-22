@@ -231,37 +231,14 @@ const settlementsDataTrafficLight = [
     },
 ]
 
-
-
-const sortByParam = (param, array, isAscending) =>
+const sortByParam = (param, array, isAscending) => {
     array.sort((obj1, obj2) => {
         if (isAscending)
             return obj2[param] < obj1[param] ? '1' : '-1'
         else
             return obj2[param] < obj1[param] ? '-1' : '1'
     })
-
-
-
-
-// const createGridRow = () => {
-//     const gridRow = []
-
-// }
-
-// const createGridText = (text) => {
-//     const gridCellText = document.createElement('div')
-//     gridCellText.classList.add('grid-cell__text')
-//     gridCellText.innerHTML = text
-//     return gridCellText
-
-// }
-
-// const createGridCell = () => {
-//     const gridCell = document.createElement('div')
-//     gridCell.classList.add('grid-cell')
-//     return gridCell
-// }
+}
 
 const createGridCellWithTextAndArrows = (text) => {
     const gridCellText = document.createElement('div')
@@ -276,93 +253,60 @@ const createGridCellWithTextAndArrows = (text) => {
     const gridCell = document.createElement('div')
     gridCell.classList.add('grid-cell')
     gridCell.append(gridCellText, upArrow, downArrow)
-    // gridCell.appendChild(gridCellText)
-    // gridCell.appendChild(upArrow)
-    // gridCell.appendChild(downArrow)
     return gridCell
-}
-
-const appendGridCellToTable = (gridCell, table) => {
-    table.appendChild(gridCell)
 }
 
 const trafficLightTable = document.querySelector('#traffic-light-table')
 const vaccinationTable = document.querySelector('#vaccination-table')
 
-trafficLightTable.replaceChildren()
-vaccinationTable.replaceChildren()
-
-// sortByParam('settlement', settlementsDataVaccination, true)
-// sortByParam('activeSick', settlementsDataTrafficLight, true)
-
-// traffic light
-const fillTrafficLightTable = () =>
+const fillTrafficLightTable = () => {
     settlementsDataTrafficLight.forEach(el => {
         for (const [key, value] of Object.entries(el)) {
             trafficLightTable.appendChild(createGridCellWithTextAndArrows(value))
         }
     })
+}
 
-// vaccination data
-const fillVaccinationTable = () =>
+const fillVaccinationTable = () => {
     settlementsDataVaccination.forEach(el => {
         for (const [key, value] of Object.entries(el)) {
             vaccinationTable.appendChild(createGridCellWithTextAndArrows(value))
         }
     })
-
-// vaccinationSettlementButton = document.querySelector('#vaccination__settlement-button')
-// vaccinationSettlementButton.addEventListener('click', (event) => {
-//     console.log(event.target);
-//     // sortByParam('settlement', settlementsDataVaccination, true)
-//     sortByParam(event.target.parentElement.name, settlementsDataVaccination, true)
-//     vaccinationTable.replaceChildren()
-//     fillVaccinationTable()
-// })
-
-// id="vaccination__settlement-button"
+}
 
 let isAscendingVaccination = false
 let lastFieldVaccination = 'firstShotPercentage'
-
 const vaccinationSettlementButtons = document.querySelectorAll('.vaccination-grid-button')
 
 let isAscendingTrafficLight = false
 let lastFieldTrafficLight = 'dailyCalculatedGrade'
+const trafficLightSettlementButtons = document.querySelectorAll('.traffic-light-grid-button')
 
 const addGradeStyle = () => {
+    const addBGColorToFirstChild = (firstChild) => {
+        firstChild.classList.add('grade')
+        if (firstChild.innerText > 7.5)
+            firstChild.classList.add('background-red')
+        if (firstChild.innerText <= 7.5 && firstChild.innerText > 6)
+            firstChild.classList.add('background-orange')
+        if (firstChild.innerText <= 6 && firstChild.innerText > 4.5)
+            firstChild.classList.add('background-yellow')
+        if (firstChild.innerText <= 4.5)
+            firstChild.classList.add('background-light-green')
+    }
 
     const gridCellsVaccination = vaccinationTable.querySelectorAll('.grid-cell')
     for (let i = 5; i < gridCellsVaccination.length; i += 6) {
         const firstChild = gridCellsVaccination[i].firstChild
-        firstChild.classList.add('grade')
-        if (firstChild.innerText > 7.5)
-            firstChild.classList.add('background-red')
-        if (firstChild.innerText <= 7.5 && firstChild.innerText > 6)
-            firstChild.classList.add('background-orange')
-        if (firstChild.innerText <= 6 && firstChild.innerText > 4.5)
-            firstChild.classList.add('background-yellow')
-        if (firstChild.innerText <= 4.5)
-            firstChild.classList.add('background-light-green')
+        addBGColorToFirstChild(firstChild)
     }
-
     const gridCellsTrafficLight = trafficLightTable.querySelectorAll('.grid-cell')
     for (let i = 1; i < gridCellsTrafficLight.length; i += 6) {
         const firstChild = gridCellsTrafficLight[i].firstChild
-        firstChild.classList.add('grade')
-        if (firstChild.innerText > 7.5)
-            firstChild.classList.add('background-red')
-        if (firstChild.innerText <= 7.5 && firstChild.innerText > 6)
-            firstChild.classList.add('background-orange')
-        if (firstChild.innerText <= 6 && firstChild.innerText > 4.5)
-            firstChild.classList.add('background-yellow')
-        if (firstChild.innerText <= 4.5)
-            firstChild.classList.add('background-light-green')
+        addBGColorToFirstChild(firstChild)
     }
 }
-
-
-const trafficLightSettlementButtons = document.querySelectorAll('.traffic-light-grid-button')
 
 const addGridButtonsEventListener = () => {
     trafficLightSettlementButtons.forEach(el => {
@@ -434,13 +378,8 @@ sortByParam('firstShotPercentage', settlementsDataVaccination, false)
 sortByParam('dailyCalculatedGrade', settlementsDataTrafficLight, false)
 fillVaccinationTable()
 fillTrafficLightTable()
-
-
-
 addGridButtonsEventListener()
 addGradeStyle()
-
-
 
 
 // this creates and fills auxiliary array for when you search for includes
