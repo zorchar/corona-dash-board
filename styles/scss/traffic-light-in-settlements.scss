@@ -92,6 +92,13 @@
     height: 30px;
     border: solid #808080 1px;
     border-radius: 50%;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.second-svg-container-outer:hover {
+    background: rgb(128, 128, 128, 0.5);
 }
 
 .svg-container-inner {
@@ -108,10 +115,6 @@
     .info-square {
         row-gap: 5px;
     }
-    // .first-info-square {
-    //     padding-right: 0;
-    //     padding-left: 0;
-    // }
     .first-grid {
         min-width: calc(100% + 16px);
         margin-right: -8px;
@@ -120,6 +123,10 @@
         min-width: calc(100% + 16px);
         margin-right: -8px;
     }
+}
+
+.first-info-square {
+    padding-top: 10px;
 }
 
 .left-side-div {
@@ -139,6 +146,9 @@
 
 .upper-division__right-side {
     .data-date {
+        background: #e6f1f4;
+        padding-right: 5px;
+        padding-left: 5px;
         @media (min-width: 550px) {
             @media (max-width: 650px) {
                 font-size: 12px;

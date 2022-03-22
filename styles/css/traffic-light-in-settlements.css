@@ -98,6 +98,13 @@
   border: solid #808080 1px;
   border-radius: 50%;
 }
+.svg-container-outer:hover {
+  cursor: pointer;
+}
+
+.second-svg-container-outer:hover {
+  background: rgba(128, 128, 128, 0.5);
+}
 
 .svg-container-inner {
   min-width: 20px;
@@ -121,6 +128,10 @@
   margin-right: -8px;
 }
 
+.first-info-square {
+  padding-top: 10px;
+}
+
 .left-side-div {
   column-gap: 5px;
 }
@@ -138,6 +149,11 @@
   }
 }
 
+.upper-division__right-side .data-date {
+  background: #e6f1f4;
+  padding-right: 5px;
+  padding-left: 5px;
+}
 @media (min-width: 550px) and (max-width: 650px) {
   .upper-division__right-side .data-date {
     font-size: 12px;

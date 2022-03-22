@@ -460,3 +460,40 @@ fillTrafficLightTable()
 
 addGridButtonsEventListener()
 addGradeStyle()
+
+
+
+
+// this creates and fills auxiliary array for when you search for includes
+
+// const trafficLightInput = document.querySelector('#traffic-light-input')
+// const trafficLightCurrentSelectedSettlements = []
+
+// trafficLightInput.addEventListener('input', (event) => {
+//     trafficLightCurrentSelectedSettlements.length = 0
+//     settlementsDataTrafficLight.forEach(el => {
+//         if (el.settlement.includes(trafficLightInput.value)) {
+//             trafficLightCurrentSelectedSettlements.push(el)
+//         }
+//     })
+//     console.log(trafficLightCurrentSelectedSettlements);
+// })
+/////
+
+// this creates and fills auxiliary array for when you search for includes
+
+const vaccinationInput = document.querySelector('#vaccination-input')
+const vaccinationCurrentSelectedSettlements = []
+const vaccinationAuxiliaryArray = [] // for when you choose a single settlement
+
+vaccinationInput.addEventListener('input', (event) => {
+    vaccinationCurrentSelectedSettlements.length = 0
+    settlementsDataVaccination.forEach(el => {
+        if (el.settlement.includes(vaccinationInput.value)) {
+            vaccinationCurrentSelectedSettlements.push(el.settlement)
+        }
+    })
+    console.log(vaccinationCurrentSelectedSettlements);
+})
+/////
+
