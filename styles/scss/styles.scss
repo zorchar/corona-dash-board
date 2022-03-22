@@ -54,10 +54,6 @@ body {
     .info-square {
         position: relative;
     }
-    > .info-square {
-        // overflow-y: hidden;
-        // overflow-x: auto;
-    }
     .dotted-hamburger {
         border: none;
         background: none;
@@ -121,4 +117,8 @@ body {
     font-size: 14px;
     font-weight: 600;
     text-decoration: underline;
+}
+
+.display-none {
+    display: none !important;
 }

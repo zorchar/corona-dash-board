@@ -233,9 +233,9 @@ const settlementsDataTrafficLight = [
 
 
 
-const sortByParam = (param, array, ascending) =>
+const sortByParam = (param, array, isAscending) =>
     array.sort((obj1, obj2) => {
-        if (ascending)
+        if (isAscending)
             return obj2[param] < obj1[param] ? '1' : '-1'
         else
             return obj2[param] < obj1[param] ? '-1' : '1'
@@ -263,14 +263,22 @@ const sortByParam = (param, array, ascending) =>
 //     return gridCell
 // }
 
-const createGridCellWithText = (text) => {
+const createGridCellWithTextAndArrows = (text) => {
     const gridCellText = document.createElement('div')
     gridCellText.classList.add('grid-cell__text')
     gridCellText.innerText = text
 
+    const upArrow = document.createElement('i')
+    upArrow.classList.add("fa-solid", "fa-sort-up", "display-none")
+    const downArrow = document.createElement('i')
+    downArrow.classList.add("fa-solid", "fa-sort-down", "display-none")
+
     const gridCell = document.createElement('div')
     gridCell.classList.add('grid-cell')
-    gridCell.appendChild(gridCellText)
+    gridCell.append(gridCellText, upArrow, downArrow)
+    // gridCell.appendChild(gridCellText)
+    // gridCell.appendChild(upArrow)
+    // gridCell.appendChild(downArrow)
     return gridCell
 }
 
@@ -291,7 +299,7 @@ vaccinationTable.replaceChildren()
 const fillTrafficLightTable = () =>
     settlementsDataTrafficLight.forEach(el => {
         for (const [key, value] of Object.entries(el)) {
-            trafficLightTable.appendChild(createGridCellWithText(value))
+            trafficLightTable.appendChild(createGridCellWithTextAndArrows(value))
         }
     })
 
@@ -299,7 +307,7 @@ const fillTrafficLightTable = () =>
 const fillVaccinationTable = () =>
     settlementsDataVaccination.forEach(el => {
         for (const [key, value] of Object.entries(el)) {
-            vaccinationTable.appendChild(createGridCellWithText(value))
+            vaccinationTable.appendChild(createGridCellWithTextAndArrows(value))
         }
     })
 
@@ -314,12 +322,12 @@ const fillVaccinationTable = () =>
 
 // id="vaccination__settlement-button"
 
-let ascendingVaccination = true
+let isAscendingVaccination = true
 let lastFieldVaccination = 'settlement'
 
 const vaccinationSettlementButtons = document.querySelectorAll('.vaccination-grid-button')
 
-let ascendingTrafficLight = true
+let isAscendingTrafficLight = true
 let lastFieldTrafficLight = 'settlement'
 
 const addGradeStyle = () => {
@@ -360,26 +368,60 @@ const addGridButtonsEventListener = () => {
 
     trafficLightSettlementButtons.forEach(el => {
         el.addEventListener('click', (event) => {
-            if (event.target.parentElement.name === lastFieldTrafficLight)
-                ascendingTrafficLight = !ascendingTrafficLight
-            else
-                ascendingTrafficLight = true
+            if (event.target.parentElement.name === lastFieldTrafficLight) {
+                isAscendingTrafficLight = !isAscendingTrafficLight
+                if (document.querySelector('.display') != null) {
+                    document.querySelector('.display').classList.add('display-none')
+                    document.querySelector('.display').classList.remove('display')
+                }
+                if (!isAscendingTrafficLight) {
+                    event.target.parentNode.querySelector('.fa-sort-down').classList.remove('display-none')
+                    event.target.parentNode.querySelector('.fa-sort-down').classList.add('display')
+                }
+                else {
+                    event.target.parentNode.querySelector('.fa-sort-up').classList.remove('display-none')
+                    event.target.parentNode.querySelector('.fa-sort-up').classList.add('display')
+
+                }
+            }
+            else {
+                isAscendingTrafficLight = false
+                if (document.querySelector('.display') != null) {
+                    document.querySelector('.display').classList.add('display-none')
+                    document.querySelector('.display').classList.remove('display')
+                }
+                event.target.parentNode.querySelector('.fa-sort-down').classList.remove('display-none')
+                event.target.parentNode.querySelector('.fa-sort-down').classList.add('display')
+            }
             lastFieldTrafficLight = event.target.parentElement.name
-            sortByParam(event.target.parentElement.name, settlementsDataTrafficLight, ascendingTrafficLight === true ? true : false)
+            sortByParam(event.target.parentElement.name, settlementsDataTrafficLight, isAscendingTrafficLight === true ? true : false)
             trafficLightTable.replaceChildren()
             fillTrafficLightTable()
             addGradeStyle()
+
+            // let arrow
+            // if (isAscendingTrafficLight)
+            //     arrow = event.target.parentNode.querySelector('.fa-sort-up')
+            // else
+            //     arrow = event.target.parentNode.querySelector('.fa-sort-down')
+
+            // arrow.classList.toggle('display-none')
+            // const test = upArrow.querySelector('.fa-sort-up')
+            // console.log('fsdf');
+
+            // .classList.toggle('display-none') // .querySelector('.fa-sort-up')
+
         })
     })
 
     vaccinationSettlementButtons.forEach(el => {
         el.addEventListener('click', (event) => {
             if (event.target.parentElement.name === lastFieldVaccination)
-                ascendingVaccination = !ascendingVaccination
+                isAscendingVaccination = !isAscendingVaccination
             else
-                ascendingVaccination = true
+                isAscendingVaccination = true
             lastFieldVaccination = event.target.parentElement.name
-            sortByParam(event.target.parentElement.name, settlementsDataVaccination, ascendingVaccination === true ? true : false)
+            sortByParam(event.target.parentElement.name, settlementsDataVaccination, isAscendingVaccination === true ? true : false)
             vaccinationTable.replaceChildren()
             fillVaccinationTable()
             addGradeStyle()
@@ -388,8 +430,8 @@ const addGridButtonsEventListener = () => {
 
 }
 
-sortByParam('settlement', settlementsDataVaccination, true)
-sortByParam('settlement', settlementsDataTrafficLight, true)
+sortByParam('firstShotPercentage', settlementsDataVaccination, true)
+sortByParam('dailyCalculatedGrade', settlementsDataTrafficLight, true)
 fillVaccinationTable()
 fillTrafficLightTable()
 

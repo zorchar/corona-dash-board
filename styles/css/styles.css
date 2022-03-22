@@ -230,16 +230,28 @@ header {
   justify-content: start;
 }
 .grid button {
+  display: flex;
+  align-items: center;
   background: #e6f1f3;
   font-size: 15px;
-  border: none;
+  border: transparent solid 2px;
 }
-.grid button:active {
+.grid button:active, .grid button:focus {
   border: solid #000000 2px;
   border-radius: 4px;
 }
 .grid button:hover {
   cursor: pointer;
+}
+.grid button i {
+  color: #308bf6;
+  padding-left: 5px;
+}
+.grid button .fa-sort-up {
+  padding-top: 11px;
+}
+.grid button .fa-sort-down {
+  padding-bottom: 6px;
 }
 
 .overview__header {
@@ -604,4 +616,8 @@ body {
   font-size: 14px;
   font-weight: 600;
   text-decoration: underline;
+}
+
+.display-none {
+  display: none !important;
 }
