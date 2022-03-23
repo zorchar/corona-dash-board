@@ -170,10 +170,6 @@
 }
 
 #traffic-light-search-bar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   border-radius: 5px;
   width: 200px;
   height: fit-content;
@@ -203,11 +199,25 @@
 }
 
 #includes-settlement-list-traffic-light {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 30%;
+  height: fit-content;
   border: #e4e9f2 solid 1px;
+  background: #ffffff;
   border-radius: 5px;
   margin-right: 23px;
+}
+
+#secondary-div__close-div-traffic-light {
+  cursor: default;
+  position: absolute;
+  color: #4a6799;
+  font-weight: 700;
+  left: 0;
+  top: 0;
+  padding-left: 25px;
+  padding-top: 4px;
+  font-size: 1rem;
 }
