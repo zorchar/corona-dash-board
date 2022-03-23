@@ -43,6 +43,17 @@
   width: 100%;
 }
 
+#secondary-div__close-div {
+  cursor: default;
+  position: absolute;
+  color: #4a6799;
+  font-weight: 700;
+  left: 0;
+  top: 0;
+  padding-left: 5px;
+  padding-top: 8px;
+}
+
 .includes-settlement-list {
   display: flex;
   flex-wrap: wrap;

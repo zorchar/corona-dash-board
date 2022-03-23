@@ -396,6 +396,46 @@ addGradeStyle()
 //     })
 //     console.log(trafficLightCurrentSelectedSettlements);
 // })
+
+const trafficLightInput = document.querySelector('#traffic-light-input')
+const trafficLightCurrentSelectedSettlements = []
+const trafficLightAuxiliaryArray = [] // for when you choose a single settlement
+const trafficLightSettlementList = document.querySelector('#includes-settlement-list-traffic-light')
+
+trafficLightInput.addEventListener('input', (event) => {
+    if (trafficLightInput.value !== "")
+        document.querySelector('#secondary-div__close-div').classList.remove('display-none')
+    if (trafficLightInput.value === "")
+        document.querySelector('#secondary-div__close-div').classList.add('display-none')
+    trafficLightCurrentSelectedSettlements.length = 0
+    trafficLightSettlementList.replaceChildren()
+    settlementsDataTrafficLight.forEach(el => {
+        if (el.settlement.includes(trafficLightInput.value)) {
+            trafficLightCurrentSelectedSettlements.push(el.settlement)
+        }
+    })
+    trafficLightCurrentSelectedSettlements.forEach(el => {
+        if (trafficLightInput.value === "")
+            return
+        if (trafficLightSettlementList.childElementCount >= 5)
+            return
+        const settlementName = document.createElement('div')
+        settlementName.classList.add('includes-settlement-list__settlement')
+        settlementName.innerText = el
+        settlementName.addEventListener('click', function (event) {
+            trafficLightInput.value = settlementName.innerText
+            const eventInput = new Event('input')
+            trafficLightInput.dispatchEvent(eventInput)
+        })
+        trafficLightSettlementList.appendChild(settlementName)
+    })
+})
+
+
+
+
+
+
 /////
 
 // this creates and fills auxiliary array for when you search for includes
@@ -406,6 +446,10 @@ const vaccinationAuxiliaryArray = [] // for when you choose a single settlement
 const settlementList = document.querySelector('.includes-settlement-list')
 
 vaccinationInput.addEventListener('input', (event) => {
+    if (vaccinationInput.value !== "")
+        document.querySelector('#secondary-div__close-div').classList.remove('display-none')
+    if (vaccinationInput.value === "")
+        document.querySelector('#secondary-div__close-div').classList.add('display-none')
     vaccinationCurrentSelectedSettlements.length = 0
     settlementList.replaceChildren()
     settlementsDataVaccination.forEach(el => {

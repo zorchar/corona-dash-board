@@ -23,7 +23,6 @@
   width: 100%;
   height: fit-content;
   min-height: 30px;
-  align-items: center;
 }
 .upper-division__right-side > div:first-child {
   align-items: unset;
@@ -153,6 +152,7 @@
   background: #e6f1f4;
   padding-right: 5px;
   padding-left: 5px;
+  align-items: center;
 }
 @media (min-width: 550px) and (max-width: 650px) {
   .upper-division__right-side .data-date {
@@ -163,4 +163,51 @@
   .upper-division__right-side .data-date {
     font-size: 10px;
   }
+}
+
+.fa-magnifying-glass {
+  font-size: 18px;
+}
+
+#traffic-light-search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 200px;
+  height: fit-content;
+  background: white;
+  overflow: hidden;
+  padding: 7px;
+  font-size: 0.75rem;
+  margin: 2px;
+  margin-bottom: 10px;
+}
+#traffic-light-search-bar .includes-settlement-list__settlement {
+  font-size: 15px;
+  font-weight: 700;
+}
+#traffic-light-search-bar input {
+  border: none;
+  padding-right: 5px;
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  border-radius: 10px;
+  padding: 7px;
+  font-size: 0.75rem;
+  background: white;
+  margin: 2px;
+  margin-bottom: 10px;
+}
+
+#includes-settlement-list-traffic-light {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border: #e4e9f2 solid 1px;
+  border-radius: 5px;
+  margin-right: 23px;
 }
