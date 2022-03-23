@@ -3,7 +3,7 @@
   padding: 5px;
 }
 
-.secondary-seach-bar-container {
+.secondary-search-bar-container {
   position: absolute;
   display: flex;
   flex-wrap: wrap;
@@ -11,14 +11,14 @@
   padding-top: 2px;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 200px;
   height: fit-content;
   border: solid 1px rgba(128, 128, 128, 0.1);
   background: white;
   overflow: hidden;
 }
-.secondary-seach-bar-container input {
+.secondary-search-bar-container input {
   width: 100%;
   border: 1px solid #e4e9f2;
   border-radius: 10px;
@@ -28,12 +28,35 @@
   margin: 2px;
   margin-bottom: 10px;
 }
-.secondary-seach-bar-container .accept-or-cancel-button {
+.secondary-search-bar-container .accept-or-cancel-button {
   text-align: center;
   padding: 5px;
   font-weight: 400;
   width: 50%;
   background: #e6f1f4;
+  cursor: pointer;
+}
+
+#secondary-search-bar__secondary-div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.includes-settlement-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.includes-settlement-list__settlement {
+  width: 100%;
+  padding: 5px;
+  padding-bottom: 10px;
+}
+.includes-settlement-list__settlement:hover {
+  background: #e6f1f4;
+  cursor: pointer;
 }
 
 .search-bar {

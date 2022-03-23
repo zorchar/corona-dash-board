@@ -300,15 +300,19 @@
                                 </path>
                             </svg>
                         </button>
-                        <div class="search-bar-container secondary-seach-bar-container">
-                            <input id="vaccination-input" type="text" placeholder="חיפוש ישוב">
-                            <div class="accept-or-cancel-button">אישור</div>
-                            <div class="accept-or-cancel-button">ביטול</div>
-                            <!-- <div class="search-bar">this will be the search bar</div> -->
+                        <div class="search-bar-container secondary-search-bar-container">
+                            <div id="secondary-search-bar__secondary-div" class="display-none">
+                                <input id="vaccination-input" type="text" placeholder="חיפוש ישוב">
+                                <div class="includes-settlement-list"></div>
+                                <div id="secondary-search-bar__accept-button" class="accept-or-cancel-button">
+                                    אישור</div>
+                                <div id="secondary-search-bar__cancel-button" class="accept-or-cancel-button">
+                                    ביטול</div>
+                                <!-- <div class="search-bar">this will be the search bar</div> -->
+                            </div>
                         </div>
 
                     </div>
-
                     <div class="grid first-grid">
                         <div class="grid-cell">
                             <button class="vaccination-grid-button" name="settlement">

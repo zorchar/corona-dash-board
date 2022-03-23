@@ -403,15 +403,60 @@ addGradeStyle()
 const vaccinationInput = document.querySelector('#vaccination-input')
 const vaccinationCurrentSelectedSettlements = []
 const vaccinationAuxiliaryArray = [] // for when you choose a single settlement
+const settlementList = document.querySelector('.includes-settlement-list')
 
 vaccinationInput.addEventListener('input', (event) => {
     vaccinationCurrentSelectedSettlements.length = 0
+    settlementList.replaceChildren()
     settlementsDataVaccination.forEach(el => {
         if (el.settlement.includes(vaccinationInput.value)) {
             vaccinationCurrentSelectedSettlements.push(el.settlement)
         }
     })
-    console.log(vaccinationCurrentSelectedSettlements);
+    vaccinationCurrentSelectedSettlements.forEach(el => {
+        if (vaccinationInput.value === "")
+            return
+        if (settlementList.childElementCount >= 5)
+            return
+        const settlementName = document.createElement('div')
+        settlementName.classList.add('includes-settlement-list__settlement')
+        settlementName.innerText = el
+        settlementName.addEventListener('click', function (event) {
+            vaccinationInput.value = settlementName.innerText
+            const eventInput = new Event('input')
+            vaccinationInput.dispatchEvent(eventInput)
+        })
+        settlementList.appendChild(settlementName)
+    })
+    // console.log(vaccinationCurrentSelectedSettlements);
+})
+
+
+buttonAccept = document.querySelector('#secondary-search-bar__accept-button')
+buttonAccept.addEventListener('click', (event) => {
+    if (vaccinationInput.value === "") {
+        fillVaccinationTable()
+        return
+    }
+    vaccinationTable.replaceChildren()
+    settlementsDataVaccination.forEach(el => {
+        if (el.settlement === vaccinationInput.value) {
+            for (const [key, value] of Object.entries(el)) {
+                vaccinationTable.appendChild(createGridCellWithTextAndArrows(value))
+            }
+        }
+    })
+
+})
+
+document.querySelectorAll('.accept-or-cancel-button').forEach(el => {
+    el.addEventListener('click', (event) => {
+        document.querySelector('#secondary-search-bar__secondary-div').classList.add('display-none')
+    })
+})
+
+document.querySelector('.vaccine-by-settlement-button').addEventListener('click', (event) => {
+    document.querySelector('#secondary-search-bar__secondary-div').classList.toggle('display-none')
 })
 /////
 
