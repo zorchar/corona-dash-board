@@ -98,6 +98,14 @@
     .grid-ltr-container {
         min-width: calc(100% + 16px);
         margin-right: -8px;
+        @media (min-width: 651px) {
+            @media (max-width: 1283px) {
+                max-height: 60%;
+            }
+        }
+        @media (min-width: 1284px) {
+            max-height: 68%;
+        }
     }
 }
 
