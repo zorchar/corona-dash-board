@@ -16,7 +16,7 @@
     height: fit-content;
     border: solid 1px rgb(128, 128, 128, 0.1);
     background: rgb(255, 255, 255);
-    overflow: hidden;
+    // overflow: hidden;
 
     input {
         width: 100%;
@@ -58,6 +58,9 @@
 }
 
 .includes-settlement-list {
+    position: absolute;
+    top: 40px;
+    background: white;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -127,4 +130,11 @@
     opacity: 0.3;
     height: 20px;
     width: 20px;
+}
+
+.accept-cancel-container {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }

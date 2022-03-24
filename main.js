@@ -312,10 +312,11 @@ const addGridButtonsEventListener = () => {
     trafficLightSettlementButtons.forEach(el => {
         el.addEventListener('click', function (event) {
             const trafficLightSection = document.querySelector('#traffic-light-in-settlements')
+            const elementDisplay = trafficLightSection.querySelector('.display')
             if (this.name === lastFieldTrafficLight) {
                 isAscendingTrafficLight = !isAscendingTrafficLight
-                trafficLightSection.querySelector('.display').classList.add('display-none')
-                trafficLightSection.querySelector('.display').classList.remove('display')
+                elementDisplay.classList.add('display-none')
+                elementDisplay.classList.remove('display')
                 if (!isAscendingTrafficLight) {
                     this.querySelector('.fa-sort-down').classList.remove('display-none')
                     this.querySelector('.fa-sort-down').classList.add('display')
@@ -327,8 +328,8 @@ const addGridButtonsEventListener = () => {
             }
             else {
                 isAscendingTrafficLight = false
-                trafficLightSection.querySelector('.display').classList.add('display-none')
-                trafficLightSection.querySelector('.display').classList.remove('display')
+                elementDisplay.classList.add('display-none')
+                elementDisplay.classList.remove('display')
                 this.querySelector('.fa-sort-down').classList.remove('display-none')
                 this.querySelector('.fa-sort-down').classList.add('display')
             }
@@ -344,10 +345,11 @@ const addGridButtonsEventListener = () => {
         el.addEventListener('click', function (event) {
             event.stopPropagation()
             const vaccinationSection = document.querySelector('#vaccination-of-population')
+            const elementDisplay = vaccinationSection.querySelector('.display')
             if (this.name === lastFieldVaccination) {
                 isAscendingVaccination = !isAscendingVaccination
-                vaccinationSection.querySelector('.display').classList.add('display-none')
-                vaccinationSection.querySelector('.display').classList.remove('display')
+                elementDisplay.classList.add('display-none')
+                elementDisplay.classList.remove('display')
                 if (!isAscendingVaccination) {
                     this.querySelector('.fa-sort-down').classList.remove('display-none')
                     this.querySelector('.fa-sort-down').classList.add('display')
@@ -359,8 +361,8 @@ const addGridButtonsEventListener = () => {
             }
             else {
                 isAscendingVaccination = false
-                vaccinationSection.querySelector('.display').classList.add('display-none')
-                vaccinationSection.querySelector('.display').classList.remove('display')
+                elementDisplay.classList.add('display-none')
+                elementDisplay.classList.remove('display')
                 this.querySelector('.fa-sort-down').classList.remove('display-none')
                 this.querySelector('.fa-sort-down').classList.add('display')
             }
@@ -385,9 +387,10 @@ const trafficLightInput = document.querySelector('#traffic-light-input')
 const trafficLightCurrentSelectedSettlements = []
 const trafficLightSettlementList = document.querySelector('#includes-settlement-list-traffic-light')
 
-document.querySelector('#secondary-div__close-div-traffic-light').addEventListener('click', (event) => {
+const closeDivElementTrafficLight = document.querySelector('#secondary-div__close-div-traffic-light')
+closeDivElementTrafficLight.addEventListener('click', (event) => {
     trafficLightInput.value = ""
-    document.querySelector('#secondary-div__close-div-traffic-light').classList.add('display-none')
+    closeDivElementTrafficLight.classList.add('display-none')
     trafficLightSettlementList.classList.add('display-none')
     trafficLightTable.replaceChildren()
     const eventInput = new Event('input')
@@ -395,69 +398,28 @@ document.querySelector('#secondary-div__close-div-traffic-light').addEventListen
 })
 
 trafficLightInput.addEventListener('input', (event) => {
-    if (trafficLightInput.value === "") {
-        document.querySelector('#secondary-div__close-div-traffic-light').classList.add('display-none')
-        fillTrafficLightTable()
-        addGradeStyle()
-    }
-    trafficLightCurrentSelectedSettlements.length = 0
-    trafficLightSettlementList.replaceChildren()
-    trafficLightSettlementList.classList.add('display-none')
-    settlementsDataTrafficLight.forEach(el => {
-        if (el.settlement.includes(trafficLightInput.value)) {
-            trafficLightCurrentSelectedSettlements.push(el.settlement)
-        }
-    })
-    trafficLightCurrentSelectedSettlements.forEach(el => {
-        if (trafficLightInput.value === "")
-            return
-        if (trafficLightSettlementList.childElementCount >= 5)
-            return
-        const settlementName = document.createElement('div')
-        settlementName.classList.add('includes-settlement-list__settlement')
-        settlementName.innerText = el
-        settlementName.addEventListener('click', function (event) {
-            trafficLightInput.value = settlementName.innerText
-            const eventInput = new Event('input')
-            trafficLightInput.dispatchEvent(eventInput)
-        })
-        trafficLightSettlementList.appendChild(settlementName)
-        if (trafficLightSettlementList.childElementCount > 0)   //check
-            trafficLightSettlementList.classList.remove('display-none')
-
-    })
-
-    if (trafficLightInput.value !== "") {
-        document.querySelector('#secondary-div__close-div-traffic-light').classList.remove('display-none')
-        trafficLightTable.replaceChildren()
-        trafficLightCurrentSelectedSettlements.forEach(elList => {
-            settlementsDataTrafficLight.forEach(elData => {
-                if (elData.settlement === elList) {
-                    for (const [key, value] of Object.entries(elData)) {
-                        trafficLightTable.appendChild(createGridCellWithTextAndArrows(value))
-                    }
-                }
-            })
-        })
-        addGradeStyle()
-    }
+    trafficLightSettlementList.classList.remove('display-none')
+    trafficLightInputChange()
 })
 
 const vaccinationInput = document.querySelector('#vaccination-input')
 const vaccinationCurrentSelectedSettlements = []
 const settlementList = document.querySelector('.includes-settlement-list')
 
-document.querySelector('#secondary-div__close-div-vaccination').addEventListener('click', (event) => {
+const closeDivElementVaccination = document.querySelector('#secondary-div__close-div-vaccination')
+
+closeDivElementVaccination.addEventListener('click', (event) => {
     vaccinationInput.value = ""
-    document.querySelector('#secondary-div__close-div-vaccination').classList.add('display-none')
+    closeDivElementVaccination.classList.add('display-none')
     updateSettlementList()
 })
 
 vaccinationInput.addEventListener('input', (event) => {
+    settlementList.classList.remove('display-none')
     updateSettlementList()
 })
 
-buttonAccept = document.querySelector('#secondary-search-bar__accept-button')
+const buttonAccept = document.querySelector('#secondary-search-bar__accept-button')
 buttonAccept.addEventListener('click', (event) => {
     if (vaccinationInput.value === "") {
         vaccinationTable.replaceChildren()
@@ -486,9 +448,9 @@ document.querySelector('.vaccine-by-settlement-button').addEventListener('click'
 
 function updateSettlementList() {
     if (vaccinationInput.value !== "")
-        document.querySelector('#secondary-div__close-div-vaccination').classList.remove('display-none')
+        closeDivElementVaccination.classList.remove('display-none')
     if (vaccinationInput.value === "")
-        document.querySelector('#secondary-div__close-div-vaccination').classList.add('display-none')
+        closeDivElementVaccination.classList.add('display-none')
 
     vaccinationCurrentSelectedSettlements.length = 0
     settlementList.replaceChildren()
@@ -505,11 +467,57 @@ function updateSettlementList() {
         const settlementName = document.createElement('div')
         settlementName.classList.add('includes-settlement-list__settlement')
         settlementName.innerText = el
+        settlementList.appendChild(settlementName)
         settlementName.addEventListener('click', function (event) {
             vaccinationInput.value = settlementName.innerText
-            const eventInput = new Event('input')
-            vaccinationInput.dispatchEvent(eventInput)
+            settlementList.classList.add('display-none')
+            updateSettlementList()
         })
-        settlementList.appendChild(settlementName)
     })
+}
+
+function trafficLightInputChange() {
+    trafficLightTable.replaceChildren()
+    if (trafficLightInput.value === "") {
+        closeDivElementTrafficLight.classList.add('display-none')
+        fillTrafficLightTable()
+        addGradeStyle()
+    }
+    trafficLightCurrentSelectedSettlements.length = 0
+    trafficLightSettlementList.replaceChildren()
+    settlementsDataTrafficLight.forEach(el => {
+        if (el.settlement.includes(trafficLightInput.value)) {
+            trafficLightCurrentSelectedSettlements.push(el.settlement)
+        }
+    })
+    trafficLightCurrentSelectedSettlements.forEach(el => {
+        if (trafficLightInput.value === "")
+            return
+        if (trafficLightSettlementList.childElementCount >= 5)
+            return
+        const settlementName = document.createElement('div')
+        settlementName.classList.add('includes-settlement-list__settlement')
+        settlementName.innerText = el
+        trafficLightSettlementList.appendChild(settlementName)
+        settlementName.addEventListener('click', function (event) {
+            trafficLightInput.value = settlementName.innerText
+            trafficLightSettlementList.classList.add('display-none')
+            trafficLightInputChange()
+        })
+    })
+
+    if (trafficLightInput.value !== "") {
+        closeDivElementTrafficLight.classList.remove('display-none')
+        trafficLightTable.replaceChildren()
+        trafficLightCurrentSelectedSettlements.forEach(elList => {
+            settlementsDataTrafficLight.forEach(elData => {
+                if (elData.settlement === elList) {
+                    for (const [key, value] of Object.entries(elData)) {
+                        trafficLightTable.appendChild(createGridCellWithTextAndArrows(value))
+                    }
+                }
+            })
+        })
+        addGradeStyle()
+    }
 }
