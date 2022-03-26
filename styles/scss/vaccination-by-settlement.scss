@@ -1,6 +1,7 @@
 .search-bar-container {
     width: 100%;
     padding: 5px;
+    background: var(--secondary-bg-color);
 }
 
 .secondary-search-bar-container {
@@ -15,16 +16,16 @@
     width: 200px;
     height: fit-content;
     border: solid 1px rgb(128, 128, 128, 0.1);
-    background: rgb(255, 255, 255);
+    background: var(--secondary-bg-color);
     // overflow: hidden;
 
     input {
         width: 100%;
-        border: 1px solid #e4e9f2;
+        border: 1px solid var(--input-border-and-angle-color-color);
         border-radius: 10px;
         padding: 7px;
         font-size: 0.75rem;
-        background: rgb(255, 255, 255);
+        background: var(--secondary-bg-color);
         margin: 2px;
         margin-bottom: 10px;
     }
@@ -34,7 +35,7 @@
         padding: 5px;
         font-weight: 400;
         width: 50%;
-        background: #e6f1f4;
+        background: var(--third-bg-color);
         cursor: pointer;
     }
 }
@@ -60,7 +61,7 @@
 .includes-settlement-list {
     position: absolute;
     top: 40px;
-    background: white;
+    background: var(--secondary-bg-color);
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -71,7 +72,7 @@
     padding: 5px;
     padding-bottom: 10px;
     &:hover {
-        background: #e6f1f4;
+        background: var(--third-bg-color);
         cursor: pointer;
     }
 }
@@ -117,11 +118,13 @@
     justify-content: space-between;
     border-radius: 10px;
     width: 200px;
-    border: solid 1px rgb(128, 128, 128, 0.1);
-    background: rgb(247, 249, 252, 1);
+    border: solid 2px var(--input-border-and-angle-color);
+    background: var(--fourth-bg-color);
     span {
         font-size: 1rem;
         padding-right: 5px;
+        background: var(--main-bg-color);
+        border-radius: 10px;
     }
 }
 
@@ -129,6 +132,7 @@
     opacity: 0.3;
     height: 20px;
     width: 20px;
+    color: var(--input-border-and-angle-color);
 }
 
 .accept-cancel-container {
@@ -141,9 +145,9 @@
 .bar {
     width: 50px;
     height: 10px;
-    background: #eff5f9;
+    background: var(--bar-bg-color);
     &:hover {
-        background: #ffffff;
+        background: var(--secondary-bg-color);
         cursor: pointer;
     }
 }
@@ -165,4 +169,21 @@
 
 .third-bar-color {
     background: #50cbfd;
+}
+
+#vaccination-of-population {
+    .info-square > .grid {
+        @media (max-width: 550px) {
+            > div:nth-child(5),
+            > div:nth-child(6) {
+                background: var(--different-grid-cell-bg-color);
+                > button {
+                    background: var(--different-grid-cell-bg-color);
+                }
+                .grid-cell__text {
+                    background: var(--different-grid-cell-bg-color);
+                }
+            }
+        }
+    }
 }

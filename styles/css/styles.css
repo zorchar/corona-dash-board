@@ -27,14 +27,15 @@ header {
   border: transparent;
   width: 100%;
   height: 100%;
-  background: #39475d;
+  background: var(--theme-button-bg-color);
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
 }
 .theme-switch-button:hover {
   cursor: pointer;
 }
-.theme-switch-button i {
+.theme-switch-button img {
+  background: none;
   width: 32px;
   height: 32px;
 }
@@ -64,7 +65,7 @@ header {
 }
 
 .info-square {
-  background: #ffffff;
+  background: var(--secondary-bg-color);
   box-shadow: 0px 0px 2px -2px;
   display: flex;
   flex-wrap: wrap;
@@ -88,10 +89,12 @@ header {
   width: 100%;
   height: fit-content;
   margin-bottom: 8px;
+  background: var(--secondary-bg-color);
 }
 .info-square__main-header svg {
   min-width: 20px;
   height: 20px;
+  background: var(--secondary-bg-color);
 }
 @media (min-width: 768px) {
   .info-square__main-header {
@@ -103,6 +106,7 @@ header {
   font-size: 0.9rem;
   font-weight: 700;
   padding-left: 8px;
+  background: var(--secondary-bg-color);
 }
 
 .info-square__main-number {
@@ -110,12 +114,14 @@ header {
   font-weight: 700;
   width: 100%;
   margin-bottom: 0;
+  background: var(--secondary-bg-color);
 }
 
 .info-square__secondary-info {
   display: flex;
   align-items: center;
   width: 100%;
+  background: var(--secondary-bg-color);
 }
 #verified-yesterday .secondary-info-number {
   font-size: 0.75rem;
@@ -124,12 +130,14 @@ header {
 .secondary-info-number {
   font-size: 0.8rem;
   padding-left: 5px;
+  background: var(--secondary-bg-color);
 }
 
 .secondary-info-text {
   font-size: 0.75rem;
   font-weight: 500;
   padding-left: 5px;
+  background: var(--secondary-bg-color);
 }
 
 #inhalated {
@@ -201,23 +209,11 @@ header {
 }
 
 .info-square > .grid > div:nth-child(-n+6) {
-  background: #e6f1f3;
+  background: var(--third-bg-color);
 }
 @media (max-width: 550px) {
   .info-square > .grid {
     padding: 0;
-  }
-  .info-square > .grid > div:nth-child(5) {
-    background: #daeaee;
-  }
-  .info-square > .grid > div:nth-child(5) > button {
-    background: #daeaee;
-  }
-  .info-square > .grid > div:nth-child(6) {
-    background: #daeaee;
-  }
-  .info-square > .grid > div:nth-child(6) > button {
-    background: #daeaee;
   }
 }
 
@@ -235,7 +231,7 @@ header {
 .grid button {
   display: flex;
   align-items: center;
-  background: #e6f1f3;
+  background: var(--third-bg-color);
   font-size: 15px;
   border: transparent solid 2px;
 }
@@ -248,6 +244,7 @@ header {
 }
 .grid button i {
   color: #308bf6;
+  background: var(--third-bg-color);
   padding-left: 5px;
 }
 .grid button .fa-sort-up {
@@ -263,7 +260,8 @@ header {
   align-items: center;
   justify-content: center;
   padding: 2px;
-  border-bottom: solid 1px #eaf3f5;
+  background: var(--secondary-bg-color);
+  border-bottom: solid 1px var(--border-bottom-color);
 }
 @media (min-width: 550px) and (max-width: 650px) {
   .grid-cell {
@@ -286,6 +284,7 @@ header {
   min-width: 2rem;
   margin: 4px 0;
   padding-left: 5px;
+  background: var(--secondary-bg-color);
 }
 @media (max-width: 685px) {
   .grid-cell__text {
@@ -303,6 +302,7 @@ header {
 }
 .first-grid .grid-cell__text {
   margin: 0;
+  background: var(--third-bg-color);
 }
 
 .overview__header {
@@ -349,6 +349,7 @@ header {
 .search-bar-container {
   width: 100%;
   padding: 5px;
+  background: var(--secondary-bg-color);
 }
 
 .secondary-search-bar-container {
@@ -363,15 +364,15 @@ header {
   width: 200px;
   height: fit-content;
   border: solid 1px rgba(128, 128, 128, 0.1);
-  background: white;
+  background: var(--secondary-bg-color);
 }
 .secondary-search-bar-container input {
   width: 100%;
-  border: 1px solid #e4e9f2;
+  border: 1px solid var(--input-border-and-angle-color-color);
   border-radius: 10px;
   padding: 7px;
   font-size: 0.75rem;
-  background: white;
+  background: var(--secondary-bg-color);
   margin: 2px;
   margin-bottom: 10px;
 }
@@ -380,7 +381,7 @@ header {
   padding: 5px;
   font-weight: 400;
   width: 50%;
-  background: #e6f1f4;
+  background: var(--third-bg-color);
   cursor: pointer;
 }
 
@@ -405,7 +406,7 @@ header {
 .includes-settlement-list {
   position: absolute;
   top: 40px;
-  background: white;
+  background: var(--secondary-bg-color);
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -417,7 +418,7 @@ header {
   padding-bottom: 10px;
 }
 .includes-settlement-list__settlement:hover {
-  background: #e6f1f4;
+  background: var(--third-bg-color);
   cursor: pointer;
 }
 
@@ -463,18 +464,21 @@ header {
   justify-content: space-between;
   border-radius: 10px;
   width: 200px;
-  border: solid 1px rgba(128, 128, 128, 0.1);
-  background: #f7f9fc;
+  border: solid 2px var(--input-border-and-angle-color);
+  background: var(--fourth-bg-color);
 }
 .vaccine-by-settlement-button span {
   font-size: 1rem;
   padding-right: 5px;
+  background: var(--main-bg-color);
+  border-radius: 10px;
 }
 
 .angle-down {
   opacity: 0.3;
   height: 20px;
   width: 20px;
+  color: var(--input-border-and-angle-color);
 }
 
 .accept-cancel-container {
@@ -487,10 +491,10 @@ header {
 .bar {
   width: 50px;
   height: 10px;
-  background: #eff5f9;
+  background: var(--bar-bg-color);
 }
 .bar:hover {
-  background: #ffffff;
+  background: var(--secondary-bg-color);
   cursor: pointer;
 }
 
@@ -513,6 +517,21 @@ header {
   background: #50cbfd;
 }
 
+@media (max-width: 550px) {
+  #vaccination-of-population .info-square > .grid > div:nth-child(5),
+#vaccination-of-population .info-square > .grid > div:nth-child(6) {
+    background: var(--different-grid-cell-bg-color);
+  }
+  #vaccination-of-population .info-square > .grid > div:nth-child(5) > button,
+#vaccination-of-population .info-square > .grid > div:nth-child(6) > button {
+    background: var(--different-grid-cell-bg-color);
+  }
+  #vaccination-of-population .info-square > .grid > div:nth-child(5) .grid-cell__text,
+#vaccination-of-population .info-square > .grid > div:nth-child(6) .grid-cell__text {
+    background: var(--different-grid-cell-bg-color);
+  }
+}
+
 .traffic-light-upper-division {
   display: flex;
   flex-wrap: wrap;
@@ -528,12 +547,16 @@ header {
   column-gap: 10px;
   font-size: 13px;
 }
+.upper-division__right-side h4 {
+  background: var(--secondary-bg-color);
+}
 @media (max-width: 550px) {
   .upper-division__right-side h4 {
     font-size: 10px;
   }
 }
 .upper-division__right-side > div {
+  background: var(--secondary-bg-color);
   display: flex;
   column-gap: 10px;
   width: 100%;
@@ -554,6 +577,7 @@ header {
 }
 
 .upper-division__left-side {
+  background: var(--secondary-bg-color);
   display: flex;
   width: 100%;
 }
@@ -561,8 +585,10 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
+  background: var(--secondary-bg-color);
 }
 .upper-division__left-side > div h3 {
+  background: var(--secondary-bg-color);
   font-size: 1rem;
   font-weight: 400;
 }
@@ -577,6 +603,7 @@ header {
   }
 }
 .upper-division__left-side > div h4 {
+  background: var(--secondary-bg-color);
   font-size: 0.7rem;
   font-weight: 200;
   font-style: italic;
@@ -604,7 +631,26 @@ header {
   }
 }
 
+@media (max-width: 550px) {
+  #traffic-light-in-settlements .info-square > .grid > div:nth-child(3),
+#traffic-light-in-settlements .info-square > .grid > div:nth-child(4),
+#traffic-light-in-settlements .info-square > .grid > div:nth-child(5) {
+    background: var(--different-grid-cell-bg-color);
+  }
+  #traffic-light-in-settlements .info-square > .grid > div:nth-child(3) > button,
+#traffic-light-in-settlements .info-square > .grid > div:nth-child(4) > button,
+#traffic-light-in-settlements .info-square > .grid > div:nth-child(5) > button {
+    background: var(--different-grid-cell-bg-color);
+  }
+  #traffic-light-in-settlements .info-square > .grid > div:nth-child(3) .grid-cell__text,
+#traffic-light-in-settlements .info-square > .grid > div:nth-child(4) .grid-cell__text,
+#traffic-light-in-settlements .info-square > .grid > div:nth-child(5) .grid-cell__text {
+    background: var(--different-grid-cell-bg-color);
+  }
+}
+
 .svg-container-outer {
+  background: var(--secondary-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -661,9 +707,12 @@ px .svg-container-outer:hover {
   }
 }
 
+.upper-division__right-side {
+  background: var(--secondary-bg-color);
+}
 .upper-division__right-side .data-date {
   border-radius: 5px;
-  background: #e6f1f4;
+  background: var(--third-bg-color);
   padding-right: 5px;
   padding-left: 5px;
   align-items: center;
@@ -689,11 +738,14 @@ px .svg-container-outer:hover {
   border-radius: 10px;
   width: 200px;
   height: fit-content;
-  background: white;
+  background: var(--secondary-bg-color);
   padding: 0 7px;
   font-size: 0.75rem;
   margin: 2px;
   margin-bottom: 10px;
+}
+#traffic-light-search-bar > div {
+  background: var(--secondary-bg-color);
 }
 #traffic-light-search-bar .includes-settlement-list__settlement {
   font-size: 15px;
@@ -707,7 +759,7 @@ px .svg-container-outer:hover {
   padding-right: 5px;
   border-radius: 10px;
   font-size: 0.75rem;
-  background: white;
+  background: var(--secondary-bg-color);
   margin: 2px;
 }
 
@@ -717,8 +769,8 @@ px .svg-container-outer:hover {
   flex-wrap: wrap;
   width: 75%;
   height: fit-content;
-  border: #e4e9f2 solid 1px;
-  background: #ffffff;
+  border: var(--input-border-and-angle-color) solid 1px;
+  background: var(--secondary-bg-color);
   border-radius: 5px;
   margin-right: 23px;
 }
@@ -740,12 +792,13 @@ px .svg-container-outer:hover {
   margin: 0;
   padding: 0;
   direction: rtl;
-  color: #222b45;
+  color: var(--main-color);
+  background: var(--main-bg-color);
   font-family: "Open Sans Hebrew", serif;
 }
 
 body {
-  background: #edf1f7;
+  background: var(--main-bg-color);
 }
 
 .section-container {
@@ -841,6 +894,23 @@ body {
 
 .align-items-center {
   align-items: center;
+}
+
+:root {
+  --main-bg-color: #edf1f7;
+  --main-color: #222b45;
+  --secondary-bg-color: #ffffff;
+  --third-bg-color: #e6f1f4;
+  --fourth-bg-color: #f7f9fc;
+  --bar-bg-color: #eff5f9;
+  --different-grid-cell-bg-color: #daeaee;
+  --input-border-and-angle-color: #e4e9f2;
+  --border-bottom-color: #eaf3f5;
+  --theme-button-bg-color: #39475d;
+}
+
+svg {
+  background: var(--secondary-bg-color);
 }
 
 /*# sourceMappingURL=styles.css.map */

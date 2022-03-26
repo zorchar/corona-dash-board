@@ -1,124 +1,25 @@
-const settlementsData = [
-    {
-        settlement: 'תל-אביב',
-        firstShotPercentage: 95,
-        secondShotPercentage: 94,
-        thirdShotPercentage: 93,
-        activeSickPerTenThousand: 88.8,
-        dailyCalculatedGrade: 9.9,
-        newSickPerTenThousand: 126.3,
-        positiveTestsPercantage: 20,
-        verifiedChangeRatio: 84,
-        activeSick: 2132
-    },
-    {
-        settlement: 'חיפה',
-        firstShotPercentage: 91,
-        secondShotPercentage: 90,
-        thirdShotPercentage: 88,
-        activeSickPerTenThousand: 85.8,
-        dailyCalculatedGrade: 9.3,
-        newSickPerTenThousand: 226.3,
-        positiveTestsPercantage: 15,
-        verifiedChangeRatio: 80,
-        activeSick: 1001
-    },
-    {
-        settlement: 'ירושלים',
-        firstShotPercentage: 88,
-        secondShotPercentage: 87,
-        thirdShotPercentage: 86,
-        activeSickPerTenThousand: 185.8,
-        dailyCalculatedGrade: 8.2,
-        newSickPerTenThousand: 123.5,
-        positiveTestsPercantage: 26,
-        verifiedChangeRatio: 35,
-        activeSick: 1751
-    },
-    {
-        settlement: 'כפר-כמא',
-        firstShotPercentage: 73.79,
-        secondShotPercentage: 69.94,
-        thirdShotPercentage: 55.12,
-        activeSickPerTenThousand: 58.9,
-        dailyCalculatedGrade: 9.9,
-        newSickPerTenThousand: 79.5,
-        positiveTestsPercantage: 27,
-        verifiedChangeRatio: 80,
-        activeSick: 20
-    },
-    {
-        settlement: 'מתן',
-        firstShotPercentage: 84.74,
-        secondShotPercentage: 81.98,
-        thirdShotPercentage: 66.42,
-        activeSickPerTenThousand: 148.8,
-        dailyCalculatedGrade: 9.9,
-        newSickPerTenThousand: 165.3,
-        positiveTestsPercantage: 23,
-        verifiedChangeRatio: 47,
-        activeSick: 54
-    },
-    {
-        settlement: 'אשדוד',
-        firstShotPercentage: 82.73,
-        secondShotPercentage: 22.91,
-        thirdShotPercentage: 46.42,
-        activeSickPerTenThousand: 248.8,
-        dailyCalculatedGrade: 6.9,
-        newSickPerTenThousand: 865.3,
-        positiveTestsPercantage: 29,
-        verifiedChangeRatio: 65,
-        activeSick: 657
-    },
-    {
-        settlement: 'אשקלון',
-        firstShotPercentage: 24.74,
-        secondShotPercentage: 21.98,
-        thirdShotPercentage: 16.42,
-        activeSickPerTenThousand: 765.8,
-        dailyCalculatedGrade: 8.4,
-        newSickPerTenThousand: 65.3,
-        positiveTestsPercantage: 83,
-        verifiedChangeRatio: 87,
-        activeSick: 876
-    },
-    {
-        settlement: 'פוריידיס',
-        firstShotPercentage: 94.74,
-        secondShotPercentage: 91.98,
-        thirdShotPercentage: 86.42,
-        activeSickPerTenThousand: 48.8,
-        dailyCalculatedGrade: 10,
-        newSickPerTenThousand: 5.3,
-        positiveTestsPercantage: 3,
-        verifiedChangeRatio: 4,
-        activeSick: 5
-    },
-]
-
 const settlementsDataVaccination = [
     {
         settlement: 'תל-אביב',
-        firstShotPercentage: 95,
-        secondShotPercentage: 94,
-        thirdShotPercentage: 93,
+        firstShotPercentage: 95.53,
+        secondShotPercentage: 94.89,
+        thirdShotPercentage: 93.45,
         activeSickPerTenThousand: 88.8,
         dailyCalculatedGrade: 9.9,
     },
     {
         settlement: 'חיפה',
-        firstShotPercentage: 91,
-        secondShotPercentage: 90,
-        thirdShotPercentage: 88,
+        firstShotPercentage: 91.12,
+        secondShotPercentage: 90.23,
+        thirdShotPercentage: 88.65,
         activeSickPerTenThousand: 85.8,
         dailyCalculatedGrade: 9.3,
     },
     {
         settlement: 'ירושלים',
-        firstShotPercentage: 88,
-        secondShotPercentage: 87,
-        thirdShotPercentage: 86,
+        firstShotPercentage: 88.01,
+        secondShotPercentage: 87.06,
+        thirdShotPercentage: 86.65,
         activeSickPerTenThousand: 185.8,
         dailyCalculatedGrade: 8.2,
     },
@@ -541,6 +442,60 @@ function trafficLightInputChange() {
         addGradeStyle()
     }
 }
+
+const themeButtonDark = document.querySelector('#theme-button-dark')
+const themeButtonLight = document.querySelector('#theme-button-light')
+themeButtonLight.addEventListener('click', () => {
+    themeButtonDark.classList.remove('display-none')
+    themeButtonLight.classList.add('display-none')
+    document.documentElement.style.setProperty
+        ('--main-bg-color', '#486579')
+    document.documentElement.style.setProperty
+        ('--main-color', '#ffffff')
+    document.documentElement.style.setProperty
+        ('--secondary-bg-color', '#384f5f')
+    document.documentElement.style.setProperty
+        ('--third-bg-color', '#2a3b47')
+    document.documentElement.style.setProperty
+        ('--fourth-bg-color', '#4e6275')
+    document.documentElement.style.setProperty
+        ('--bar-bg-color', '#293b48')
+    document.documentElement.style.setProperty
+        ('--different-grid-cell-bg-color', '#354047')
+    document.documentElement.style.setProperty
+        ('--input-border-and-angle-color', '#79858e')
+    document.documentElement.style.setProperty
+        ('--border-bottom-color', '#95a8b1')
+    document.documentElement.style.setProperty
+        ('--theme-button-bg-color', '#d8d8d8')
+
+})
+
+themeButtonDark.addEventListener('click', () => {
+    themeButtonDark.classList.add('display-none')
+    themeButtonLight.classList.remove('display-none')
+    document.documentElement.style.setProperty
+        ('--main-bg-color', '#edf1f7')
+    document.documentElement.style.setProperty
+        ('--main-color', '#222b45')
+    document.documentElement.style.setProperty
+        ('--secondary-bg-color', '#ffffff')
+    document.documentElement.style.setProperty
+        ('--third-bg-color', '#e6f1f4')
+    document.documentElement.style.setProperty
+        ('--fourth-bg-color', '#f7f9fc')
+    document.documentElement.style.setProperty
+        ('--bar-bg-color', '#eff5f9')
+    document.documentElement.style.setProperty
+        ('--different-grid-cell-bg-color', '#daeaee')
+    document.documentElement.style.setProperty
+        ('--input-border-and-angle-color', '#e4e9f2')
+    document.documentElement.style.setProperty
+        ('--border-bottom-color', '#eaf3f5')
+    document.documentElement.style.setProperty
+        ('--theme-button-bg-color', '#39475d')
+})
+
 
 sortByParam('firstShotPercentage', settlementsDataVaccination, false)
 sortByParam('dailyCalculatedGrade', settlementsDataTrafficLight, false)

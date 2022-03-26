@@ -13,11 +13,13 @@
     column-gap: 10px;
     font-size: 13px;
     h4 {
+        background: var(--secondary-bg-color);
         @media (max-width: 550px) {
             font-size: 10px;
         }
     }
     > div {
+        background: var(--secondary-bg-color);
         display: flex;
         column-gap: 10px;
         width: 100%;
@@ -37,13 +39,16 @@
 }
 
 .upper-division__left-side {
+    background: var(--secondary-bg-color);
     display: flex;
     width: 100%;
     > div {
         width: 100%;
         display: flex;
         align-items: center;
+        background: var(--secondary-bg-color);
         h3 {
+            background: var(--secondary-bg-color);
             font-size: 1rem;
             font-weight: 400;
             @media (max-width: 650px) {
@@ -56,6 +61,7 @@
             }
         }
         h4 {
+            background: var(--secondary-bg-color);
             font-size: 0.7rem;
             font-weight: 200;
             font-style: italic;
@@ -84,7 +90,26 @@
 // .traffic-light-search-bar {
 // }
 
+#traffic-light-in-settlements {
+    .info-square > .grid {
+        @media (max-width: 550px) {
+            > div:nth-child(3),
+            > div:nth-child(4),
+            > div:nth-child(5) {
+                background: var(--different-grid-cell-bg-color);
+                > button {
+                    background: var(--different-grid-cell-bg-color);
+                }
+                .grid-cell__text {
+                    background: var(--different-grid-cell-bg-color);
+                }
+            }
+        }
+    }
+}
+
 .svg-container-outer {
+    background: var(--secondary-bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,9 +171,10 @@
 }
 
 .upper-division__right-side {
+    background: var(--secondary-bg-color);
     .data-date {
         border-radius: 5px;
-        background: #e6f1f4;
+        background: var(--third-bg-color);
         padding-right: 5px;
         padding-left: 5px;
         align-items: center;
@@ -173,12 +199,14 @@
     border-radius: 10px;
     width: 200px;
     height: fit-content;
-    background: rgb(255, 255, 255);
+    background: var(--secondary-bg-color);
     padding: 0 7px;
     font-size: 0.75rem;
     margin: 2px;
     margin-bottom: 10px;
-
+    > div {
+        background: var(--secondary-bg-color);
+    }
     .includes-settlement-list__settlement {
         font-size: 15px;
         font-weight: 700;
@@ -193,7 +221,7 @@
         border-radius: 10px;
         // padding: 7px;
         font-size: 0.75rem;
-        background: rgb(255, 255, 255);
+        background: var(--secondary-bg-color);
         margin: 2px;
     }
 }
@@ -204,8 +232,8 @@
     flex-wrap: wrap;
     width: 75%;
     height: fit-content;
-    border: #e4e9f2 solid 1px;
-    background: #ffffff;
+    border: var(--input-border-and-angle-color) solid 1px;
+    background: var(--secondary-bg-color);
     border-radius: 5px;
     margin-right: 23px;
 }
