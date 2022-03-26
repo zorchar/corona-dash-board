@@ -6,6 +6,7 @@
 }
 
 .upper-division__right-side {
+    padding-left: 8px;
     display: flex;
     flex-wrap: wrap;
     width: 70%;
@@ -115,10 +116,10 @@
     .info-square {
         row-gap: 5px;
     }
-    .first-grid {
-        min-width: calc(100% + 16px);
-        margin-right: -8px;
-    }
+    // .first-grid {
+    //     min-width: calc(100% + 16px);
+    //     margin-right: -8px;
+    // }
     .grid-ltr-container {
         min-width: calc(100% + 16px);
         margin-right: -8px;
@@ -185,6 +186,7 @@
 
     input {
         border: none;
+        width: 100%;
         font-size: 15px;
         padding: 5px 0;
         padding-right: 5px;

@@ -240,19 +240,52 @@ const sortByParam = (param, array, isAscending) => {
     })
 }
 
-const createGridCellWithTextAndArrows = (text) => {
+const createGridCellWithText = (text) => {
     const gridCellText = document.createElement('div')
     gridCellText.classList.add('grid-cell__text')
     gridCellText.innerText = text
 
-    const upArrow = document.createElement('i')
-    upArrow.classList.add("fa-solid", "fa-sort-up", "display-none")
-    const downArrow = document.createElement('i')
-    downArrow.classList.add("fa-solid", "fa-sort-down", "display-none")
+    // const upArrow = document.createElement('i')
+    // upArrow.classList.add("fa-solid", "fa-sort-up", "display-none")
+    // const downArrow = document.createElement('i')
+    // downArrow.classList.add("fa-solid", "fa-sort-down", "display-none")
 
     const gridCell = document.createElement('div')
     gridCell.classList.add('grid-cell')
-    gridCell.append(gridCellText, upArrow, downArrow)
+    gridCell.appendChild(gridCellText)
+    return gridCell
+}
+
+const createGridCellWithTextAndBar = (text, barColor) => {
+    const gridCellText = document.createElement('div')
+    gridCellText.classList.add('grid-cell__text')
+    gridCellText.innerText = text
+
+    const gridCell = document.createElement('div')
+    // const upArrow = document.createElement('i')
+    // upArrow.classList.add("fa-solid", "fa-sort-up", "display-none")
+    // const downArrow = document.createElement('i')
+    // downArrow.classList.add("fa-solid", "fa-sort-down", "display-none")
+    if (barColor > 0 && barColor < 4) {
+        const bar = document.createElement('div')
+        bar.classList.add("bar")
+        const coloredPart = document.createElement('div')
+        coloredPart.classList.add("colored-part")
+        if (barColor === 1)
+            coloredPart.classList.add("first-bar-color")
+        else if (barColor === 2)
+            coloredPart.classList.add("second-bar-color")
+        else if (barColor === 3)
+            coloredPart.classList.add("third-bar-color")
+        coloredPart.style.width = text + '%'
+        bar.appendChild(coloredPart)
+        gridCell.appendChild(bar)
+    }
+    // const nonColoredPart = document.createElement('div')
+    // downArrow.classList.add()
+
+    gridCell.classList.add('grid-cell')
+    gridCell.appendChild(gridCellText)
     return gridCell
 }
 
@@ -262,15 +295,19 @@ const vaccinationTable = document.querySelector('#vaccination-table')
 const fillTrafficLightTable = () => {
     settlementsDataTrafficLight.forEach(el => {
         for (const [key, value] of Object.entries(el)) {
-            trafficLightTable.appendChild(createGridCellWithTextAndArrows(value))
+            trafficLightTable.appendChild(createGridCellWithText(value))
         }
     })
 }
 
 const fillVaccinationTable = () => {
+    let counter = 0
     settlementsDataVaccination.forEach(el => {
         for (const [key, value] of Object.entries(el)) {
-            vaccinationTable.appendChild(createGridCellWithTextAndArrows(value))
+            vaccinationTable.appendChild(createGridCellWithTextAndBar(value, counter))
+            counter++
+            if (counter == 6)
+                counter = 0
         }
     })
 }
@@ -430,7 +467,7 @@ buttonAccept.addEventListener('click', (event) => {
     settlementsDataVaccination.forEach(el => {
         if (el.settlement === vaccinationInput.value) {
             for (const [key, value] of Object.entries(el)) {
-                vaccinationTable.appendChild(createGridCellWithTextAndArrows(value))
+                vaccinationTable.appendChild(createGridCellWithText(value))
             }
         }
     })
@@ -513,7 +550,7 @@ function trafficLightInputChange() {
             settlementsDataTrafficLight.forEach(elData => {
                 if (elData.settlement === elList) {
                     for (const [key, value] of Object.entries(elData)) {
-                        trafficLightTable.appendChild(createGridCellWithTextAndArrows(value))
+                        trafficLightTable.appendChild(createGridCellWithText(value))
                     }
                 }
             })

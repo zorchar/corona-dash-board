@@ -159,10 +159,6 @@ header {
   padding: 7px;
 }
 
-.info-square > .grid {
-  margin-bottom: -5px;
-}
-
 .grid-ltr-container {
   width: 100%;
   direction: ltr;
@@ -228,6 +224,7 @@ header {
 
 .grid .grid-cell:nth-child(6n+1) {
   justify-content: start;
+  font-weight: 700;
 }
 .grid button {
   display: flex;
@@ -252,6 +249,38 @@ header {
 }
 .grid button .fa-sort-down {
   padding-bottom: 6px;
+}
+
+.grid-cell {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.grid-cell:nth-child(6n+1) {
+  padding-right: 8px;
+}
+
+.grid-cell__text {
+  text-align: center;
+  min-width: 2rem;
+  margin: 4px 0;
+  padding-right: 5px;
+}
+@media (max-width: 550px) {
+  .grid-cell__text {
+    font-size: 0.7rem;
+  }
+}
+
+.first-grid {
+  min-width: calc(100% + 16px);
+  margin-right: -8px;
+}
+.first-grid .grid-cell__text {
+  margin: 0;
 }
 
 .overview__header {
@@ -386,10 +415,6 @@ header {
     max-height: 57%;
   }
 }
-#vaccination-of-population .first-grid {
-  min-width: calc(100% + 16px);
-  margin-right: -8px;
-}
 #vaccination-of-population .grid-ltr-container {
   min-width: calc(100% + 16px);
   margin-right: -8px;
@@ -432,6 +457,35 @@ header {
   width: 100%;
 }
 
+.bar {
+  width: 50px;
+  height: 10px;
+  background: #eff5f9;
+}
+.bar:hover {
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.colored-part {
+  height: 100%;
+}
+.colored-part:hover {
+  opacity: 0.8;
+}
+
+.first-bar-color {
+  background: #1c7d7e;
+}
+
+.second-bar-color {
+  background: #b6ca51;
+}
+
+.third-bar-color {
+  background: #50cbfd;
+}
+
 .traffic-light-upper-division {
   display: flex;
   flex-wrap: wrap;
@@ -440,6 +494,7 @@ header {
 }
 
 .upper-division__right-side {
+  padding-left: 8px;
   display: flex;
   flex-wrap: wrap;
   width: 70%;
@@ -553,10 +608,6 @@ px .svg-container-outer:hover {
 #traffic-light-in-settlements .info-square {
   row-gap: 5px;
 }
-#traffic-light-in-settlements .first-grid {
-  min-width: calc(100% + 16px);
-  margin-right: -8px;
-}
 #traffic-light-in-settlements .grid-ltr-container {
   min-width: calc(100% + 16px);
   margin-right: -8px;
@@ -623,6 +674,7 @@ px .svg-container-outer:hover {
 }
 #traffic-light-search-bar input {
   border: none;
+  width: 100%;
   font-size: 15px;
   padding: 5px 0;
   padding-right: 5px;
@@ -676,28 +728,6 @@ body {
   .section-container {
     padding: 0;
     padding: 5px 0;
-  }
-}
-
-.grid-cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px;
-}
-
-.grid-cell:nth-child(6n+1) {
-  padding-right: 8px;
-}
-
-.grid-cell__text {
-  text-align: center;
-  min-width: 2rem;
-  margin: 4px;
-}
-@media (max-width: 550px) {
-  .grid-cell__text {
-    font-size: 0.7rem;
   }
 }
 
