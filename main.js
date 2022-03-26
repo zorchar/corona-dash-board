@@ -503,5 +503,3 @@ fillVaccinationTable()
 fillTrafficLightTable()
 addGridButtonsEventListener()
 addGradeStyle()
-
-// test
