@@ -245,11 +245,6 @@ const createGridCellWithText = (text) => {
     gridCellText.classList.add('grid-cell__text')
     gridCellText.innerText = text
 
-    // const upArrow = document.createElement('i')
-    // upArrow.classList.add("fa-solid", "fa-sort-up", "display-none")
-    // const downArrow = document.createElement('i')
-    // downArrow.classList.add("fa-solid", "fa-sort-down", "display-none")
-
     const gridCell = document.createElement('div')
     gridCell.classList.add('grid-cell')
     gridCell.appendChild(gridCellText)
@@ -262,10 +257,8 @@ const createGridCellWithTextAndBar = (text, barColor) => {
     gridCellText.innerText = text
 
     const gridCell = document.createElement('div')
-    // const upArrow = document.createElement('i')
-    // upArrow.classList.add("fa-solid", "fa-sort-up", "display-none")
-    // const downArrow = document.createElement('i')
-    // downArrow.classList.add("fa-solid", "fa-sort-down", "display-none")
+    gridCell.classList.add('grid-cell')
+
     if (barColor > 0 && barColor < 4) {
         const bar = document.createElement('div')
         bar.classList.add("bar")
@@ -281,10 +274,7 @@ const createGridCellWithTextAndBar = (text, barColor) => {
         bar.appendChild(coloredPart)
         gridCell.appendChild(bar)
     }
-    // const nonColoredPart = document.createElement('div')
-    // downArrow.classList.add()
 
-    gridCell.classList.add('grid-cell')
     gridCell.appendChild(gridCellText)
     return gridCell
 }
@@ -412,13 +402,6 @@ const addGridButtonsEventListener = () => {
     })
 
 }
-
-sortByParam('firstShotPercentage', settlementsDataVaccination, false)
-sortByParam('dailyCalculatedGrade', settlementsDataTrafficLight, false)
-fillVaccinationTable()
-fillTrafficLightTable()
-addGridButtonsEventListener()
-addGradeStyle()
 
 const trafficLightInput = document.querySelector('#traffic-light-input')
 const trafficLightCurrentSelectedSettlements = []
@@ -558,3 +541,10 @@ function trafficLightInputChange() {
         addGradeStyle()
     }
 }
+
+sortByParam('firstShotPercentage', settlementsDataVaccination, false)
+sortByParam('dailyCalculatedGrade', settlementsDataTrafficLight, false)
+fillVaccinationTable()
+fillTrafficLightTable()
+addGridButtonsEventListener()
+addGradeStyle()

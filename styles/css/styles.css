@@ -171,7 +171,7 @@ header {
 }
 @media (max-width: 550px) {
   .grid-ltr-container {
-    max-height: 39%;
+    max-height: 30%;
   }
 }
 @media (min-width: 651px) {
@@ -210,7 +210,13 @@ header {
   .info-square > .grid > div:nth-child(5) {
     background: #daeaee;
   }
+  .info-square > .grid > div:nth-child(5) > button {
+    background: #daeaee;
+  }
   .info-square > .grid > div:nth-child(6) {
+    background: #daeaee;
+  }
+  .info-square > .grid > div:nth-child(6) > button {
     background: #daeaee;
   }
 }
@@ -257,6 +263,18 @@ header {
   align-items: center;
   justify-content: center;
   padding: 2px;
+  border-bottom: solid 1px #eaf3f5;
+}
+@media (min-width: 550px) and (max-width: 650px) {
+  .grid-cell {
+    max-width: 106px;
+  }
+}
+@media (max-width: 685px) {
+  .grid-cell {
+    font-size: 11px;
+    padding-right: 0;
+  }
 }
 
 .grid-cell:nth-child(6n+1) {
@@ -267,12 +285,16 @@ header {
   text-align: center;
   min-width: 2rem;
   margin: 4px 0;
-  padding-right: 5px;
+  padding-left: 5px;
 }
-@media (max-width: 550px) {
+@media (max-width: 685px) {
   .grid-cell__text {
-    font-size: 0.7rem;
+    font-size: 11px;
   }
+}
+
+.grid-ltr-container .grid-cell__text {
+  padding-right: 5px;
 }
 
 .first-grid {
@@ -405,6 +427,10 @@ header {
   border-radius: 10px;
 }
 
+#vaccination-of-population .grid-ltr-container {
+  min-width: calc(100% + 16px);
+  margin-right: -8px;
+}
 @media (min-width: 550px) and (max-width: 650px) {
   #vaccination-of-population .grid-ltr-container {
     max-height: 62%;
@@ -415,10 +441,6 @@ header {
     max-height: 57%;
   }
 }
-#vaccination-of-population .grid-ltr-container {
-  min-width: calc(100% + 16px);
-  margin-right: -8px;
-}
 @media (min-width: 651px) and (max-width: 1283px) {
   #vaccination-of-population .grid-ltr-container {
     max-height: 60%;
@@ -427,6 +449,11 @@ header {
 @media (min-width: 1284px) {
   #vaccination-of-population .grid-ltr-container {
     max-height: 68%;
+  }
+}
+@media (min-width: 556px) and (max-width: 686px) {
+  #vaccination-of-population .grid-ltr-container {
+    max-height: 69%;
   }
 }
 
