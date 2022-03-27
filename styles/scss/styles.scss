@@ -4,6 +4,7 @@
 @use "./overview.scss";
 @use "./vaccination-by-settlement.scss";
 @use "./traffic-light-in-settlements";
+@use "./main-indexes.scss";
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
 
@@ -19,6 +20,7 @@
 
 body {
     background: var(--main-bg-color);
+    overflow: visible;
 }
 
 .section-container {
@@ -138,4 +140,16 @@ body {
 
 svg {
     background: var(--secondary-bg-color);
+}
+
+.first-bar-color {
+    background: #1c7d7e;
+}
+
+.second-bar-color {
+    background: #b6ca51;
+}
+
+.third-bar-color {
+    background: #50cbfd;
 }

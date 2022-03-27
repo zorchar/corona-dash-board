@@ -363,7 +363,7 @@ document.querySelectorAll('.accept-or-cancel-button').forEach(el => {
     })
 })
 
-document.querySelector('.vaccine-by-settlement-button').addEventListener('click', (event) => {
+document.querySelector('#vaccine-by-settlement-button').addEventListener('click', (event) => {
     document.querySelector('#secondary-search-bar__secondary-div').classList.toggle('display-none')
 })
 

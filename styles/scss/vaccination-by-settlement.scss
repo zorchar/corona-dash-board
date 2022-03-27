@@ -112,7 +112,7 @@
     }
 }
 
-.vaccine-by-settlement-button {
+.dropdown-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -157,18 +157,6 @@
     &:hover {
         opacity: 0.8;
     }
-}
-
-.first-bar-color {
-    background: #1c7d7e;
-}
-
-.second-bar-color {
-    background: #b6ca51;
-}
-
-.third-bar-color {
-    background: #50cbfd;
 }
 
 #vaccination-of-population {
