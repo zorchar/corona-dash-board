@@ -12,5 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.49.9"
+  },
+  "dependencies": {
+    "chart.js": "^3.7.1"
   }
 }
