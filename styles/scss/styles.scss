@@ -5,6 +5,7 @@
 @use "./vaccination-by-settlement.scss";
 @use "./traffic-light-in-settlements";
 @use "./main-indexes.scss";
+@use "./general-sickness-indexes.scss";
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
 
@@ -171,7 +172,6 @@ svg {
 }
 
 .rtl-scroll {
-    padding-top: 175px;
     height: 100vh;
     overflow-y: scroll;
     direction: rtl;

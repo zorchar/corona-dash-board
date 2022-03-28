@@ -13,7 +13,7 @@ header {
 .main-header__container {
   display: flex;
   flex-wrap: wrap;
-  height: 121px;
+  height: max-content;
   width: 100vw;
   background: var(--secondary-bg-color);
 }
@@ -49,7 +49,7 @@ header {
 .logo-container {
   width: 217px;
   max-width: 217px;
-  height: 47px;
+  height: 50px;
 }
 .logo-container img {
   background: var(--secondary-bg-color);
@@ -59,8 +59,10 @@ header {
 
 .header-and-update-container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  min-width: 60%;
+  align-items: center;
   background: var(--secondary-bg-color);
   padding: 0 24px;
 }
@@ -118,7 +120,8 @@ header {
   padding: 16px;
   margin: 0 16px;
 }
-.navigation-bar div h4 {
+.navigation-bar div a {
+  text-decoration: none;
   background: inherit;
   font-weight: 400;
   color: #ffffff;
@@ -415,6 +418,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  padding-top: 140px;
 }
 #overview .info-square-container.last-7-days > .info-square {
   box-shadow: 0px 0px 11px -7px;
@@ -925,6 +929,24 @@ px .svg-container-outer:hover {
   width: 100%;
 }
 
+#main-indexes::before {
+  display: block;
+  content: " ";
+  margin-top: -140px;
+  height: 140px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#general-sickness-indexes::before {
+  display: block;
+  content: " ";
+  margin-top: -140px;
+  height: 140px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -1092,7 +1114,6 @@ svg {
 }
 
 .rtl-scroll {
-  padding-top: 175px;
   height: 100vh;
   overflow-y: scroll;
   direction: rtl;
