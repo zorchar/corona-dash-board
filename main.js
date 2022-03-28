@@ -448,52 +448,54 @@ const themeButtonLight = document.querySelector('#theme-button-light')
 themeButtonLight.addEventListener('click', () => {
     themeButtonDark.classList.remove('display-none')
     themeButtonLight.classList.add('display-none')
-    document.documentElement.style.setProperty
-        ('--main-bg-color', '#486579')
-    document.documentElement.style.setProperty
-        ('--main-color', '#ffffff')
-    document.documentElement.style.setProperty
-        ('--secondary-bg-color', '#384f5f')
-    document.documentElement.style.setProperty
-        ('--third-bg-color', '#2a3b47')
-    document.documentElement.style.setProperty
-        ('--fourth-bg-color', '#4e6275')
-    document.documentElement.style.setProperty
-        ('--bar-bg-color', '#293b48')
-    document.documentElement.style.setProperty
-        ('--different-grid-cell-bg-color', '#354047')
-    document.documentElement.style.setProperty
-        ('--input-border-and-angle-color', '#79858e')
-    document.documentElement.style.setProperty
-        ('--border-bottom-color', '#95a8b1')
-    document.documentElement.style.setProperty
-        ('--theme-button-bg-color', '#d8d8d8')
+    document.querySelector('html').classList.add('dark-mode')
+    // document.documentElement.style.setProperty
+    //     ('--main-bg-color', '#486579')
+    // document.documentElement.style.setProperty
+    //     ('--main-color', '#ffffff')
+    // document.documentElement.style.setProperty
+    //     ('--secondary-bg-color', '#384f5f')
+    // document.documentElement.style.setProperty
+    //     ('--third-bg-color', '#2a3b47')
+    // document.documentElement.style.setProperty
+    //     ('--fourth-bg-color', '#4e6275')
+    // document.documentElement.style.setProperty
+    //     ('--bar-bg-color', '#293b48')
+    // document.documentElement.style.setProperty
+    //     ('--different-grid-cell-bg-color', '#354047')
+    // document.documentElement.style.setProperty
+    //     ('--input-border-and-angle-color', '#79858e')
+    // document.documentElement.style.setProperty
+    //     ('--border-bottom-color', '#95a8b1')
+    // document.documentElement.style.setProperty
+    //     ('--theme-button-bg-color', '#d8d8d8')
 
 })
 
 themeButtonDark.addEventListener('click', () => {
     themeButtonDark.classList.add('display-none')
     themeButtonLight.classList.remove('display-none')
-    document.documentElement.style.setProperty
-        ('--main-bg-color', '#edf1f7')
-    document.documentElement.style.setProperty
-        ('--main-color', '#222b45')
-    document.documentElement.style.setProperty
-        ('--secondary-bg-color', '#ffffff')
-    document.documentElement.style.setProperty
-        ('--third-bg-color', '#e6f1f4')
-    document.documentElement.style.setProperty
-        ('--fourth-bg-color', '#f7f9fc')
-    document.documentElement.style.setProperty
-        ('--bar-bg-color', '#eff5f9')
-    document.documentElement.style.setProperty
-        ('--different-grid-cell-bg-color', '#daeaee')
-    document.documentElement.style.setProperty
-        ('--input-border-and-angle-color', '#e4e9f2')
-    document.documentElement.style.setProperty
-        ('--border-bottom-color', '#eaf3f5')
-    document.documentElement.style.setProperty
-        ('--theme-button-bg-color', '#39475d')
+    document.querySelector('html').classList.remove('dark-mode')
+    // document.documentElement.style.setProperty
+    //     ('--main-bg-color', '#edf1f7')
+    // document.documentElement.style.setProperty
+    //     ('--main-color', '#222b45')
+    // document.documentElement.style.setProperty
+    //     ('--secondary-bg-color', '#ffffff')
+    // document.documentElement.style.setProperty
+    //     ('--third-bg-color', '#e6f1f4')
+    // document.documentElement.style.setProperty
+    //     ('--fourth-bg-color', '#f7f9fc')
+    // document.documentElement.style.setProperty
+    //     ('--bar-bg-color', '#eff5f9')
+    // document.documentElement.style.setProperty
+    //     ('--different-grid-cell-bg-color', '#daeaee')
+    // document.documentElement.style.setProperty
+    //     ('--input-border-and-angle-color', '#e4e9f2')
+    // document.documentElement.style.setProperty
+    //     ('--border-bottom-color', '#eaf3f5')
+    // document.documentElement.style.setProperty
+    //     ('--theme-button-bg-color', '#39475d')
 })
 
 

@@ -1,8 +1,10 @@
 .main-indexes-info-square {
+    padding: 8px;
+    width: 33.3%;
     @media (max-width: 768px) {
         width: 100%;
+        padding: 0;
     }
-    width: 33.3%;
     button {
         span {
             font-size: 15px;
@@ -25,5 +27,11 @@
         font-size: 0.8rem;
         font-weight: 400;
         background: var(--secondary-bg-color);
+    }
+}
+
+#main-indexes {
+    > .info-square-container {
+        width: 100%;
     }
 }

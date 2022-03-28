@@ -125,17 +125,19 @@ body {
     --input-border-and-angle-color: #e4e9f2;
     --border-bottom-color: #eaf3f5;
     --theme-button-bg-color: #39475d;
+}
 
-    // --main-bg-color: #486579;
-    // --main-color: #ffffff;
-    // --secondary-bg-color: #384f5f;
-    // --third-bg-color: #2a3b47;
-    // --fourth-bg-color: #4e6275;
-    // --bar-bg-color: #293b48;
-    // --different-grid-cell-bg-color: #354047;
-    // --input-border-and-angle-color: #79858e;
-    // --border-bottom-color: #95a8b1;
-    // --theme-button-bg-color: #d8d8d8;
+html.dark-mode {
+    --main-bg-color: #486579;
+    --main-color: #ffffff;
+    --secondary-bg-color: #384f5f;
+    --third-bg-color: #2a3b47;
+    --fourth-bg-color: #4e6275;
+    --bar-bg-color: #293b48;
+    --different-grid-cell-bg-color: #354047;
+    --input-border-and-angle-color: #79858e;
+    --border-bottom-color: #95a8b1;
+    --theme-button-bg-color: #d8d8d8;
 }
 
 svg {
@@ -166,4 +168,11 @@ svg {
         background: var(--secondary-bg-color);
         text-align: center;
     }
+}
+
+.rtl-scroll {
+    padding-top: 125px;
+    height: 100vh;
+    overflow-y: scroll;
+    direction: rtl;
 }

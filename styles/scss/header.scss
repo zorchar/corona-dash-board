@@ -2,7 +2,10 @@ header {
     height: fit-content; // maybe
     display: flex;
     flex-wrap: wrap; //maybe
-    width: 97vw;
+    width: 100vw;
+    z-index: 10;
+    position: fixed;
+    overflow-x: hidden;
 }
 
 .main-header__container {
@@ -10,6 +13,7 @@ header {
     flex-wrap: wrap;
     height: 121px;
     width: 100vw;
+    background: var(--secondary-bg-color);
     @media (max-width: 690px) {
         height: 125px;
     }
@@ -20,7 +24,11 @@ header {
 
 .hamburger-and-logo-container {
     display: flex;
-    width: 50%;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    min-width: 327px;
+    background: var(--secondary-bg-color);
 }
 
 .hamburger-container {
@@ -29,6 +37,7 @@ header {
     justify-content: center;
     width: 40px;
     height: 40px;
+    background: var(--secondary-bg-color);
     // i {
     //     width: 100%;
     //     height: 100%;
@@ -37,14 +46,25 @@ header {
 
 .logo-container {
     width: 217px;
+    max-width: 217px;
     height: 47px;
     img {
+        background: var(--secondary-bg-color);
         width: 100%;
         height: 100%;
     }
 }
-
 .header-and-update-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: var(--secondary-bg-color);
+    .header {
+        background: var(--secondary-bg-color);
+    }
+    .update {
+        background: var(--secondary-bg-color);
+    }
 }
 
 .theme-switch-container {
@@ -53,6 +73,7 @@ header {
     left: 0;
     width: 53px;
     height: 44px;
+    background: var(--secondary-bg-color);
 }
 
 .theme-switch-button {

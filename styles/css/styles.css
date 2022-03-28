@@ -4,7 +4,10 @@ header {
   height: fit-content;
   display: flex;
   flex-wrap: wrap;
-  width: 97vw;
+  width: 100vw;
+  z-index: 10;
+  position: fixed;
+  overflow-x: hidden;
 }
 
 .main-header__container {
@@ -12,6 +15,7 @@ header {
   flex-wrap: wrap;
   height: 121px;
   width: 100vw;
+  background: var(--secondary-bg-color);
 }
 @media (max-width: 690px) {
   .main-header__container {
@@ -26,7 +30,11 @@ header {
 
 .hamburger-and-logo-container {
   display: flex;
-  width: 50%;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%;
+  min-width: 327px;
+  background: var(--secondary-bg-color);
 }
 
 .hamburger-container {
@@ -35,15 +43,31 @@ header {
   justify-content: center;
   width: 40px;
   height: 40px;
+  background: var(--secondary-bg-color);
 }
 
 .logo-container {
   width: 217px;
+  max-width: 217px;
   height: 47px;
 }
 .logo-container img {
+  background: var(--secondary-bg-color);
   width: 100%;
   height: 100%;
+}
+
+.header-and-update-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: var(--secondary-bg-color);
+}
+.header-and-update-container .header {
+  background: var(--secondary-bg-color);
+}
+.header-and-update-container .update {
+  background: var(--secondary-bg-color);
 }
 
 .theme-switch-container {
@@ -52,6 +76,7 @@ header {
   left: 0;
   width: 53px;
   height: 44px;
+  background: var(--secondary-bg-color);
 }
 
 .theme-switch-button {
@@ -85,17 +110,21 @@ header {
   row-gap: 16px;
 }
 
-.info-square-container {
+#overview .info-squares-container > .info-square-container {
   height: 184px;
-  padding: 16px;
   width: 16.6667%;
   min-height: 100px;
 }
 @media (max-width: 768px) {
-  .info-square-container {
+  #overview .info-squares-container > .info-square-container {
     padding: 5px;
     width: 50%;
   }
+}
+
+.info-square-container {
+  padding: 16px;
+  min-height: 348px;
 }
 
 .info-square {
@@ -351,31 +380,46 @@ header {
   }
 }
 
-.last-7-days {
+#overview .info-square-container.last-7-days {
   height: fit-content;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
-.last-7-days .info-square {
+#overview .info-square-container.last-7-days > .info-square {
   box-shadow: 0px 0px 11px -7px;
   min-height: 150px;
-}
-.last-7-days .info-square-container {
-  padding-left: 8px;
-  padding-right: 8px;
-  width: 25%;
+  height: 218px;
 }
 @media (max-width: 768px) {
-  .last-7-days .info-square-container {
+  #overview .info-square-container.last-7-days > .info-square {
+    height: 380px;
+  }
+}
+#overview .info-square-container.last-7-days > .info-square .info-square {
+  box-shadow: 0px 0px 11px -7px;
+  min-height: 150px;
+  height: 150px;
+}
+#overview .info-square-container.last-7-days .info-square-container {
+  background: var(--secondary-bg-color);
+  padding: 8px;
+  width: 25%;
+  height: fit-content;
+  min-height: fit-content;
+}
+@media (max-width: 768px) {
+  #overview .info-square-container.last-7-days .info-square-container {
     width: 50%;
   }
 }
-.last-7-days .width-100 {
+#overview .info-square-container.last-7-days .width-100 {
+  background: var(--secondary-bg-color);
   padding-right: 16px;
+  font-size: 16px;
 }
 @media (max-width: 768px) {
-  .last-7-days .width-100 {
+  #overview .info-square-container.last-7-days .width-100 {
     padding-right: 5px;
   }
 }
@@ -810,11 +854,13 @@ px .svg-container-outer:hover {
 }
 
 .main-indexes-info-square {
+  padding: 8px;
   width: 33.3%;
 }
 @media (max-width: 768px) {
   .main-indexes-info-square {
     width: 100%;
+    padding: 0;
   }
 }
 .main-indexes-info-square button span {
@@ -838,6 +884,10 @@ px .svg-container-outer:hover {
   font-size: 0.8rem;
   font-weight: 400;
   background: var(--secondary-bg-color);
+}
+
+#main-indexes > .info-square-container {
+  width: 100%;
 }
 
 * {
@@ -963,6 +1013,19 @@ body {
   --theme-button-bg-color: #39475d;
 }
 
+html.dark-mode {
+  --main-bg-color: #486579;
+  --main-color: #ffffff;
+  --secondary-bg-color: #384f5f;
+  --third-bg-color: #2a3b47;
+  --fourth-bg-color: #4e6275;
+  --bar-bg-color: #293b48;
+  --different-grid-cell-bg-color: #354047;
+  --input-border-and-angle-color: #79858e;
+  --border-bottom-color: #95a8b1;
+  --theme-button-bg-color: #d8d8d8;
+}
+
 svg {
   background: var(--secondary-bg-color);
 }
@@ -991,6 +1054,13 @@ svg {
   color: var(--main-color);
   background: var(--secondary-bg-color);
   text-align: center;
+}
+
+.rtl-scroll {
+  padding-top: 125px;
+  height: 100vh;
+  overflow-y: scroll;
+  direction: rtl;
 }
 
 /*# sourceMappingURL=styles.css.map */
