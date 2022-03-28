@@ -25,7 +25,7 @@ header {
 .hamburger-and-logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 12px 24px;
     max-width: 80%;
     min-width: 327px;
     background: var(--secondary-bg-color);
@@ -59,11 +59,14 @@ header {
     flex-direction: column;
     justify-content: space-around;
     background: var(--secondary-bg-color);
+    padding: 0 24px;
     .header {
         background: var(--secondary-bg-color);
+        font-size: 1rem;
     }
     .update {
         background: var(--secondary-bg-color);
+        font-size: 0.75rem;
     }
 }
 
@@ -73,7 +76,7 @@ header {
     left: 0;
     width: 53px;
     height: 44px;
-    background: var(--secondary-bg-color);
+    background: transparent;
 }
 
 .theme-switch-button {
@@ -98,4 +101,32 @@ header {
 
 .navigation-bar {
     display: flex;
+    overflow-x: scroll;
+    height: 57px;
+    // width: fit-content; //check if needed later
+    width: fit-content;
+    background: #374f60;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: inherit;
+        font-size: 1rem;
+        padding: 16px;
+        margin: 0 16px;
+        h4 {
+            background: inherit;
+            font-weight: 400;
+            color: #ffffff;
+            width: max-content;
+        }
+    }
+}
+
+.navigation-bar::-webkit-scrollbar {
+    height: 7px;
+}
+
+.navigation-bar::-webkit-scrollbar-track {
+    background: #374f60;
 }
