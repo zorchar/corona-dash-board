@@ -89,11 +89,11 @@
     justify-content: center;
     padding: 2px;
     background: var(--secondary-bg-color);
-    @media (min-width: 550px) {
-        @media (max-width: 650px) {
-            max-width: 106px;
-        }
-    }
+    // @media (min-width: 550px) {
+    //     @media (max-width: 650px) {
+    //         max-width: 106px;
+    //     }
+    // }
     @media (max-width: 685px) {
         font-size: 11px;
         padding-right: 0;
