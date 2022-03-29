@@ -496,6 +496,13 @@ themeButtonDark.addEventListener('click', () => {
     //     ('--border-bottom-color', '#eaf3f5')
     // document.documentElement.style.setProperty
     //     ('--theme-button-bg-color', '#39475d')
+    const element = document.querySelector(".rtl-scroll");
+    const pos = element.scrollTop;
+    console.log(pos);
+    const vop = document.querySelector('#main-indexes').offsetTop
+    console.log(vop);
+    const innerWidth = window.innerWidth
+    console.log(innerWidth);
 })
 
 
@@ -505,3 +512,6 @@ fillVaccinationTable()
 fillTrafficLightTable()
 addGridButtonsEventListener()
 addGradeStyle()
+
+
+const highlight
