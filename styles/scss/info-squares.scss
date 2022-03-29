@@ -3,14 +3,17 @@
     flex-wrap: wrap;
     width: 100%;
     row-gap: 16px;
+    padding: 0 16px;
 }
 
 #overview {
     .info-squares-container {
+        // padding: 0 8px;
         > .info-square-container {
             height: 184px;
             width: 16.6667%;
             min-height: 100px; // temp for testing maybe change
+            padding: 0 8px;
             // border: solid 1px red;
             @media (max-width: 768px) {
                 padding: 5px;

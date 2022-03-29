@@ -1,8 +1,12 @@
-// #general-sickness-indexes::before {
+// #children-sickness::before {
 //     display: block;
 //     content: " ";
 //     margin-top: -140px;
 //     height: 140px;
 //     visibility: hidden;
 //     pointer-events: none;
+//     @media (max-width: 768px) {
+//         margin-top: -182px;
+//         height: 182px;
+//     }
 // }

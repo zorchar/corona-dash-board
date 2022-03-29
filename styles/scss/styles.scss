@@ -6,6 +6,14 @@
 @use "./traffic-light-in-settlements";
 @use "./main-indexes.scss";
 @use "./general-sickness-indexes.scss";
+@use "./children-sickness.scss";
+@use "./sickness-from-abroad";
+@use "./vaccination-influence-on-sickness";
+@use "./severely-sick-and-hospitalized";
+@use "./passed-away.scss";
+@use "./check-ups.scss";
+@use "./further-inquiry.scss";
+@use "./recurring-sickness-and-recovery.scss";
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
 
@@ -22,6 +30,7 @@
 body {
     background: var(--main-bg-color);
     overflow: visible;
+    overflow-x: hidden;
 }
 
 .section-container {
@@ -35,6 +44,7 @@ body {
 .larger-container {
     width: 100%;
     height: 350px;
+    padding: 0 16px;
     .info-square {
         position: relative;
     }
@@ -172,7 +182,13 @@ svg {
 }
 
 .rtl-scroll {
-    height: 100vh;
+    height: calc(100vh - 140px);
     overflow-y: scroll;
     direction: rtl;
+    @media (max-width: 880px) {
+        height: calc(100vh - 153px);
+    }
+    @media (max-width: 690px) {
+        height: calc(100vh - 182px);
+    }
 }

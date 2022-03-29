@@ -6,7 +6,7 @@ header {
   flex-wrap: wrap;
   width: 100vw;
   z-index: 10;
-  position: fixed;
+  position: sticky;
   overflow-x: hidden;
 }
 
@@ -141,12 +141,14 @@ header {
   flex-wrap: wrap;
   width: 100%;
   row-gap: 16px;
+  padding: 0 16px;
 }
 
 #overview .info-squares-container > .info-square-container {
   height: 184px;
   width: 16.6667%;
   min-height: 100px;
+  padding: 0 8px;
 }
 @media (max-width: 768px) {
   #overview .info-squares-container > .info-square-container {
@@ -409,9 +411,6 @@ header {
   }
 }
 
-#overview {
-  padding-top: 140px;
-}
 #overview .info-square-container.last-7-days {
   height: fit-content;
   display: flex;
@@ -942,24 +941,6 @@ px .svg-container-outer:hover {
   width: 100%;
 }
 
-#main-indexes::before {
-  display: block;
-  content: " ";
-  margin-top: -140px;
-  height: 140px;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-#general-sickness-indexes::before {
-  display: block;
-  content: " ";
-  margin-top: -140px;
-  height: 140px;
-  visibility: hidden;
-  pointer-events: none;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -973,6 +954,7 @@ px .svg-container-outer:hover {
 body {
   background: var(--main-bg-color);
   overflow: visible;
+  overflow-x: hidden;
 }
 
 .section-container {
@@ -988,6 +970,7 @@ body {
 .larger-container {
   width: 100%;
   height: 350px;
+  padding: 0 16px;
 }
 .larger-container .info-square {
   position: relative;
@@ -1127,9 +1110,19 @@ svg {
 }
 
 .rtl-scroll {
-  height: 100vh;
+  height: calc(100vh - 140px);
   overflow-y: scroll;
   direction: rtl;
+}
+@media (max-width: 880px) {
+  .rtl-scroll {
+    height: calc(100vh - 153px);
+  }
+}
+@media (max-width: 690px) {
+  .rtl-scroll {
+    height: calc(100vh - 182px);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

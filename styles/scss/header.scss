@@ -4,7 +4,7 @@ header {
     flex-wrap: wrap; //maybe
     width: 100vw;
     z-index: 10;
-    position: fixed;
+    position: sticky;
     overflow-x: hidden;
 }
 
