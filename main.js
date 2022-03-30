@@ -509,6 +509,12 @@ addGradeStyle()
 const scroollBar = document.querySelector(".rtl-scroll")
 const navBar = document.querySelector('.navigation-bar')
 const tabs = navBar.querySelectorAll('a')
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        highlightNavBarTab(tab)
+    })
+})
 // const sections = document.querySelectorAll('.section-container')
 // const sectionsIDs = []
 // sections.forEach(section => {
