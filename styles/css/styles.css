@@ -905,17 +905,17 @@ px .svg-container-outer:hover {
   font-size: 1rem;
 }
 
-.main-indexes-info-square {
+.main-info-square {
   padding: 8px;
   width: 33.3%;
 }
 @media (max-width: 768px) {
-  .main-indexes-info-square {
+  .main-info-square {
     width: 100%;
     padding: 0;
   }
 }
-.main-indexes-info-square button span {
+.main-info-square button span {
   font-size: 15px;
 }
 
