@@ -192,3 +192,12 @@ svg {
         height: calc(100vh - 182px);
     }
 }
+
+.highlight-tab {
+    background: rgb(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+    a {
+        font-weight: 700 !important;
+        background: transparent !important;
+    }
+}

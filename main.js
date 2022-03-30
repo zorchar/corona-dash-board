@@ -496,13 +496,6 @@ themeButtonDark.addEventListener('click', () => {
     //     ('--border-bottom-color', '#eaf3f5')
     // document.documentElement.style.setProperty
     //     ('--theme-button-bg-color', '#39475d')
-    const element = document.querySelector(".rtl-scroll");
-    const pos = element.scrollTop;
-    console.log(pos);
-    const vop = document.querySelector('#main-indexes').offsetTop
-    console.log(vop);
-    const innerWidth = window.innerWidth
-    console.log(innerWidth);
 })
 
 
@@ -513,5 +506,29 @@ fillTrafficLightTable()
 addGridButtonsEventListener()
 addGradeStyle()
 
+const scroollBar = document.querySelector(".rtl-scroll")
+const navBar = document.querySelector('.navigation-bar')
+const tabs = navBar.querySelectorAll('a')
+// const sections = document.querySelectorAll('.section-container')
+// const sectionsIDs = []
+// sections.forEach(section => {
+//     sectionsIDs.push(section.id)
+// })
 
-const highlight
+scroollBar.addEventListener('scroll', () => {
+    const scroollBarPosition = scroollBar.scrollTop;
+    tabs.forEach(tab => {
+        if (scroollBarPosition >= document.querySelector(tab.hash).offsetTop && scroollBarPosition <= document.querySelector(tab.hash).offsetTop + 100) {
+            highlightNavBarTab(tab)
+        }
+    })
+})
+
+const highlightNavBarTab = (tab) => {
+    const highlightedTab = document.querySelector('.highlight-tab')
+    if (highlightedTab != undefined) {
+        highlightedTab.classList.remove('highlight-tab')
+    }
+    tab.parentElement.classList.add('highlight-tab')
+}
+

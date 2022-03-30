@@ -110,6 +110,7 @@ header {
   height: 57px;
   width: fit-content;
   background: #374f60;
+  padding: 10px 0;
 }
 .navigation-bar div {
   display: flex;
@@ -1123,6 +1124,15 @@ svg {
   .rtl-scroll {
     height: calc(100vh - 182px);
   }
+}
+
+.highlight-tab {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 10px !important;
+}
+.highlight-tab a {
+  font-weight: 700 !important;
+  background: transparent !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
