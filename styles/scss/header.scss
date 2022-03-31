@@ -105,6 +105,7 @@ header {
 .navigation-bar {
     display: flex;
     overflow-x: scroll;
+    overflow-y: hidden;
     height: 57px;
     // width: fit-content; //check if needed later
     width: fit-content;

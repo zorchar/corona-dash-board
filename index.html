@@ -33,6 +33,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
         integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://kit.fontawesome.com/a7a77a6418.js" crossorigin="anonymous"></script>
     <script src="./main.js" defer></script>
     <script src="./chart.js" defer></script>
@@ -403,7 +404,14 @@
                         <div class="info-square-container main-info-square">
                             <div class="info-square">
                                 <div class="chart-placeholder">
-                                    <canvas id="my-chart2" width="400" height="100"></canvas>
+
+                                    <figure class="highcharts-figure">
+                                        <div id="container"></div>
+                                        <p class="highcharts-description">
+                                            Chart showing data loaded dynamically. The individual data points can
+                                            be clicked to display more information.
+                                        </p>
+                                    </figure>
                                 </div>
                                 <!-- <div class="info-square__main-header">
                             <h3 class="info-square-main-header__headline">מצב מאושפזים - שינוי יומי</h3>
