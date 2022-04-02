@@ -920,18 +920,6 @@ px .svg-container-outer:hover {
   font-size: 15px;
 }
 
-.legend-item-container {
-  display: flex;
-  align-items: center;
-  background: var(--secondary-bg-color);
-  padding-left: 16px;
-}
-.legend-item-container h4 {
-  font-size: 0.8rem;
-  font-weight: 400;
-  background: var(--secondary-bg-color);
-}
-
 #main-indexes > .info-square-container {
   width: 100%;
 }
@@ -1181,6 +1169,42 @@ svg {
   height: 100% !important;
 }
 
+#main2 {
+  width: 100% !important;
+  height: 100% !important;
+}
+#main2 canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#main3 {
+  width: 100% !important;
+  height: 100% !important;
+}
+#main3 canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#main4 {
+  width: 100% !important;
+  height: 100% !important;
+}
+#main4 canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#main5 {
+  width: 100% !important;
+  height: 100% !important;
+}
+#main5 canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .graph-top-row-container {
   width: 100%;
   display: flex;
@@ -1208,6 +1232,16 @@ svg {
 }
 .legend-container > div h4 {
   background: transparent;
+  font-size: 0.8rem;
+  font-weight: 400;
+  background: var(--secondary-bg-color);
+}
+
+.legend-item-container {
+  display: flex;
+  align-items: center;
+  background: var(--secondary-bg-color);
+  padding-left: 16px;
 }
 
 /*# sourceMappingURL=styles.css.map */

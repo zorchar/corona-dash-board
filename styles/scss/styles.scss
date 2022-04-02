@@ -214,6 +214,48 @@ svg {
     }
 }
 
+#main2 {
+    // width: 300px;
+    // height: 300px;
+    width: 100% !important;
+    height: 100% !important;
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+#main3 {
+    // width: 300px;
+    // height: 300px;
+    width: 100% !important;
+    height: 100% !important;
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+#main4 {
+    // width: 300px;
+    // height: 300px;
+    width: 100% !important;
+    height: 100% !important;
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+#main5 {
+    // width: 300px;
+    // height: 300px;
+    width: 100% !important;
+    height: 100% !important;
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+
 .graph-top-row-container{
     width: 100%;
     display: flex;    
@@ -242,6 +284,16 @@ svg {
             background: transparent;
             h4{
                 background: transparent;
+                font-size: 0.8rem;
+                font-weight: 400;
+                background: var(--secondary-bg-color);        
             }    
         }
+}
+
+.legend-item-container {
+    display: flex;
+    align-items: center;
+    background: var(--secondary-bg-color);
+    padding-left: 16px;
 }

@@ -271,7 +271,7 @@
 
 
 // Initialize the echarts instance based on the prepared dom
-var myChart = echarts.init(document.getElementById('main'));
+const myChart = echarts.init(document.getElementById('main'));
 
 // Specify the configuration items and data for the chart
 option = {
@@ -336,3 +336,248 @@ option = {
 
 // Display the chart using the configuration items and data just specified.
 myChart.setOption(option);
+
+// Initialize the echarts instance based on the prepared dom
+const myChart2 = echarts.init(document.getElementById('main2'));
+
+// Specify the configuration items and data for the chart
+option = {
+    color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
+    // title: {
+    //     text: 'Stacked Line'
+    // },
+    tooltip: {
+        trigger: 'axis'
+    },
+    // legend: {
+    //     data: ['קשה', 'בינוני', 'קל']
+    // },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    // toolbox: {
+    //     feature: {
+    //         saveAsImage: {}
+    //     }
+    // },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+    },
+    yAxis: {
+        type: 'value',
+    },
+    series: [
+        {
+            name: 'קשה',
+            type: 'line',
+            // itemStyle: {
+            //     color: function () {
+            //         return '#fff'
+            //     }
+            // },
+            data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+        },
+        {
+            name: 'בינוני',
+            type: 'line',
+            data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+        },
+        {
+            name: 'קל',
+            type: 'line',
+            data: [150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 34, 76]
+        }
+    ]
+};
+
+// Display the chart using the configuration items and data just specified.
+myChart2.setOption(option);
+
+// Initialize the echarts instance based on the prepared dom
+const myChart3 = echarts.init(document.getElementById('main3'));
+
+// Specify the configuration items and data for the chart
+option = {
+    color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
+    // title: {
+    //     text: 'Stacked Line'
+    // },
+    tooltip: {
+        trigger: 'axis'
+    },
+    // legend: {
+    //     data: ['קשה', 'בינוני', 'קל']
+    // },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    // toolbox: {
+    //     feature: {
+    //         saveAsImage: {}
+    //     }
+    // },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    },
+    yAxis: {
+        type: 'value',
+    },
+    series: [
+        {
+            name: 'קשה',
+            type: 'bar',
+            // itemStyle: {
+            //     color: function () {
+            //         return '#fff'
+            //     }
+            // },
+            data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+        },
+        {
+            name: 'בינוני',
+            type: 'bar',
+            data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+        },
+        {
+            name: 'קל',
+            type: 'bar',
+            data: [150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 34, 76]
+        }
+    ]
+};
+
+// Display the chart using the configuration items and data just specified.
+myChart3.setOption(option);
+
+// Initialize the echarts instance based on the prepared dom
+const myChart4 = echarts.init(document.getElementById('main4'));
+
+// Specify the configuration items and data for the chart
+option = {
+    color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
+    // title: {
+    //     text: 'Stacked Line'
+    // },
+    tooltip: {
+        trigger: 'axis'
+    },
+    // legend: {
+    //     data: ['קשה', 'בינוני', 'קל']
+    // },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    // toolbox: {
+    //     feature: {
+    //         saveAsImage: {}
+    //     }
+    // },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+    },
+    yAxis: {
+        type: 'value',
+    },
+    series: [
+        {
+            name: 'קשה',
+            type: 'bar',
+            // itemStyle: {
+            //     color: function () {
+            //         return '#fff'
+            //     }
+            // },
+            data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+        },
+        {
+            name: 'בינוני',
+            type: 'line',
+            data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+        },
+    ]
+};
+
+// Display the chart using the configuration items and data just specified.
+myChart4.setOption(option);
+
+// Initialize the echarts instance based on the prepared dom
+const myChart5 = echarts.init(document.getElementById('main5'));
+
+// Specify the configuration items and data for the chart
+option = {
+    color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
+    // title: {
+    //     text: 'Stacked Line'
+    // },
+    tooltip: {
+        trigger: 'axis'
+    },
+    // legend: {
+    //     data: ['קשה', 'בינוני', 'קל']
+    // },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    // toolbox: {
+    //     feature: {
+    //         saveAsImage: {}
+    //     }
+    // },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+    },
+    yAxis: {
+        type: 'value',
+    },
+    series: [
+        {
+            name: 'קשה',
+            type: 'line',
+            areaStyle: {},
+            // itemStyle: {
+            //     color: function () {
+            //         return '#fff'
+            //     }
+            // },
+            stack: 'Total',
+            data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+        },
+        {
+            name: 'בינוני',
+            type: 'line',
+            areaStyle: {},
+            stack: 'Total',
+            data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+        },
+        {
+            name: 'קל',
+            type: 'line',
+            areaStyle: {},
+            stack: 'Total',
+            data: [150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 34, 76]
+        }
+    ]
+};
+
+// Display the chart using the configuration items and data just specified.
+myChart5.setOption(option);
