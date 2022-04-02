@@ -202,3 +202,46 @@ svg {
         background: transparent !important;
     }
 }
+
+#main {
+    // width: 300px;
+    // height: 300px;
+    width: 100% !important;
+    height: 100% !important;
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.graph-top-row-container{
+    width: 100%;
+    display: flex;    
+    position: relative;
+    top: 10%;
+    z-index: 100;
+    justify-content: space-between;
+    >h4{
+        background: transparent;
+        font-size: 0.8rem;
+        font-weight: 400;
+        padding: 10px;
+        word-wrap: break-word;
+        // width: 10%;
+        // text-overflow: clip;
+    }
+
+}
+
+.legend-container{
+        padding: 5px;
+        background: var(--secondary-bg-color);
+        display: flex;    
+        background: transparent;
+        >div{
+            background: transparent;
+            h4{
+                background: transparent;
+            }    
+        }
+}

@@ -136,141 +136,203 @@
 
 
 
-
 // A point click event that uses the Renderer to draw a label next to the point
 // On subsequent clicks, move the existing label instead of creating a new one.
-Highcharts.addEvent(Highcharts.Point, 'click', function () {
-    if (this.series.options.className.indexOf('popup-on-click') !== -1) {
-        const chart = this.series.chart;
-        const date = Highcharts.dateFormat('%A, %b %e, %Y', this.x);
-        const text = `<b>${date}</b><br/>${this.y} ${this.series.name}`;
+// Highcharts.addEvent(Highcharts.Point, 'click', function () {
+//     if (this.series.options.className.indexOf('popup-on-click') !== -1) {
+//         const chart = this.series.chart;
+//         const date = Highcharts.dateFormat('%A, %b %e, %Y', this.x);
+//         const text = `<b>${date}</b><br/>${this.y} ${this.series.name}`;
 
-        const anchorX = this.plotX + this.series.xAxis.pos;
-        const anchorY = this.plotY + this.series.yAxis.pos;
-        const align = anchorX < chart.chartWidth - 200 ? 'left' : 'right';
-        const x = align === 'left' ? anchorX + 10 : anchorX - 10;
-        const y = anchorY - 30;
-        if (!chart.sticky) {
-            chart.sticky = chart.renderer
-                .label(text, x, y, 'callout', anchorX, anchorY)
-                .attr({
-                    align,
-                    fill: 'rgba(0, 0, 0, 0.75)',
-                    padding: 10,
-                    zIndex: 7 // Above series, below tooltip
-                })
-                .css({
-                    color: 'white'
-                })
-                .on('click', function () {
-                    chart.sticky = chart.sticky.destroy();
-                })
-                .add();
-        } else {
-            chart.sticky
-                .attr({ align, text })
-                .animate({ anchorX, anchorY, x, y }, { duration: 250 });
-        }
-    }
-});
+//         const anchorX = this.plotX + this.series.xAxis.pos;
+//         const anchorY = this.plotY + this.series.yAxis.pos;
+//         const align = anchorX < chart.chartWidth - 200 ? 'left' : 'right';
+//         const x = align === 'left' ? anchorX + 10 : anchorX - 10;
+//         const y = anchorY - 30;
+//         if (!chart.sticky) {
+//             chart.sticky = chart.renderer
+//                 .label(text, x, y, 'callout', anchorX, anchorY)
+//                 .attr({
+//                     align,
+//                     fill: 'rgba(0, 0, 0, 0.75)',
+//                     padding: 10,
+//                     zIndex: 7 // Above series, below tooltip
+//                 })
+//                 .css({
+//                     color: 'white'
+//                 })
+//                 .on('click', function () {
+//                     chart.sticky = chart.sticky.destroy();
+//                 })
+//                 .add();
+//         } else {
+//             chart.sticky
+//                 .attr({ align, text })
+//                 .animate({ anchorX, anchorY, x, y }, { duration: 250 });
+//         }
+//     }
+// });
 
 
-Highcharts.chart('container', {
+// Highcharts.chart('container', {
 
-    chart: {
-        scrollablePlotArea: {
-            minWidth: 700
-        }
-    },
+//     chart: {
+//         scrollablePlotArea: {
+//             minWidth: 700
+//         }
+//     },
 
-    data: {
-        csvURL: 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/analytics.csv',
-        beforeParse: function (csv) {
-            return csv.replace(/\n\n/g, '\n');
-        }
-    },
+//     data: {
+//         csvURL: 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/analytics.csv',
+//         beforeParse: function (csv) {
+//             console.log(csv.replace(/\n\n/g, '\n'));
+//             return csv.replace(/\n\n/g, '\n');
+//         }
+//     },
 
-    title: {
-        text: 'Daily sessions at www.highcharts.com'
-    },
+//     title: {
+//         text: 'Daily sessions at www.highcharts.com'
+//     },
 
-    subtitle: {
-        text: 'Source: Google Analytics'
-    },
+//     subtitle: {
+//         text: 'Source: Google Analytics'
+//     },
 
-    xAxis: {
-        tickInterval: 7 * 24 * 3600 * 1000, // one week
-        tickWidth: 0,
-        gridLineWidth: 1,
-        labels: {
-            align: 'left',
-            x: 3,
-            y: -3
-        }
-    },
+//     xAxis: {
+//         tickInterval: 7 * 24 * 3600 * 1000, // one week
+//         tickWidth: 0,
+//         gridLineWidth: 1,
+//         labels: {
+//             align: 'left',
+//             x: 3,
+//             y: -3
+//         }
+//     },
 
-    yAxis: [{ // left y axis
-        title: {
-            text: null
-        },
-        labels: {
-            align: 'left',
-            x: 3,
-            y: 16,
-            format: '{value:.,0f}'
-        },
-        showFirstLabel: false
-    }, { // right y axis
-        linkedTo: 0,
-        gridLineWidth: 0,
-        opposite: true,
-        title: {
-            text: null
-        },
-        labels: {
-            align: 'right',
-            x: -3,
-            y: 16,
-            format: '{value:.,0f}'
-        },
-        showFirstLabel: false
-    }],
+//     yAxis: [{ // left y axis
+//         title: {
+//             text: null
+//         },
+//         labels: {
+//             align: 'left',
+//             x: 3,
+//             y: 16,
+//             format: '{value:.,0f}'
+//         },
+//         showFirstLabel: false
+//     }, { // right y axis
+//         linkedTo: 0,
+//         gridLineWidth: 0,
+//         opposite: true,
+//         title: {
+//             text: null
+//         },
+//         labels: {
+//             align: 'right',
+//             x: -3,
+//             y: 16,
+//             format: '{value:.,0f}'
+//         },
+//         showFirstLabel: false
+//     }],
 
-    legend: {
-        align: 'left',
-        verticalAlign: 'top',
-        borderWidth: 0
-    },
+//     legend: {
+//         align: 'left',
+//         verticalAlign: 'top',
+//         borderWidth: 0
+//     },
 
+//     tooltip: {
+//         shared: true,
+//         crosshairs: true
+//     },
+
+//     plotOptions: {
+//         series: {
+//             cursor: 'pointer',
+//             className: 'popup-on-click',
+//             marker: {
+//                 lineWidth: 1
+//             }
+//         }
+//     },
+
+//     series: [{
+//         name: 'All sessions',
+//         lineWidth: 4,
+//         marker: {
+//             radius: 4
+//         }
+//     }, {
+//         name: 'New users'
+//     }]
+// });
+
+
+
+// Initialize the echarts instance based on the prepared dom
+var myChart = echarts.init(document.getElementById('main'));
+
+// Specify the configuration items and data for the chart
+option = {
+    color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
+    // title: {
+    //     text: 'Stacked Line'
+    // },
     tooltip: {
-        shared: true,
-        crosshairs: true
+        trigger: 'axis'
     },
-
-    plotOptions: {
-        series: {
-            cursor: 'pointer',
-            className: 'popup-on-click',
-            marker: {
-                lineWidth: 1
-            }
+    // legend: {
+    //     data: ['קשה', 'בינוני', 'קל']
+    // },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    // toolbox: {
+    //     feature: {
+    //         saveAsImage: {}
+    //     }
+    // },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+    },
+    yAxis: {
+        type: 'value',
+    },
+    series: [
+        {
+            name: 'קשה',
+            type: 'line',
+            areaStyle: {},
+            // itemStyle: {
+            //     color: function () {
+            //         return '#fff'
+            //     }
+            // },
+            stack: 'Total',
+            data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+        },
+        {
+            name: 'בינוני',
+            type: 'line',
+            areaStyle: {},
+            stack: 'Total',
+            data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+        },
+        {
+            name: 'קל',
+            type: 'line',
+            areaStyle: {},
+            stack: 'Total',
+            data: [150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 34, 76]
         }
-    },
+    ]
+};
 
-    series: [{
-        name: 'Installation',
-        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-    }, {
-        name: 'Manufacturing',
-        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-    }, {
-        name: 'Sales & Distribution',
-        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-    }, {
-        name: 'Project Development',
-        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-    }, {
-        name: 'Other',
-        data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-    }],
-});
+// Display the chart using the configuration items and data just specified.
+myChart.setOption(option);
