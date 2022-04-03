@@ -538,3 +538,38 @@ const highlightNavBarTab = (tab) => {
     tab.parentElement.classList.add('highlight-tab')
 }
 
+const numberHospitalizedDailyButton = document.querySelector('#number-hospitalzied-daily-dropdown-button')
+const numberHospitalizedDailySearchContainer = document.querySelector('#number-hospitalized-daily-search-container')
+
+numberHospitalizedDailyButton.addEventListener('click', () => {
+    let buttonString = ""
+
+    const checkBoxes = numberHospitalizedDailySearchContainer.querySelectorAll('.input-checkbox')
+    checkBoxes.forEach(el => {
+        if (el.checked) {
+            buttonString += el.parentElement.innerText.replace(/\s/g, '');
+            buttonString += ", "
+        }
+    })
+    const radios = numberHospitalizedDailySearchContainer.querySelectorAll('.input-radio')
+    radios.forEach(el => {
+        if (el.checked) {
+            const r = /\B\s+|\s+\B/g
+
+            buttonString += el.parentElement.innerText.replace(r, '');
+            buttonString += ", "
+        }
+    })
+
+
+    numberHospitalizedDailyButton.firstElementChild.innerText = buttonString
+
+
+    numberHospitalizedDailySearchContainer.classList.toggle('display-none')
+})
+
+const r = /\B\s+|\s+\B/g
+const hebrew = "שלום" + "&nbsp" + "ברכה"
+const s = "this is cecy" + hebrew;
+
+console.log(s.replace(r, ''))

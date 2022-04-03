@@ -359,8 +359,8 @@
                                     </svg>
                                 </div>
                                 <div class="search-bar-container">
-                                    <button class="dropdown-button">
-                                        <span>קשה, בינוני, קל חודש אחרון</span>
+                                    <button class="dropdown-button" id="number-hospitalzied-daily-dropdown-button">
+                                        <span>קשה, בינוני, קל, חודש אחרון</span>
                                         <svg class="angle-down" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                             role="img" width="1em" height="1em" viewBox="0 0 24 24">
                                             <path
@@ -368,37 +368,41 @@
                                             </path>
                                         </svg>
                                     </button>
-                                    <div class="search-bar-container secondary-search-bar-container"
+                                    <div class="search-bar-container secondary-search-bar-container display-none"
                                         id="number-hospitalized-daily-search-container">
                                         <div class="search-bar-options">
                                             <form action="" onsubmit="return false">
                                                 <h4>מצב מאושפזים</h4>
                                                 <div class="input-and-text-container">
-                                                    <input type="checkbox" checked>קשה
+                                                    <input class="input-checkbox" type="checkbox" checked>קשה
                                                 </div>
                                                 <div class="input-and-text-container">
-                                                    <input type="checkbox" checked>בינוני
+                                                    <input class="input-checkbox" type="checkbox" checked>בינוני
                                                 </div>
                                                 <div class="input-and-text-container">
-                                                    <input type="checkbox" checked>קל
+                                                    <input class="input-checkbox" type="checkbox" checked>קל
                                                 </div>
                                                 <h4>זמן</h4>
                                                 <div class="input-and-text-container">
-                                                    <input type="radio" name="radio-number-hospitalzied-daily">עד עכשיו
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">עד עכשיו
                                                 </div>
                                                 <div class="input-and-text-container">
-                                                    <input type="radio" name="radio-number-hospitalzied-daily">שנה
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">שנה
                                                 </div>
                                                 <div class="input-and-text-container">
-                                                    <input type="radio" name="radio-number-hospitalzied-daily">6 חודשים
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">6 חודשים
                                                 </div>
                                                 <div class="input-and-text-container">
-                                                    <input type="radio" name="radio-number-hospitalzied-daily">שלושה
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">שלושה
                                                     חודשים
                                                 </div>
                                                 <div class="input-and-text-container">
-                                                    <input type="radio" name="radio-number-hospitalzied-daily"
-                                                        checked>חודש
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily" checked>חודש
                                                     אחרון
                                                 </div>
                                             </form>
