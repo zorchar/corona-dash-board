@@ -275,6 +275,7 @@ const myChart = echarts.init(document.getElementById('main'));
 
 // Specify the configuration items and data for the chart
 option = {
+    backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
     // title: {
     //     text: 'Stacked Line'
@@ -288,7 +289,7 @@ option = {
     grid: {
         left: '3%',
         right: '4%',
-        bottom: '3%',
+        bottom: '10%',
         containLabel: true
     },
     // toolbox: {
@@ -298,11 +299,22 @@ option = {
     // },
     xAxis: {
         type: 'category',
-        boundaryGap: false,
+        name: 'תאריך',
+        nameLocation: 'center',
+        nameTextStyle: {
+            verticalAlign: 'top',
+            padding: 8,
+            fontSize: 14,
+        },
+        boundaryGap: true,
         data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
     },
     yAxis: {
         type: 'value',
+        name: 'מספר\nמאושפזים',
+        nameTextStyle: {
+            align: 'right'
+        }
     },
     series: [
         {
@@ -342,6 +354,7 @@ const myChart2 = echarts.init(document.getElementById('main2'));
 
 // Specify the configuration items and data for the chart
 option = {
+    backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
     // title: {
     //     text: 'Stacked Line'
@@ -403,6 +416,7 @@ const myChart3 = echarts.init(document.getElementById('main3'));
 
 // Specify the configuration items and data for the chart
 option = {
+    backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
     // title: {
     //     text: 'Stacked Line'
@@ -464,6 +478,7 @@ const myChart4 = echarts.init(document.getElementById('main4'));
 
 // Specify the configuration items and data for the chart
 option = {
+    backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
     // title: {
     //     text: 'Stacked Line'
@@ -520,6 +535,7 @@ const myChart5 = echarts.init(document.getElementById('main5'));
 
 // Specify the configuration items and data for the chart
 option = {
+    backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
     // title: {
     //     text: 'Stacked Line'
