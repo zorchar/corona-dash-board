@@ -5,6 +5,7 @@
 }
 
 .secondary-search-bar-container {
+    z-index: 11;
     position: absolute;
     display: flex;
     flex-wrap: wrap;
@@ -37,6 +38,11 @@
         width: 50%;
         background: var(--third-bg-color);
         cursor: pointer;
+        border: transparent;
+
+        &:focus {
+            border: #000000 1px solid
+        }
     }
 }
 
@@ -71,6 +77,7 @@
     width: 100%;
     padding: 5px;
     padding-bottom: 10px;
+
     &:hover {
         background: var(--third-bg-color);
         cursor: pointer;
@@ -85,28 +92,35 @@
 
 #vaccination-of-population {
     .grid-ltr-container {
+
         // max-height: 55%;
         @media (max-width: 1500px) {
             max-height: 72%;
         }
+
         @media (min-width: 550px) {
             @media (max-width: 650px) {
                 max-height: 62%;
             }
         }
+
         @media (max-width: 550px) {
             max-height: 57%;
         }
+
         min-width: calc(100% + 16px);
         margin-right: -8px;
+
         @media (min-width: 651px) {
             @media (max-width: 1050px) {
                 max-height: 60%;
             }
         }
+
         @media (min-width: 1284px) {
             max-height: 68%;
         }
+
         @media (min-width: 556px) {
             @media (max-width: 686px) {
                 max-height: 69%;
@@ -123,6 +137,7 @@
     width: 200px;
     border: solid 2px var(--input-border-and-angle-color);
     background: var(--fourth-bg-color);
+
     span {
         font-size: 1rem;
         padding-right: 5px;
@@ -149,6 +164,7 @@
     width: 50px;
     height: 10px;
     background: var(--bar-bg-color);
+
     &:hover {
         background: var(--secondary-bg-color);
         cursor: pointer;
@@ -157,20 +173,24 @@
 
 .colored-part {
     height: 100%;
+
     &:hover {
         opacity: 0.8;
     }
 }
 
 #vaccination-of-population {
-    .info-square > .grid {
+    .info-square>.grid {
         @media (max-width: 550px) {
-            > div:nth-child(5),
-            > div:nth-child(6) {
+
+            >div:nth-child(5),
+            >div:nth-child(6) {
                 background: var(--different-grid-cell-bg-color);
-                > button {
+
+                >button {
                     background: var(--different-grid-cell-bg-color);
                 }
+
                 .grid-cell__text {
                     background: var(--different-grid-cell-bg-color);
                 }

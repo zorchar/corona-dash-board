@@ -465,6 +465,7 @@ header {
 }
 
 .secondary-search-bar-container {
+  z-index: 11;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
@@ -495,6 +496,10 @@ header {
   width: 50%;
   background: var(--third-bg-color);
   cursor: pointer;
+  border: transparent;
+}
+.secondary-search-bar-container .accept-or-cancel-button:focus {
+  border: #000000 1px solid;
 }
 
 #secondary-search-bar__secondary-div {
@@ -1235,6 +1240,29 @@ svg {
   align-items: center;
   background: var(--secondary-bg-color);
   padding-left: 16px;
+}
+
+.search-bar-options {
+  width: 100%;
+  height: 240px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.search-bar-options h4 {
+  padding: 5px;
+  background: var(--secondary-bg-color);
+}
+.search-bar-options .input-and-text-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 5px;
+  background: var(--secondary-bg-color);
+}
+.search-bar-options .input-and-text-container input {
+  width: fit-content;
+  margin: 0;
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

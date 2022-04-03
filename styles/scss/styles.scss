@@ -326,3 +326,30 @@ svg {
     background: var(--secondary-bg-color);
     padding-left: 16px;
 }
+
+.search-bar-options {
+    // background: var(--secondary-bg-color);
+    width: 100%;
+    height: 240px;
+    overflow-y: scroll;
+    overflow-x: hidden; // leave for finishing
+
+    h4 {
+        padding: 5px;
+        background: var(--secondary-bg-color);
+    }
+
+    .input-and-text-container {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 5px;
+        background: var(--secondary-bg-color);
+
+        input {
+            width: fit-content;
+            margin: 0;
+            margin-left: 10px;
+        }
+    }
+}
