@@ -164,6 +164,7 @@ header {
 }
 
 .info-square {
+  position: relative;
   background: var(--secondary-bg-color);
   box-shadow: 0px 0px 2px -2px;
   display: flex;
@@ -1163,6 +1164,7 @@ svg {
 #main {
   width: 100% !important;
   height: 100% !important;
+  background: var(--secondary-bg-color);
 }
 #main canvas {
   width: 100% !important;
@@ -1172,6 +1174,7 @@ svg {
 #main2 {
   width: 100% !important;
   height: 100% !important;
+  background: var(--secondary-bg-color);
 }
 #main2 canvas {
   width: 100% !important;
@@ -1181,6 +1184,7 @@ svg {
 #main3 {
   width: 100% !important;
   height: 100% !important;
+  background: var(--secondary-bg-color);
 }
 #main3 canvas {
   width: 100% !important;
@@ -1190,6 +1194,7 @@ svg {
 #main4 {
   width: 100% !important;
   height: 100% !important;
+  background: var(--secondary-bg-color);
 }
 #main4 canvas {
   width: 100% !important;
@@ -1199,6 +1204,7 @@ svg {
 #main5 {
   width: 100% !important;
   height: 100% !important;
+  background: var(--secondary-bg-color);
 }
 #main5 canvas {
   width: 100% !important;
@@ -1222,6 +1228,9 @@ svg {
 }
 
 .legend-container {
+  position: absolute;
+  top: 23%;
+  z-index: 10;
   padding: 5px;
   background: var(--secondary-bg-color);
   display: flex;

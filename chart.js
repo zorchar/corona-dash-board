@@ -303,7 +303,7 @@ option = {
         nameLocation: 'center',
         nameTextStyle: {
             verticalAlign: 'top',
-            padding: 8,
+            padding: 18,
             fontSize: 14,
         },
         boundaryGap: true,
@@ -368,7 +368,7 @@ option = {
     grid: {
         left: '3%',
         right: '4%',
-        bottom: '3%',
+        bottom: '10%',
         containLabel: true
     },
     // toolbox: {
@@ -378,11 +378,22 @@ option = {
     // },
     xAxis: {
         type: 'category',
-        boundaryGap: false,
+        name: 'תאריך',
+        nameLocation: 'center',
+        nameTextStyle: {
+            verticalAlign: 'top',
+            padding: 18,
+            fontSize: 14,
+        },
+        boundaryGap: true,
         data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
     },
     yAxis: {
         type: 'value',
+        name: 'תושבים\nנכנסים',
+        nameTextStyle: {
+            align: 'right'
+        }
     },
     series: [
         {
@@ -430,7 +441,7 @@ option = {
     grid: {
         left: '3%',
         right: '4%',
-        bottom: '3%',
+        bottom: '10%',
         containLabel: true
     },
     // toolbox: {
@@ -440,7 +451,14 @@ option = {
     // },
     xAxis: {
         type: 'category',
-        boundaryGap: false,
+        name: 'תאריך',
+        nameLocation: 'center',
+        nameTextStyle: {
+            verticalAlign: 'top',
+            padding: 18,
+            fontSize: 14,
+        },
+        boundaryGap: true,
         data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     },
     yAxis: {
@@ -479,7 +497,7 @@ const myChart4 = echarts.init(document.getElementById('main4'));
 // Specify the configuration items and data for the chart
 option = {
     backgroundColor: '#ffffff',
-    color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
+    color: ["#1c7d7e", "#ff7d67"],
     // title: {
     //     text: 'Stacked Line'
     // },
@@ -492,7 +510,7 @@ option = {
     grid: {
         left: '3%',
         right: '4%',
-        bottom: '3%',
+        bottom: '10%',
         containLabel: true
     },
     // toolbox: {
@@ -502,8 +520,15 @@ option = {
     // },
     xAxis: {
         type: 'category',
-        boundaryGap: false,
-        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+        name: 'תאריך',
+        nameLocation: 'center',
+        nameTextStyle: {
+            verticalAlign: 'top',
+            padding: 18,
+            fontSize: 14,
+        },
+        boundaryGap: true,
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
     },
     yAxis: {
         type: 'value',
@@ -517,12 +542,12 @@ option = {
             //         return '#fff'
             //     }
             // },
-            data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+            data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 21, 19, 17, 14]
         },
         {
             name: 'בינוני',
             type: 'line',
-            data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+            data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 53, 51, 49, 33]
         },
     ]
 };
@@ -549,7 +574,7 @@ option = {
     grid: {
         left: '3%',
         right: '4%',
-        bottom: '3%',
+        bottom: '10%',
         containLabel: true
     },
     // toolbox: {
@@ -559,7 +584,14 @@ option = {
     // },
     xAxis: {
         type: 'category',
-        boundaryGap: false,
+        name: 'תאריך',
+        nameLocation: 'center',
+        nameTextStyle: {
+            verticalAlign: 'top',
+            padding: 18,
+            fontSize: 14,
+        },
+        boundaryGap: true,
         data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
     },
     yAxis: {
