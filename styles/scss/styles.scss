@@ -279,25 +279,25 @@ svg {
 }
 
 
-.graph-top-row-container {
-    width: 100%;
-    display: flex;
-    position: relative;
-    top: 10%;
-    z-index: 100;
-    justify-content: space-between;
+// .graph-top-row-container {
+//     width: 100%;
+//     display: flex;
+//     position: relative;
+//     top: 10%;
+//     z-index: 100;
+//     justify-content: space-between;
 
-    >h4 {
-        background: transparent;
-        font-size: 0.8rem;
-        font-weight: 400;
-        padding: 10px;
-        word-wrap: break-word;
-        // width: 10%;
-        // text-overflow: clip;
-    }
+//     >h4 {
+//         background: transparent;
+//         font-size: 0.8rem;
+//         font-weight: 400;
+//         padding: 10px;
+//         word-wrap: break-word;
+//         // width: 10%;
+//         // text-overflow: clip;
+//     }
 
-}
+// }
 
 .legend-container {
     position: absolute;

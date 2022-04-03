@@ -268,13 +268,27 @@
 //     }]
 // });
 
+const insertAxisData = (axis, chartOption, data) => {
+    chartOption[axis].data = data
+}
 
+const insertSeriesData = (chartOption, name, type, isArea, isStack, data) => {
+    const newObject = {}
+    newObject.name = name
+    newObject.type = type
+    if (isArea)
+        newObject.areaStyle = {}
+    if (isStack)
+        newObject.stack = 'total'
+    newObject.data = data
+    chartOption.series.push(newObject)
+}
 
 // Initialize the echarts instance based on the prepared dom
 const myChart = echarts.init(document.getElementById('main'));
 
 // Specify the configuration items and data for the chart
-option = {
+const option = {
     backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
     // title: {
@@ -346,6 +360,13 @@ option = {
     ]
 };
 
+option.series.length = 0
+insertAxisData('xAxis', option, [1, 2, 3, 5, 6])
+insertSeriesData(option, 'John', 'line', true, true, [900, 1100, 1115])
+insertSeriesData(option, 'Shmulik', 'line', true, true, [901, 1101, 1111])
+insertSeriesData(option, 'Kobe', 'line', true, true, [1500, 1510, 1115])
+
+
 // Display the chart using the configuration items and data just specified.
 myChart.setOption(option);
 
@@ -353,7 +374,7 @@ myChart.setOption(option);
 const myChart2 = echarts.init(document.getElementById('main2'));
 
 // Specify the configuration items and data for the chart
-option = {
+const option2 = {
     backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
     // title: {
@@ -420,13 +441,13 @@ option = {
 };
 
 // Display the chart using the configuration items and data just specified.
-myChart2.setOption(option);
+myChart2.setOption(option2);
 
 // Initialize the echarts instance based on the prepared dom
 const myChart3 = echarts.init(document.getElementById('main3'));
 
 // Specify the configuration items and data for the chart
-option = {
+const option3 = {
     backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
     // title: {
@@ -489,13 +510,13 @@ option = {
 };
 
 // Display the chart using the configuration items and data just specified.
-myChart3.setOption(option);
+myChart3.setOption(option3);
 
 // Initialize the echarts instance based on the prepared dom
 const myChart4 = echarts.init(document.getElementById('main4'));
 
 // Specify the configuration items and data for the chart
-option = {
+const option4 = {
     backgroundColor: '#ffffff',
     color: ["#1c7d7e", "#ff7d67"],
     // title: {
@@ -553,13 +574,13 @@ option = {
 };
 
 // Display the chart using the configuration items and data just specified.
-myChart4.setOption(option);
+myChart4.setOption(option4);
 
 // Initialize the echarts instance based on the prepared dom
 const myChart5 = echarts.init(document.getElementById('main5'));
 
 // Specify the configuration items and data for the chart
-option = {
+const option5 = {
     backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
     // title: {
@@ -628,4 +649,11 @@ option = {
 };
 
 // Display the chart using the configuration items and data just specified.
-myChart5.setOption(option);
+myChart5.setOption(option5);
+
+
+
+
+
+
+
