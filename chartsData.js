@@ -1,3 +1,5 @@
+// import * as Funcs from './chartsFuncs.js';
+
 // const ctx = document.getElementById('my-chart').getContext('2d');
 // const tooltipLine = {
 //     id: 'tooltipLine',
@@ -268,10 +270,65 @@
 //     }]
 // });
 
-// charts data functions
+////////////////////////// charts data functions
 
-const insertAxisData = (chartOption, axis, data) => {
-    chartOption[axis].data = data
+////////// axis
+
+const insertAxisData = (chartOption, axis, data, from = 0, to = data.length - 1) => {
+    for (let i = from; i < to; i++)
+        chartOption[axis].data.push(data[i])
+}
+
+const clearAxisData = (chartOption, axis) => {
+    chartOption[axis].data.length = 0
+}
+
+///dates
+
+const createConsecutiveDatesArray = () => {
+    const newArray = []
+    let day = 1
+    let month = 1
+    let year = 20
+
+    for (let i = 0; i < 1000; i++) {
+        let dateString = ""
+
+        if (day === 31) {
+            day = 1
+            month++
+        }
+        if (month === 13) {
+            month = 1
+            year++
+        }
+
+        if (day < 10)
+            dateString += "0"
+        dateString += day + '.'
+        if (month < 10)
+            dateString += "0"
+        dateString += month + '.' + year
+
+        newArray.push(dateString)
+        day++
+    }
+
+    return newArray
+}
+
+/////////
+
+///// series.data
+
+const createMockDataArray = (minVal, maxVal, length) => {
+    const newArray = []
+
+    for (let i = 0; i < length; i++) {
+        newArray.push(Math.floor(Math.random() * maxVal) + minVal)
+    }
+
+    return newArray
 }
 
 // const insertSeriesData = (chartOption, name, type, isArea, isStack, colorString, data) => {
@@ -302,8 +359,6 @@ const removeSeriesData = (chartOption, seriesName) => {
 }
 
 ///////////////
-
-///// charts
 
 // Initialize the echarts instance based on the prepared dom
 const myChart = echarts.init(document.getElementById('main'));
@@ -383,6 +438,13 @@ const option = {
         }
     ]
 };
+
+const fullDatesArray = createConsecutiveDatesArray()
+clearAxisData(option, 'xAxis')
+insertAxisData(option, 'xAxis', fullDatesArray, 969, 999)
+insertSeriesData(option, 'קשה', createMockDataArray(150, 350, 1000))
+insertSeriesData(option, 'בינוני', createMockDataArray(50, 250, 1000))
+insertSeriesData(option, 'קל', createMockDataArray(350, 750, 1000))
 
 // removeSeriesData(option, 'קשה')
 // removeSeriesData(option, 'קל')
@@ -677,54 +739,3 @@ const option5 = {
 
 // Display the chart using the configuration items and data just specified.
 myChart5.setOption(option5);
-
-//////////
-
-///dates
-
-const getConsecutiveDatesArray = () => {
-    const newArray = []
-    let day = 1
-    let month = 1
-    let year = 2020
-
-    for (let i = 0; i < 1000; i++) {
-        let dateString = ""
-
-        if (day === 31) {
-            day = 1
-            month++
-        }
-        if (month === 13) {
-            month = 1
-            year++
-        }
-
-        if (day < 10)
-            dateString += "0"
-        dateString += day + '.'
-        if (month < 10)
-            dateString += "0"
-        dateString += month + '.' + year
-
-        newArray.push(dateString)
-        day++
-    }
-
-    return newArray
-}
-
-//////
-
-//series.data
-
-const getMockDataArray = (minVal, maxVal, length) => {
-    const newArray = []
-
-    for (let i = 0; i < length; i++) {
-        newArray.push(Math.floor(Math.random() * maxVal) + minVal)
-    }
-
-    return newArray
-}
-
