@@ -556,7 +556,7 @@ const dropdownButtons = document.querySelectorAll('.dropdown-button')
 let testCounter = 0
 dropdownButtons.forEach(el => {
     console.log(testCounter++);
-    if (el.id != "") {
+    if (el.id !== "") {
         const button = document.querySelector('#' + el.id)
         const searchContainer = el.nextElementSibling
 

@@ -585,7 +585,8 @@ header {
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
-  width: 200px;
+  max-width: 100%;
+  overflow: visible;
   border: solid 2px var(--input-border-and-angle-color);
   background: var(--fourth-bg-color);
 }
@@ -594,9 +595,12 @@ header {
 }
 .dropdown-button span {
   font-size: 1rem;
-  padding-right: 5px;
+  padding: 0 5px;
   background: var(--main-bg-color);
   border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .angle-down {

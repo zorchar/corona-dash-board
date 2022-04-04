@@ -624,7 +624,7 @@
                                 <div class="search-bar-container">
                                     <button class="dropdown-button"
                                         id="residents-entering-israel-vaccination-dropdown-button">
-                                        <span>קשה, בינוני, קל חודש אחרון</span>
+                                        <span>מספר תושבים שנכנסו, חודש אחרון</span>
                                         <svg class=" angle-down" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                             role="img" width="1em" height="1em" viewBox="0 0 24 24">
                                             <path
@@ -636,36 +636,37 @@
                                         id="residents-entering-israel-vaccination-search-container">
                                         <div class="search-bar-options">
                                             <form action="" onsubmit="return false">
-                                                <h4>מצב מאושפזים</h4>
+                                                <h4>הצג לפי</h4>
                                                 <div class="input-and-text-container">
-                                                    <input class="input-checkbox" type="checkbox" checked>קשה
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-residents-entering-israel-vaccination1" checked>מספר
+                                                    תושבים שנכנסו
                                                 </div>
                                                 <div class="input-and-text-container">
-                                                    <input class="input-checkbox" type="checkbox" checked>בינוני
-                                                </div>
-                                                <div class="input-and-text-container">
-                                                    <input class="input-checkbox" type="checkbox" checked>קל
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-residents-entering-israel-vaccination1">מספר תושבים
+                                                    מאומתים שנכנסו
                                                 </div>
                                                 <h4>זמן</h4>
                                                 <div class="input-and-text-container">
                                                     <input class="input-radio" type="radio"
-                                                        name="radio-number-hospitalzied-daily">עד עכשיו
+                                                        name="radio-residents-entering-israel-vaccination2">עד עכשיו
                                                 </div>
                                                 <div class="input-and-text-container">
                                                     <input class="input-radio" type="radio"
-                                                        name="radio-number-hospitalzied-daily">שנה
+                                                        name="radio-residents-entering-israel-vaccination2">שנה
                                                 </div>
                                                 <div class="input-and-text-container">
                                                     <input class="input-radio" type="radio"
-                                                        name="radio-number-hospitalzied-daily">6 חודשים
+                                                        name="radio-residents-entering-israel-vaccination2">6 חודשים
                                                 </div>
                                                 <div class="input-and-text-container">
                                                     <input class="input-radio" type="radio"
-                                                        name="radio-number-hospitalzied-daily">3 חודשים
+                                                        name="radio-residents-entering-israel-vaccination2">3 חודשים
                                                 </div>
                                                 <div class="input-and-text-container">
                                                     <input class="input-radio" type="radio"
-                                                        name="radio-number-hospitalzied-daily" checked>חודש
+                                                        name="radio-residents-entering-israel-vaccination2" checked>חודש
                                                     אחרון
                                                 </div>
                                             </form>
@@ -714,7 +715,7 @@
 
 
             <div id="vaccination-influence-on-sickness" class="section-container">
-                <h1 class="overview__header">חולים פעילים - גיל והתחסנות</h1>
+                <h1 class="overview__header">השפעת התחסנות על התחלואה</h1>
                 <div class="info-square-container">
                     <div class="info-squares-container">
                         <div class="info-square-container main-info-square">
@@ -745,7 +746,8 @@
                                     </svg>
                                 </div>
                                 <div class="search-bar-container">
-                                    <button class="dropdown-button">
+                                    <button class="dropdown-button"
+                                        id="active-sick-age-and-vaccination-dropdown-button">
                                         <span>קשה, בינוני, קל חודש אחרון</span>
                                         <svg class="angle-down" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                             role="img" width="1em" height="1em" viewBox="0 0 24 24">
@@ -754,17 +756,49 @@
                                             </path>
                                         </svg>
                                     </button>
-                                    <!-- <div class="search-bar-container secondary-search-bar-container">
-                                        <div id="number-hospitalized-daily" class="display-none">
-                                            <input id="vaccination-input" type="text" placeholder="חיפוש ישוב">
-                                            <div id="secondary-div__close-div-vaccination" class="display-none">x</div>
-                                            <div class="includes-settlement-list"></div>
-                                            <div id="secondary-search-bar__accept-button"
-                                                class="accept-or-cancel-button">אישור</div>
-                                            <div id="secondary-search-bar__cancel-button"
-                                                class="accept-or-cancel-button">ביטול</div>
+                                    <div class="search-bar-container secondary-search-bar-container display-none"
+                                        id="active-sick-age-and-vaccination-search-container">
+                                        <div class="search-bar-options">
+                                            <form action="" onsubmit="return false">
+                                                <h4>מצב מאושפזים</h4>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-checkbox" type="checkbox" checked>קשה
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-checkbox" type="checkbox" checked>בינוני
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-checkbox" type="checkbox" checked>קל
+                                                </div>
+                                                <h4>זמן</h4>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">עד עכשיו
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">שנה
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">6 חודשים
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">3 חודשים
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily" checked>חודש
+                                                    אחרון
+                                                </div>
+                                            </form>
                                         </div>
-                                    </div> -->
+                                        <button class="accept-or-cancel-button">
+                                            אישור</button>
+                                        <button class="accept-or-cancel-button">
+                                            ביטול</button>
+                                    </div>
                                 </div>
                                 <div class="legend-container">
                                     <div class="legend-item-container">
@@ -830,7 +864,7 @@
                                     </svg>
                                 </div>
                                 <div class="search-bar-container">
-                                    <button class="dropdown-button">
+                                    <button class="dropdown-button" id="passed-away-daily-dropdown-button">
                                         <span>קשה, בינוני, קל חודש אחרון</span>
                                         <svg class="angle-down" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                             role="img" width="1em" height="1em" viewBox="0 0 24 24">
@@ -839,17 +873,49 @@
                                             </path>
                                         </svg>
                                     </button>
-                                    <!-- <div class="search-bar-container secondary-search-bar-container">
-                                        <div id="number-hospitalized-daily" class="display-none">
-                                            <input id="vaccination-input" type="text" placeholder="חיפוש ישוב">
-                                            <div id="secondary-div__close-div-vaccination" class="display-none">x</div>
-                                            <div class="includes-settlement-list"></div>
-                                            <div id="secondary-search-bar__accept-button"
-                                                class="accept-or-cancel-button">אישור</div>
-                                            <div id="secondary-search-bar__cancel-button"
-                                                class="accept-or-cancel-button">ביטול</div>
+                                    <div class="search-bar-container secondary-search-bar-container display-none"
+                                        id="passed-away-daily-search-container">
+                                        <div class="search-bar-options">
+                                            <form action="" onsubmit="return false">
+                                                <h4>מצב מאושפזים</h4>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-checkbox" type="checkbox" checked>קשה
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-checkbox" type="checkbox" checked>בינוני
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-checkbox" type="checkbox" checked>קל
+                                                </div>
+                                                <h4>זמן</h4>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">עד עכשיו
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">שנה
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">6 חודשים
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">3 חודשים
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily" checked>חודש
+                                                    אחרון
+                                                </div>
+                                            </form>
                                         </div>
-                                    </div> -->
+                                        <button class="accept-or-cancel-button">
+                                            אישור</button>
+                                        <button class="accept-or-cancel-button">
+                                            ביטול</button>
+                                    </div>
                                 </div>
                                 <div class="legend-container">
                                     <div class="legend-item-container">
@@ -950,7 +1016,8 @@
                                     </svg>
                                 </div>
                                 <div class="search-bar-container">
-                                    <button class="dropdown-button">
+                                    <button class="dropdown-button"
+                                        id="different-indexes-by-age-and-gender-dropdown-button">
                                         <span>קשה, בינוני, קל חודש אחרון</span>
                                         <svg class="angle-down" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                             role="img" width="1em" height="1em" viewBox="0 0 24 24">
@@ -959,17 +1026,49 @@
                                             </path>
                                         </svg>
                                     </button>
-                                    <!-- <div class="search-bar-container secondary-search-bar-container">
-                                        <div id="number-hospitalized-daily" class="display-none">
-                                            <input id="vaccination-input" type="text" placeholder="חיפוש ישוב">
-                                            <div id="secondary-div__close-div-vaccination" class="display-none">x</div>
-                                            <div class="includes-settlement-list"></div>
-                                            <div id="secondary-search-bar__accept-button"
-                                                class="accept-or-cancel-button">אישור</div>
-                                            <div id="secondary-search-bar__cancel-button"
-                                                class="accept-or-cancel-button">ביטול</div>
+                                    <div class="search-bar-container secondary-search-bar-container display-none"
+                                        id="different-indexes-by-age-and-gender-search-container">
+                                        <div class="search-bar-options">
+                                            <form action="" onsubmit="return false">
+                                                <h4>מצב מאושפזים</h4>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-checkbox" type="checkbox" checked>קשה
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-checkbox" type="checkbox" checked>בינוני
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-checkbox" type="checkbox" checked>קל
+                                                </div>
+                                                <h4>זמן</h4>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">עד עכשיו
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">שנה
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">6 חודשים
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily">3 חודשים
+                                                </div>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-number-hospitalzied-daily" checked>חודש
+                                                    אחרון
+                                                </div>
+                                            </form>
                                         </div>
-                                    </div> -->
+                                        <button class="accept-or-cancel-button">
+                                            אישור</button>
+                                        <button class="accept-or-cancel-button">
+                                            ביטול</button>
+                                    </div>
                                 </div>
                                 <div class="legend-container">
                                     <div class="legend-item-container">
@@ -986,7 +1085,6 @@
                                     </div>
                                 </div>
                                 <div id="main5"></div>
-
                             </div>
                         </div>
                         <div class="info-square-container main-info-square">
