@@ -544,32 +544,24 @@ const numberHospitalizedDailySearchContainer = document.querySelector('#number-h
 numberHospitalizedDailyButton.addEventListener('click', () => {
     let buttonString = ""
 
-    const checkBoxes = numberHospitalizedDailySearchContainer.querySelectorAll('.input-checkbox')
-    checkBoxes.forEach(el => {
-        if (el.checked) {
-            buttonString += el.parentElement.innerText.replace(/\s/g, '');
-            buttonString += ", "
-        }
-    })
-    const radios = numberHospitalizedDailySearchContainer.querySelectorAll('.input-radio')
-    radios.forEach(el => {
-        if (el.checked) {
-            const r = /\B\s+|\s+\B/g
-
-            buttonString += el.parentElement.innerText.replace(r, '');
-            buttonString += ", "
-        }
-    })
-
+    buttonString += getInputLabelsAsString(numberHospitalizedDailySearchContainer, '.input-checkbox')
+    buttonString += getInputLabelsAsString(numberHospitalizedDailySearchContainer, '.input-radio')
+    buttonString = buttonString.slice(0, -2)
 
     numberHospitalizedDailyButton.firstElementChild.innerText = buttonString
-
-
     numberHospitalizedDailySearchContainer.classList.toggle('display-none')
 })
 
-const r = /\B\s+|\s+\B/g
-const hebrew = "שלום" + "&nbsp" + "ברכה"
-const s = "this is cecy" + hebrew;
+const getInputLabelsAsString = (elScope, elClass) => {
+    let labelsString = ""
+    const checkBoxes = elScope.querySelectorAll(elClass)
 
-console.log(s.replace(r, ''))
+    checkBoxes.forEach(el => {
+        if (el.checked) {
+            labelsString += el.parentElement.innerText.trim()
+            labelsString += ", "
+        }
+    })
+
+    return labelsString
+}

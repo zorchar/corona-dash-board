@@ -589,6 +589,9 @@ header {
   border: solid 2px var(--input-border-and-angle-color);
   background: var(--fourth-bg-color);
 }
+.dropdown-button br {
+  display: none;
+}
 .dropdown-button span {
   font-size: 1rem;
   padding-right: 5px;
