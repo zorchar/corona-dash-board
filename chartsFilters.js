@@ -14,7 +14,7 @@ const getInputLabelsAsString = (elScope, elClass) => {
 
 const dropdownButtons = document.querySelectorAll('.dropdown-button')
 dropdownButtons.forEach(el => {
-    if (el.id !== "") {
+    if (el.id !== "" && el.id !== "vaccine-by-settlement-button") {
         const button = document.querySelector('#' + el.id)
         const searchContainer = el.nextElementSibling
 
@@ -24,13 +24,37 @@ dropdownButtons.forEach(el => {
 
         button.parentNode.querySelectorAll('.accept-or-cancel-button')[0].addEventListener('click', () => {
             let buttonString = ""
-
             buttonString += getInputLabelsAsString(searchContainer, '.input-checkbox')
             buttonString += getInputLabelsAsString(searchContainer, '.input-radio')
             buttonString = buttonString.slice(0, -2)
+            button.firstElementChild.innerText = buttonString
 
-            if (buttonString !== "")
-                button.firstElementChild.innerText = buttonString
+            if (el.id === 'number-hospitalzied-daily-dropdown-button') {
+                removeSeriesData(option, 'קשה')
+                removeSeriesData(option, 'בינוני')
+                removeSeriesData(option, 'קל')
+                clearAxisData(option, 'xAxis')
+                if (buttonString.includes('קשה'))
+                    insertSeriesData(option, 'קשה', createMockDataArray(150, 350, 1000))
+                if (buttonString.includes('בינוני'))
+                    insertSeriesData(option, 'בינוני', createMockDataArray(150, 350, 1000))
+                if (buttonString.includes('קל'))
+                    insertSeriesData(option, 'קל', createMockDataArray(150, 350, 1000))
+
+                if (buttonString.includes('חודש אחרון'))
+                    insertAxisData(option, 'xAxis', createConsecutiveDatesArray(), 969, 999)
+                else if (buttonString.includes('3 חודשים'))
+                    insertAxisData(option, 'xAxis', createConsecutiveDatesArray(), 909, 999)
+                else if (buttonString.includes('6 חודשים'))
+                    insertAxisData(option, 'xAxis', createConsecutiveDatesArray(), 819, 999)
+                else if (buttonString.includes('שנה'))
+                    insertAxisData(option, 'xAxis', createConsecutiveDatesArray(), 639, 999)
+                else if (buttonString.includes('עד עכשיו'))
+                    insertAxisData(option, 'xAxis', createConsecutiveDatesArray(), 0, 999)
+
+                myChart.setOption(option);
+            }
+
             searchContainer.classList.toggle('display-none')
         })
 
@@ -65,4 +89,4 @@ dropdownButtons.forEach(el => {
 //     numberHospitalizedDailySearchContainer.classList.toggle('display-none')
 // })
 
-// ////////
+///////////////////////////////////////////////////////////////////////////

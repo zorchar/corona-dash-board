@@ -600,6 +600,8 @@ header {
   border-radius: 10px;
   overflow: hidden;
   white-space: nowrap;
+  min-width: 200px;
+  text-align: right;
   text-overflow: ellipsis;
 }
 

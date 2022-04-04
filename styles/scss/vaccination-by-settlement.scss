@@ -134,7 +134,8 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
-    // max-width: 100%; // chekc no probs
+    max-width: 100%; // chekc no probs
+    // min-width: 200px;
     overflow: visible;
     // width: 200px; // check no probs
     border: solid 2px var(--input-border-and-angle-color);
@@ -152,6 +153,8 @@
         overflow: hidden;
         white-space: nowrap;
         // max-width: 85%;
+        min-width: 200px;
+        text-align: right;
         text-overflow: ellipsis;
     }
 }
