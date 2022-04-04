@@ -12,13 +12,16 @@
     width: 70%;
     column-gap: 10px;
     font-size: 13px;
+
     h4 {
         background: var(--secondary-bg-color);
+
         @media (max-width: 550px) {
             font-size: 10px;
         }
     }
-    > div {
+
+    >div {
         background: var(--secondary-bg-color);
         display: flex;
         column-gap: 10px;
@@ -26,13 +29,16 @@
         height: fit-content;
         min-height: 30px;
     }
-    > div:first-child {
+
+    >div:first-child {
         align-items: unset;
     }
+
     @media (min-width: 550px) {
         width: 100%;
         flex-wrap: nowrap;
-        > div {
+
+        >div {
             width: fit-content;
         }
     }
@@ -42,33 +48,40 @@
     background: var(--secondary-bg-color);
     display: flex;
     width: 100%;
-    > div {
+
+    >div {
         width: 100%;
         display: flex;
         align-items: center;
         background: var(--secondary-bg-color);
+
         h3 {
             background: var(--secondary-bg-color);
             font-size: 1rem;
             font-weight: 400;
+
             @media (max-width: 650px) {
                 font-size: 2.8vw;
             }
+
             @media (min-width: 550px) {
                 @media (max-width: 650px) {
                     font-size: 13px;
                 }
             }
         }
+
         h4 {
             background: var(--secondary-bg-color);
             font-size: 0.7rem;
             font-weight: 200;
             font-style: italic;
             color: #808080;
+
             @media (max-width: 650px) {
                 font-size: 2.8vw;
             }
+
             @media (min-width: 550px) {
                 @media (max-width: 650px) {
                     font-size: 13px;
@@ -76,12 +89,14 @@
             }
         }
     }
+
     @media (max-width: 650px) {
         width: 30%;
         justify-content: center;
         flex-direction: column;
         row-gap: 5px;
-        > div {
+
+        >div {
             margin: auto;
         }
     }
@@ -91,15 +106,18 @@
 // }
 
 #traffic-light-in-settlements {
-    .info-square > .grid {
+    .info-square>.grid {
         @media (max-width: 550px) {
-            > div:nth-child(3),
-            > div:nth-child(4),
-            > div:nth-child(5) {
+
+            >div:nth-child(3),
+            >div:nth-child(4),
+            >div:nth-child(5) {
                 background: var(--different-grid-cell-bg-color);
-                > button {
+
+                >button {
                     background: var(--different-grid-cell-bg-color);
                 }
+
                 .grid-cell__text {
                     background: var(--different-grid-cell-bg-color);
                 }
@@ -118,6 +136,7 @@
     border: solid #808080 1px;
     border-radius: 50%;
     margin-top: 5px;
+
     px &:hover {
         cursor: pointer;
     }
@@ -138,9 +157,11 @@
             width: 70%;
         }
     }
+
     .info-square {
         row-gap: 5px;
     }
+
     // .first-grid {
     //     min-width: calc(100% + 16px);
     //     margin-right: -8px;
@@ -148,15 +169,18 @@
     .grid-ltr-container {
         min-width: calc(100% + 16px);
         margin-right: -8px;
+
         // @media (min-width: 365px) {
         //     max-height: 20%;
         // }
         @media (max-width: 850px) {
             max-height: 56%;
         }
+
         @media (max-width: 650px) {
             max-height: 16%;
         }
+
         @media (max-width: 550px) {
             max-height: 29%;
         }
@@ -176,6 +200,7 @@
     min-width: 26px;
     height: 26px;
     border-radius: 10%;
+
     @media (min-width: 800px) {
         width: 32px;
         height: 32px;
@@ -184,17 +209,20 @@
 
 .upper-division__right-side {
     background: var(--secondary-bg-color);
+
     .data-date {
         border-radius: 5px;
         background: var(--third-bg-color);
         padding-right: 5px;
         padding-left: 5px;
         align-items: center;
+
         @media (min-width: 550px) {
             @media (max-width: 650px) {
                 font-size: 12px;
             }
         }
+
         @media (max-width: 550px) {
             font-size: 10px;
         }
@@ -216,9 +244,11 @@
     font-size: 0.75rem;
     margin: 2px;
     margin-bottom: 10px;
-    > div {
+
+    >div {
         background: var(--secondary-bg-color);
     }
+
     .includes-settlement-list__settlement {
         font-size: 15px;
         font-weight: 700;
