@@ -268,21 +268,42 @@
 //     }]
 // });
 
-const insertAxisData = (axis, chartOption, data) => {
+// charts data functions
+
+const insertAxisData = (chartOption, axis, data) => {
     chartOption[axis].data = data
 }
 
-const insertSeriesData = (chartOption, name, type, isArea, isStack, data) => {
-    const newObject = {}
-    newObject.name = name
-    newObject.type = type
-    if (isArea)
-        newObject.areaStyle = {}
-    if (isStack)
-        newObject.stack = 'total'
-    newObject.data = data
-    chartOption.series.push(newObject)
+// const insertSeriesData = (chartOption, name, type, isArea, isStack, colorString, data) => {
+//     const newObject = {}
+//     newObject.name = name
+//     newObject.type = type
+//     if (isArea)
+//         newObject.areaStyle = {}
+//     if (isStack)
+//         newObject.stack = 'total'
+//     newObject.color = colorString
+//     newObject.data = data
+//     chartOption.series.push(newObject)
+// }
+
+const insertSeriesData = (chartOption, seriesName, data) => {
+    chartOption.series.forEach(el => {
+        if (el.name === seriesName)
+            el.data = data
+    })
 }
+
+const removeSeriesData = (chartOption, seriesName) => {
+    chartOption.series.forEach(el => {
+        if (el.name === seriesName)
+            el.data.length = 0
+    });
+}
+
+///////////////
+
+///// charts
 
 // Initialize the echarts instance based on the prepared dom
 const myChart = echarts.init(document.getElementById('main'));
@@ -290,7 +311,7 @@ const myChart = echarts.init(document.getElementById('main'));
 // Specify the configuration items and data for the chart
 const option = {
     backgroundColor: '#ffffff',
-    color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
+    color: ["#50cbfd", "#b6ca51", "#1c7d7e"], //either keep this or series.color
     // title: {
     //     text: 'Stacked Line'
     // },
@@ -341,6 +362,7 @@ const option = {
             //     }
             // },
             stack: 'Total',
+            // color: '#50cbfd', // either keep this or option.color
             data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
         },
         {
@@ -348,6 +370,7 @@ const option = {
             type: 'line',
             areaStyle: {},
             stack: 'Total',
+            // color: '#b6ca51',
             data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
         },
         {
@@ -355,16 +378,20 @@ const option = {
             type: 'line',
             areaStyle: {},
             stack: 'Total',
+            // color: '#1c7d7e',
             data: [150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 34, 76]
         }
     ]
 };
 
-option.series.length = 0
-insertAxisData('xAxis', option, [1, 2, 3, 5, 6])
-insertSeriesData(option, 'John', 'line', true, true, [900, 1100, 1115])
-insertSeriesData(option, 'Shmulik', 'line', true, true, [901, 1101, 1111])
-insertSeriesData(option, 'Kobe', 'line', true, true, [1500, 1510, 1115])
+// removeSeriesData(option, 'קשה')
+// removeSeriesData(option, 'קל')
+// option.series.splice(1, 1);
+// option.series.length = 0
+// insertAxisData('xAxis', option, [1, 2, 3, 5, 6])
+// insertSeriesData(option, 'John', 'line', true, true, [900, 1100, 1115])
+// insertSeriesData(option, 'Shmulik', 'line', true, true, [901, 1101, 1111])
+// insertSeriesData(option, 'Kobe', 'line', true, true, [1500, 1510, 1115])
 
 
 // Display the chart using the configuration items and data just specified.
@@ -613,7 +640,7 @@ const option5 = {
             fontSize: 14,
         },
         boundaryGap: true,
-        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410,],
     },
     yAxis: {
         type: 'value',
@@ -629,21 +656,21 @@ const option5 = {
             //     }
             // },
             stack: 'Total',
-            data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+            data: [620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410, 620, 532, 401, 334, 20, 230, 210, 150, 232, 201, 154, 190, 330, 410,]
         },
         {
             name: 'בינוני',
             type: 'line',
             areaStyle: {},
             stack: 'Total',
-            data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
+            data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54,]
         },
         {
             name: 'קל',
             type: 'line',
             areaStyle: {},
             stack: 'Total',
-            data: [150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 34, 76]
+            data: [650, 432, 501, 654, 590, 430, 510, 540, 650, 532, 601, 454, 690, 630, 610, 64, 650, 532, 501, 454, 690, 730, 410, 345, 347, 760, 650, 432, 501, 654, 590, 430, 510, 540, 650, 532, 601, 454, 690, 630, 610, 64, 650, 532, 501, 454, 690, 730, 410, 345, 347, 760, 650, 432, 501, 654, 590, 430, 510, 540, 650, 532, 601, 454, 690, 630, 610, 64, 650, 532, 501, 454, 690, 730, 410, 345, 347, 760, 650, 432, 501, 654, 590, 430, 510, 540, 650, 532, 601, 454, 690, 630, 610, 64, 650, 532, 501, 454, 690, 730, 410, 345, 347, 760, 650, 432, 501, 654, 590, 430, 510, 540, 650, 532, 601, 454, 690, 630, 610, 64, 650, 532, 501, 454, 690, 730, 410, 345, 347, 760, 650, 432, 501, 654, 590, 430, 510, 540, 650, 532, 601, 454, 690, 630, 610, 64, 650, 532, 501, 454, 690, 730, 410, 345, 347, 760, 650, 432, 501, 654, 590, 430, 510, 540, 650, 532, 601, 454, 690, 630, 610, 64, 650, 532, 501, 454, 690, 730, 410, 345, 347, 760]
         }
     ]
 };
@@ -651,9 +678,53 @@ const option5 = {
 // Display the chart using the configuration items and data just specified.
 myChart5.setOption(option5);
 
+//////////
 
+///dates
 
+const getConsecutiveDatesArray = () => {
+    const newArray = []
+    let day = 1
+    let month = 1
+    let year = 2020
 
+    for (let i = 0; i < 1000; i++) {
+        let dateString = ""
 
+        if (day === 31) {
+            day = 1
+            month++
+        }
+        if (month === 13) {
+            month = 1
+            year++
+        }
 
+        if (day < 10)
+            dateString += "0"
+        dateString += day + '.'
+        if (month < 10)
+            dateString += "0"
+        dateString += month + '.' + year
+
+        newArray.push(dateString)
+        day++
+    }
+
+    return newArray
+}
+
+//////
+
+//series.data
+
+const getMockDataArray = (minVal, maxVal, length) => {
+    const newArray = []
+
+    for (let i = 0; i < length; i++) {
+        newArray.push(Math.floor(Math.random() * maxVal) + minVal)
+    }
+
+    return newArray
+}
 
