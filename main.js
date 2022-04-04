@@ -187,6 +187,8 @@ closeDivElementTrafficLight.addEventListener('click', (event) => {
 trafficLightInput.addEventListener('input', (event) => {
     trafficLightSettlementList.classList.remove('display-none')
     trafficLightInputChange()
+    if (trafficLightInput.value === "" || trafficLightSettlementList.children.length === 0)
+        trafficLightSettlementList.classList.add('display-none')
 })
 
 const vaccinationInput = document.querySelector('#vaccination-input')
