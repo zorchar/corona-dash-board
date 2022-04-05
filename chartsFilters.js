@@ -55,7 +55,7 @@ dropdownButtons.forEach(el => {
                 myChart.setOption(option);
             }
 
-            if (el.id === 'active-sick-age-and-vaccination-dropdown-button') {
+            if (el.id === 'residents-entering-israel-vaccination-dropdown-button') {
                 clearAxisData(option2, 'xAxis')
                 if (buttonString.includes('חודש אחרון'))
                     insertAxisData(option2, 'xAxis', createConsecutiveDatesArray(), 969, 999)
