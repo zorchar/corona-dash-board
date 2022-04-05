@@ -109,6 +109,14 @@ dropdownButtons.forEach(el => {
                 myChart4.setOption(option4);
             }
 
+            if (el.id === 'different-indexes-by-age-and-gender-dropdown-button') {
+                removeSeriesData(option5, 'גברים')
+                removeSeriesData(option5, 'נשים')
+                insertSeriesData(option5, 'גברים', createMockDataArrayPercents(12))
+                insertSeriesData(option5, 'נשים', createMockDataArrayPercents(12, true))
+                myChart5.setOption(option5);
+            }
+
             searchContainer.classList.toggle('display-none')
         })
 
@@ -117,30 +125,3 @@ dropdownButtons.forEach(el => {
         })
     }
 })
-
-// // first chart dropdown button
-
-// const numberHospitalizedDailyButton = document.querySelector('#number-hospitalzied-daily-dropdown-button')
-// const numberHospitalizedDailySearchContainer = document.querySelector('#number-hospitalized-daily-search-container')
-
-// numberHospitalizedDailyButton.addEventListener('click', () => {
-//     numberHospitalizedDailySearchContainer.classList.toggle('display-none')
-// })
-
-// numberHospitalizedDailyButton.parentNode.querySelectorAll('.accept-or-cancel-button')[0].addEventListener('click', () => {
-//     let buttonString = ""
-
-//     buttonString += getInputLabelsAsString(numberHospitalizedDailySearchContainer, '.input-checkbox')
-//     buttonString += getInputLabelsAsString(numberHospitalizedDailySearchContainer, '.input-radio')
-//     buttonString = buttonString.slice(0, -2)
-
-//     if (buttonString !== "")
-//         numberHospitalizedDailyButton.firstElementChild.innerText = buttonString
-//     numberHospitalizedDailySearchContainer.classList.toggle('display-none')
-// })
-
-// numberHospitalizedDailyButton.parentNode.querySelectorAll('.accept-or-cancel-button')[1].addEventListener('click', () => {
-//     numberHospitalizedDailySearchContainer.classList.toggle('display-none')
-// })
-
-///////////////////////////////////////////////////////////////////////////

@@ -57,6 +57,21 @@ const createMockDataArray = (minVal, maxVal, length) => {
     return newArray
 }
 
+const createMockDataArrayPercents = (length, isNegative = false) => {
+    const newArray = []
+
+    for (let i = 0; i < length; i++) {
+        const afterDot = Math.floor(Math.random() * (100 - 0) + 0) / 100
+        const beforeDot = Math.floor(Math.random() * (9 - 0) + 0) + afterDot
+        newArray.push(isNegative ? beforeDot * (-1) : beforeDot)
+    }
+
+    return newArray
+}
+
+
+
+
 // const insertSeriesData = (chartOption, name, type, isArea, isStack, colorString, data) => {
 //     const newObject = {}
 //     newObject.name = name

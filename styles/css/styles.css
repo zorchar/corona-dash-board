@@ -406,7 +406,6 @@ header {
   padding-right: 16px;
   padding-top: 16px;
   padding-bottom: 16px;
-  margin-top: 25px;
 }
 @media (max-width: 768px) {
   .overview__header {
@@ -1005,6 +1004,7 @@ body {
 
 .section-container {
   width: 100%;
+  margin-bottom: 25px;
 }
 @media (max-width: 768px) {
   .section-container {

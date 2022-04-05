@@ -4,7 +4,7 @@
     padding-right: 16px;
     padding-top: 16px;
     padding-bottom: 16px;
-    margin-top: 25px;
+    // margin-top: 25px;
 
     @media (max-width: 768px) {
         padding-right: 5px;
@@ -14,6 +14,11 @@
 }
 
 #overview {
+    // .overview__header {
+    //     border-top: 0;
+    //     margin-top: 0;
+    // }
+
     .info-square-container.last-7-days {
         height: fit-content;
         display: flex;

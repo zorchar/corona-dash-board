@@ -144,26 +144,19 @@ const myChart3 = echarts.init(document.getElementById('main3'));
 const option3 = {
     backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
-    // title: {
-    //     text: 'Stacked Line'
-    // },
     tooltip: {
-        trigger: 'axis'
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        },
+
     },
-    // legend: {
-    //     data: ['קשה', 'בינוני', 'קל']
-    // },
     grid: {
         left: '3%',
         right: '4%',
         bottom: '10%',
         containLabel: true
     },
-    // toolbox: {
-    //     feature: {
-    //         saveAsImage: {}
-    //     }
-    // },
     xAxis: {
         type: 'category',
         name: 'קבוצת גיל',
@@ -172,6 +165,9 @@ const option3 = {
             verticalAlign: 'top',
             padding: 18,
             fontSize: 14,
+        },
+        axisLabel: {
+            rotate: 45
         },
         boundaryGap: true,
         data: ['5-11', '12-15', '16-19', '20-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80-89', '90+'],
@@ -262,18 +258,13 @@ const myChart5 = echarts.init(document.getElementById('main5'));
 
 // Specify the configuration items and data for the chart
 const option5 = {
+    color: ["#50cbfd", "#b6ca51",],
     tooltip: {
         trigger: 'axis',
-        axisPointer: {
-            type: 'shadow'
-        },
         valueFormatter: function (value, index) {
-            return Math.abs(parseInt(value));
+            return Math.abs(parseFloat(value));
         },
     },
-    // legend: {
-    //     data: ['Profit', 'Expenses', 'Income']
-    // },
     grid: {
         left: '3%',
         right: '4%',
@@ -282,22 +273,28 @@ const option5 = {
     },
     xAxis: [
         {
+            name: '% סה"כ',
             type: 'value',
+            min: -30,
+            max: 30,
             axisLabel: {
                 formatter: function (value, index) {
-                    return Math.abs(parseInt(value));
+                    return Math.abs(parseFloat(value));
                 },
-                rotate: 45
             },
         }
     ],
     yAxis: [
         {
+            name: 'קבוצת גיל',
             type: 'category',
             axisTick: {
                 show: false
             },
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            nameTextStyle: {
+                align: 'right'
+            },
+            data: ['0-9', '9-19', '20-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80-89', '90+']
         }
     ],
     series: [
@@ -322,7 +319,7 @@ const option5 = {
                 show: true,
                 position: 'left',
                 formatter: function (value, index) {
-                    return Math.abs(parseInt(value.value));
+                    return Math.abs(parseFloat(value.value));
                 },
             },
             emphasis: {
@@ -340,6 +337,8 @@ myChart5.setOption(option5);
 
 
 ////////////// keep for maybe for now
+
+/// charts.js?
 
 // const ctx = document.getElementById('my-chart').getContext('2d');
 // const tooltipLine = {
@@ -476,7 +475,7 @@ myChart5.setOption(option5);
 // console.log(myChart);
 
 
-
+/// highcharts
 
 
 // A point click event that uses the Renderer to draw a label next to the point
