@@ -87,26 +87,15 @@ const myChart2 = echarts.init(document.getElementById('main2'));
 const option2 = {
     backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51", "#1c7d7e"],
-    // title: {
-    //     text: 'Stacked Line'
-    // },
     tooltip: {
         trigger: 'axis'
     },
-    // legend: {
-    //     data: ['קשה', 'בינוני', 'קל']
-    // },
     grid: {
         left: '3%',
         right: '4%',
         bottom: '10%',
         containLabel: true
     },
-    // toolbox: {
-    //     feature: {
-    //         saveAsImage: {}
-    //     }
-    // },
     xAxis: {
         type: 'category',
         name: 'תאריך',
@@ -128,24 +117,19 @@ const option2 = {
     },
     series: [
         {
-            name: 'קשה',
+            name: 'לא מחוסנים',
             type: 'line',
-            // itemStyle: {
-            //     color: function () {
-            //         return '#fff'
-            //     }
-            // },
             data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
         },
         {
-            name: 'בינוני',
+            name: 'מחוסנים ללא תוקף',
             type: 'line',
             data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
         },
         {
-            name: 'קל',
+            name: 'מחוסנים',
             type: 'line',
-            data: [150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 34, 76]
+            data: [1150, 1232, 1201, 1154, 1190, 1330, 1410, 954, 1150, 1232, 1201, 1154, 1190, 1330, 1410, 1114, 1150, 1232, 1201, 1154, 1190, 1330, 1410, 1154, 1134, 1176]
         }
     ]
 };
@@ -182,7 +166,7 @@ const option3 = {
     // },
     xAxis: {
         type: 'category',
-        name: 'תאריך',
+        name: 'קבוצת גיל',
         nameLocation: 'center',
         nameTextStyle: {
             verticalAlign: 'top',
@@ -190,29 +174,28 @@ const option3 = {
             fontSize: 14,
         },
         boundaryGap: true,
-        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        data: ['5-11', '12-15', '16-19', '20-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80-89', '90+'],
     },
     yAxis: {
         type: 'value',
+        name: 'מספר\nחולים\nפעילים',
+        nameTextStyle: {
+            align: 'right'
+        }
     },
     series: [
         {
-            name: 'קשה',
+            name: 'לא מחוסנים',
             type: 'bar',
-            // itemStyle: {
-            //     color: function () {
-            //         return '#fff'
-            //     }
-            // },
             data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
         },
         {
-            name: 'בינוני',
+            name: 'מחוסנים ללא תוקף',
             type: 'bar',
             data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54]
         },
         {
-            name: 'קל',
+            name: 'מחוסנים',
             type: 'bar',
             data: [150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 34, 76]
         }
@@ -229,26 +212,15 @@ const myChart4 = echarts.init(document.getElementById('main4'));
 const option4 = {
     backgroundColor: '#ffffff',
     color: ["#1c7d7e", "#ff7d67"],
-    // title: {
-    //     text: 'Stacked Line'
-    // },
     tooltip: {
         trigger: 'axis'
     },
-    // legend: {
-    //     data: ['קשה', 'בינוני', 'קל']
-    // },
     grid: {
         left: '3%',
         right: '4%',
         bottom: '10%',
         containLabel: true
     },
-    // toolbox: {
-    //     feature: {
-    //         saveAsImage: {}
-    //     }
-    // },
     xAxis: {
         type: 'category',
         name: 'תאריך',
@@ -263,20 +235,19 @@ const option4 = {
     },
     yAxis: {
         type: 'value',
+        name: 'מספר\nנפטרים',
+        nameTextStyle: {
+            align: 'right'
+        }
     },
     series: [
         {
-            name: 'קשה',
+            name: 'נפטרים',
             type: 'bar',
-            // itemStyle: {
-            //     color: function () {
-            //         return '#fff'
-            //     }
-            // },
             data: [220, 132, 101, 134, 90, 230, 210, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 21, 19, 17, 14]
         },
         {
-            name: 'בינוני',
+            name: 'ממוצע נע נפטרים',
             type: 'line',
             data: [220, 182, 191, 234, 290, 330, 310, 150, 232, 201, 154, 190, 330, 410, 54, 150, 232, 201, 154, 190, 330, 410, 54, 53, 51, 49, 33]
         },

@@ -32,11 +32,13 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/a7a77a6418.js" crossorigin="anonymous"></script>
     <script src="./node_modules/echarts/dist/echarts.js"></script>
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
     <script src="./settlementData.js" defer></script>
     <script src="./main.js" defer></script>
     <script src="./chartsDataFuncs.js" defer></script>
     <script src="./chartsFilters.js" defer></script>
     <script src="./chartsData.js" defer></script>
+    <script src="./jscharting.js" defer></script>
     <script src="./scrollBar.js" defer></script>
 </head>
 
@@ -683,15 +685,15 @@
                                 <div class="legend-container">
                                     <div class="legend-item-container">
                                         <div class="small-circle third-bar-color"></div>
-                                        <h4>קשה</h4>
+                                        <h4>לא מחוסנים</h4>
                                     </div>
                                     <div class="legend-item-container">
                                         <div class="small-circle second-bar-color"></div>
-                                        <h4>בינוני</h4>
+                                        <h4>מחוסנים ללא תוקף</h4>
                                     </div>
                                     <div class="legend-item-container">
                                         <div class="small-circle first-bar-color"></div>
-                                        <h4>קל</h4>
+                                        <h4>מחוסנים</h4>
                                     </div>
                                 </div>
                                 <div id="main2"></div>
@@ -750,8 +752,8 @@
                                 </div>
                                 <div class="search-bar-container">
                                     <button class="dropdown-button"
-                                        id="active-sick-age-and-vaccination-dropdown-button">
-                                        <span>קשה, בינוני, קל חודש אחרון</span>
+                                        id="vaccination-influence-on-sickness-dropdown-button">
+                                        <span>חולים פעילים, ל-100 אלף תושבים</span>
                                         <svg class="angle-down" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                             role="img" width="1em" height="1em" viewBox="0 0 24 24">
                                             <path
@@ -760,44 +762,30 @@
                                         </svg>
                                     </button>
                                     <div class="search-bar-container secondary-search-bar-container display-none"
-                                        id="active-sick-age-and-vaccination-search-container">
+                                        id="vaccination-influence-on-sickness-search-container">
                                         <div class="search-bar-options">
                                             <form action="" onsubmit="return false">
-                                                <h4>מצב מאושפזים</h4>
-                                                <div class="input-and-text-container">
-                                                    <input class="input-checkbox" type="checkbox" checked>קשה
-                                                </div>
-                                                <div class="input-and-text-container">
-                                                    <input class="input-checkbox" type="checkbox" checked>בינוני
-                                                </div>
-                                                <div class="input-and-text-container">
-                                                    <input class="input-checkbox" type="checkbox" checked>קל
-                                                </div>
-                                                <h4>זמן</h4>
+                                                <h4>משתנה</h4>
                                                 <div class="input-and-text-container">
                                                     <input class="input-radio" type="radio"
-                                                        name="radio-number-hospitalzied-daily">עד עכשיו
+                                                        name="radio-active-sick-age-and-vaccination1" checked>חולים
+                                                    פעילים
                                                 </div>
                                                 <div class="input-and-text-container">
                                                     <input class="input-radio" type="radio"
-                                                        name="radio-number-hospitalzied-daily">שנה
+                                                        name="radio-active-sick-age-and-vaccination1">חולים קשה
+                                                </div>
+                                                <h4>סוג ניתוח</h4>
+                                                <div class="input-and-text-container">
+                                                    <input class="input-radio" type="radio"
+                                                        name="radio-active-sick-age-and-vaccination2" checked>מספר מוחלט
                                                 </div>
                                                 <div class="input-and-text-container">
                                                     <input class="input-radio" type="radio"
-                                                        name="radio-number-hospitalzied-daily">6 חודשים
-                                                </div>
-                                                <div class="input-and-text-container">
-                                                    <input class="input-radio" type="radio"
-                                                        name="radio-number-hospitalzied-daily">3 חודשים
-                                                </div>
-                                                <div class="input-and-text-container">
-                                                    <input class="input-radio" type="radio"
-                                                        name="radio-number-hospitalzied-daily" checked>חודש
-                                                    אחרון
+                                                        name="radio-active-sick-age-and-vaccination2">ל-100 אלף תושבים
                                                 </div>
                                             </form>
-                                        </div>
-                                        <button class="accept-or-cancel-button">
+                                        </div> <button class="accept-or-cancel-button">
                                             אישור</button>
                                         <button class="accept-or-cancel-button">
                                             ביטול</button>
@@ -806,15 +794,15 @@
                                 <div class="legend-container">
                                     <div class="legend-item-container">
                                         <div class="small-circle third-bar-color"></div>
-                                        <h4>קשה</h4>
+                                        <h4>לא מחוסנים</h4>
                                     </div>
                                     <div class="legend-item-container">
                                         <div class="small-circle second-bar-color"></div>
-                                        <h4>בינוני</h4>
+                                        <h4>מחוסנים ללא תוקף</h4>
                                     </div>
                                     <div class="legend-item-container">
                                         <div class="small-circle first-bar-color"></div>
-                                        <h4>קל</h4>
+                                        <h4>מחוסנים</h4>
                                     </div>
                                 </div>
                                 <div id="main3"></div>
@@ -868,7 +856,7 @@
                                 </div>
                                 <div class="search-bar-container">
                                     <button class="dropdown-button" id="passed-away-daily-dropdown-button">
-                                        <span>קשה, בינוני, קל חודש אחרון</span>
+                                        <span>חודש אחרון</span>
                                         <svg class="angle-down" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                             role="img" width="1em" height="1em" viewBox="0 0 24 24">
                                             <path
@@ -880,16 +868,6 @@
                                         id="passed-away-daily-search-container">
                                         <div class="search-bar-options">
                                             <form action="" onsubmit="return false">
-                                                <h4>מצב מאושפזים</h4>
-                                                <div class="input-and-text-container">
-                                                    <input class="input-checkbox" type="checkbox" checked>קשה
-                                                </div>
-                                                <div class="input-and-text-container">
-                                                    <input class="input-checkbox" type="checkbox" checked>בינוני
-                                                </div>
-                                                <div class="input-and-text-container">
-                                                    <input class="input-checkbox" type="checkbox" checked>קל
-                                                </div>
                                                 <h4>זמן</h4>
                                                 <div class="input-and-text-container">
                                                     <input class="input-radio" type="radio"
@@ -923,15 +901,11 @@
                                 <div class="legend-container">
                                     <div class="legend-item-container">
                                         <div class="small-circle third-bar-color"></div>
-                                        <h4>קשה</h4>
+                                        <h4>נפטרים</h4>
                                     </div>
                                     <div class="legend-item-container">
-                                        <div class="small-circle second-bar-color"></div>
-                                        <h4>בינוני</h4>
-                                    </div>
-                                    <div class="legend-item-container">
-                                        <div class="small-circle first-bar-color"></div>
-                                        <h4>קל</h4>
+                                        <div class="small-circle background-special-red"></div>
+                                        <h4>ממוצע נע נפטרים</h4>
                                     </div>
                                 </div>
                                 <div id="main4"></div>
@@ -1087,350 +1061,351 @@
                                         <h4>קל</h4>
                                     </div>
                                 </div>
+                                <!-- <div id="chartDiv" style="max-width: 740px;margin: 0px auto"> -->
                                 <div id="main5"></div>
                             </div>
                         </div>
-                        <div class="info-square-container main-info-square">
-                            <div class="info-square">
-                                <div class="chart-placeholder">
-                                    <h1>chart placeholder</h1>
-                                </div>
+                    </div>
+                    <div class="info-square-container main-info-square">
+                        <div class="info-square">
+                            <div class="chart-placeholder">
+                                <h1>chart placeholder</h1>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+    </div>
 
 
 
-            <div id="recurring-sickness-and-recovery" class="section-container">
-                <h1 class="overview__header">תחלואה חוזרת ומחלימים</h1>
-                <div class="info-square-container">
-                    <div class="info-squares-container">
-                        <div class="info-square-container main-info-square">
-                            <div class="info-square">
-                                <div class="chart-placeholder">
-                                    <h1>chart placeholder</h1>
-                                </div>
-                            </div>
+    <div id="recurring-sickness-and-recovery" class="section-container">
+        <h1 class="overview__header">תחלואה חוזרת ומחלימים</h1>
+        <div class="info-square-container">
+            <div class="info-squares-container">
+                <div class="info-square-container main-info-square">
+                    <div class="info-square">
+                        <div class="chart-placeholder">
+                            <h1>chart placeholder</h1>
                         </div>
-                        <div class="info-square-container main-info-square">
-                            <div class="info-square">
-                                <div class="chart-placeholder">
-                                    <h1>chart placeholder</h1>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="info-square-container main-info-square">
+                    <div class="info-square">
+                        <div class="chart-placeholder">
+                            <h1>chart placeholder</h1>
                         </div>
-                        <div class="info-square-container main-info-square">
-                            <div class="info-square">
-                                <div class="chart-placeholder">
-                                    <h1>chart placeholder</h1>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="info-square-container main-info-square">
+                    <div class="info-square">
+                        <div class="chart-placeholder">
+                            <h1>chart placeholder</h1>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
 
-            <div id="vaccination-of-population" class="section-container">
-                <h1 class="overview__header">התחסנות לפי ישובים</h1>
-                <div class="info-square-container">
-                    <div class="info-squares-container">
-                        <div class="info-square-container main-info-square">
-                            <div class="info-square">
-                                <div class="chart-placeholder">
-                                    <h1>chart placeholder</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-square-container main-info-square">
-                            <div class="info-square">
-                                <div class="chart-placeholder">
-                                    <h1>chart placeholder</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-square-container main-info-square">
-                            <div class="info-square">
-                                <div class="chart-placeholder">
-                                    <h1>chart placeholder</h1>
-                                </div>
-                            </div>
+    <div id="vaccination-of-population" class="section-container">
+        <h1 class="overview__header">התחסנות לפי ישובים</h1>
+        <div class="info-square-container">
+            <div class="info-squares-container">
+                <div class="info-square-container main-info-square">
+                    <div class="info-square">
+                        <div class="chart-placeholder">
+                            <h1>chart placeholder</h1>
                         </div>
                     </div>
                 </div>
-                <div class="info-square-container larger-container">
-                    <div class="info-square first-info-square">
-                        <button class="dotted-hamburger">
-                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
-                                height="1em" viewBox="0 0 16 16">
-                                <path
-                                    d="M9.5 13a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0z">
-                                </path>
-                            </svg>
+                <div class="info-square-container main-info-square">
+                    <div class="info-square">
+                        <div class="chart-placeholder">
+                            <h1>chart placeholder</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-square-container main-info-square">
+                    <div class="info-square">
+                        <div class="chart-placeholder">
+                            <h1>chart placeholder</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info-square-container larger-container">
+            <div class="info-square first-info-square">
+                <button class="dotted-hamburger">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0z">
+                        </path>
+                    </svg>
+                </button>
+                <div class="info-square__main-header">
+                    <h3 class="info-square-main-header__headline">התחסנות לפי ישובים</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="search-bar-container">
+                    <button id="vaccine-by-settlement-button" class="dropdown-button">
+                        <span>כלל היישובים</span>
+                        <svg class="angle-down" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                            width="1em" height="1em" viewBox="0 0 24 24">
+                            <path
+                                d="M12 15.5a1 1 0 0 1-.71-.29l-4-4a1 1 0 1 1 1.42-1.42L12 13.1l3.3-3.18a1 1 0 1 1 1.38 1.44l-4 3.86a1 1 0 0 1-.68.28z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="search-bar-container secondary-search-bar-container">
+                        <div id="secondary-search-bar__secondary-div" class="display-none">
+                            <input id="vaccination-input" type="text" placeholder="חיפוש ישוב">
+                            <div id="secondary-div__close-div-vaccination" class="display-none">x</div>
+                            <div class="includes-settlement-list"></div>
+                            <div id="secondary-search-bar__accept-button" class="accept-or-cancel-button">
+                                אישור</div>
+                            <div id="secondary-search-bar__cancel-button" class="accept-or-cancel-button">
+                                ביטול</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="grid first-grid">
+                    <div class="grid-cell">
+                        <button class="vaccination-grid-button" name="settlement">
+                            <div class="grid-cell__text">ישוב</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display-none"></i>
                         </button>
-                        <div class="info-square__main-header">
-                            <h3 class="info-square-main-header__headline">התחסנות לפי ישובים</h3>
+                    </div>
+                    <div class="grid-cell">
+                        <button class="vaccination-grid-button" name="firstShotPercentage">
+                            <div class="grid-cell__text">% מתחסנים מנה ראשונה</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display"></i>
+                        </button>
+                    </div>
+                    <div class="grid-cell">
+                        <button class="vaccination-grid-button" name="secondShotPercentage">
+                            <div class="grid-cell__text">% מתחסנים מנה שנייה</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display-none"></i>
+                        </button>
+                    </div>
+                    <div class="grid-cell">
+                        <button class="vaccination-grid-button" name="thirdShotPercentage">
+                            <div class="grid-cell__text">% מתחסנים מנה שלישית</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display-none"></i>
+                        </button>
+                    </div>
+                    <div class="grid-cell">
+                        <button class="vaccination-grid-button" name="activeSickPerTenThousand">
+                            <div class="grid-cell__text">חולים פעילים לכל 10,000 נפש</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display-none"></i>
+                        </button>
+                    </div>
+                    <div class="grid-cell">
+                        <button class="vaccination-grid-button" name="dailyCalculatedGrade">
+                            <div class="grid-cell__text">ציון יומי מחושב</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display-none"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid-ltr-container">
+                    <div id="vaccination-table" class="grid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="traffic-light-in-settlements" class="section-container">
+        <h1 class="overview__header">רמזור ביישובים</h1>
+        <div class="info-square-container larger-container">
+            <div class="info-square first-info-square">
+                <div class="traffic-light-upper-division">
+                    <div class="upper-division__right-side">
+                        <div class="flex-box column wrap margin-left-auto">
+                            <div class="info-square__main-header fit-content">
+                                <h3 class="info-square-main-header__headline">תכנית הרמזור</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+                                    height="1em" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4>* מרכיבי ציון הרמזור (לפי נתוני השבוע האחרון)</h4>
+                        </div>
+                        <div class="data-date flex-box">
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
                                 height="1em" viewBox="0 0 24 24">
                                 <path
                                     d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
                                 </path>
                             </svg>
+                            הנתונים נכונים לתאריך 15/03/2022
                         </div>
-                        <div class="search-bar-container">
-                            <button id="vaccine-by-settlement-button" class="dropdown-button">
-                                <span>כלל היישובים</span>
-                                <svg class="angle-down" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
-                                    width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 15.5a1 1 0 0 1-.71-.29l-4-4a1 1 0 1 1 1.42-1.42L12 13.1l3.3-3.18a1 1 0 1 1 1.38 1.44l-4 3.86a1 1 0 0 1-.68.28z">
-                                    </path>
-                                </svg>
-                            </button>
-                            <div class="search-bar-container secondary-search-bar-container">
-                                <div id="secondary-search-bar__secondary-div" class="display-none">
-                                    <input id="vaccination-input" type="text" placeholder="חיפוש ישוב">
-                                    <div id="secondary-div__close-div-vaccination" class="display-none">x</div>
-                                    <div class="includes-settlement-list"></div>
-                                    <div id="secondary-search-bar__accept-button" class="accept-or-cancel-button">
-                                        אישור</div>
-                                    <div id="secondary-search-bar__cancel-button" class="accept-or-cancel-button">
-                                        ביטול</div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="grid first-grid">
-                            <div class="grid-cell">
-                                <button class="vaccination-grid-button" name="settlement">
-                                    <div class="grid-cell__text">ישוב</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display-none"></i>
-                                </button>
-                            </div>
-                            <div class="grid-cell">
-                                <button class="vaccination-grid-button" name="firstShotPercentage">
-                                    <div class="grid-cell__text">% מתחסנים מנה ראשונה</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display"></i>
-                                </button>
-                            </div>
-                            <div class="grid-cell">
-                                <button class="vaccination-grid-button" name="secondShotPercentage">
-                                    <div class="grid-cell__text">% מתחסנים מנה שנייה</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display-none"></i>
-                                </button>
-                            </div>
-                            <div class="grid-cell">
-                                <button class="vaccination-grid-button" name="thirdShotPercentage">
-                                    <div class="grid-cell__text">% מתחסנים מנה שלישית</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display-none"></i>
-                                </button>
-                            </div>
-                            <div class="grid-cell">
-                                <button class="vaccination-grid-button" name="activeSickPerTenThousand">
-                                    <div class="grid-cell__text">חולים פעילים לכל 10,000 נפש</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display-none"></i>
-                                </button>
-                            </div>
-                            <div class="grid-cell">
-                                <button class="vaccination-grid-button" name="dailyCalculatedGrade">
-                                    <div class="grid-cell__text">ציון יומי מחושב</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display-none"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="grid-ltr-container">
-                            <div id="vaccination-table" class="grid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div id="traffic-light-in-settlements" class="section-container">
-                <h1 class="overview__header">רמזור ביישובים</h1>
-                <div class="info-square-container larger-container">
-                    <div class="info-square first-info-square">
-                        <div class="traffic-light-upper-division">
-                            <div class="upper-division__right-side">
-                                <div class="flex-box column wrap margin-left-auto">
-                                    <div class="info-square__main-header fit-content">
-                                        <h3 class="info-square-main-header__headline">תכנית הרמזור</h3>
-                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
-                                            width="1em" height="1em" viewBox="0 0 24 24">
-                                            <path
-                                                d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
-                                            </path>
-                                        </svg>
+                        <div class="flex-box">
+                            <div id="traffic-light-search-bar">
+                                <div class="flex-box align-items-center relative">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input id="traffic-light-input" type="text" placeholder="חיפוש ישוב">
+                                    <div id="secondary-div__close-div-traffic-light" class="display-none">x
                                     </div>
-                                    <h4>* מרכיבי ציון הרמזור (לפי נתוני השבוע האחרון)</h4>
                                 </div>
-                                <div class="data-date flex-box">
-                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
-                                        height="1em" viewBox="0 0 24 24">
+                                <div id="includes-settlement-list-traffic-light" class="display-none"></div>
+                            </div>
+                            <div class="svg-container-outer">
+                                <div class="svg-container-inner">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                                        viewBox="0 0 24 24" class="eva eva-share-outline" fill="currentColor">
                                         <path
-                                            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0zm-1-7a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
+                                            d="M18 15a3 3 0 0 0-2.1.86L8 12.34V12v-.33l7.9-3.53A3 3 0 1 0 15 6v.34L7.1 9.86a3 3 0 1 0 0 4.28l7.9 3.53V18a3 3 0 1 0 3-3zm0-10a1 1 0 1 1-1 1 1 1 0 0 1 1-1zM5 13a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm13 6a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
                                         </path>
                                     </svg>
-                                    הנתונים נכונים לתאריך 15/03/2022
-                                </div>
-                                <div class="flex-box">
-                                    <div id="traffic-light-search-bar">
-                                        <div class="flex-box align-items-center relative">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                            <input id="traffic-light-input" type="text" placeholder="חיפוש ישוב">
-                                            <div id="secondary-div__close-div-traffic-light" class="display-none">x
-                                            </div>
-                                        </div>
-                                        <div id="includes-settlement-list-traffic-light" class="display-none"></div>
-                                    </div>
-                                    <div class="svg-container-outer">
-                                        <div class="svg-container-inner">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                                                viewBox="0 0 24 24" class="eva eva-share-outline" fill="currentColor">
-                                                <path
-                                                    d="M18 15a3 3 0 0 0-2.1.86L8 12.34V12v-.33l7.9-3.53A3 3 0 1 0 15 6v.34L7.1 9.86a3 3 0 1 0 0 4.28l7.9 3.53V18a3 3 0 1 0 3-3zm0-10a1 1 0 1 1-1 1 1 1 0 0 1 1-1zM5 13a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm13 6a1 1 0 1 1 1-1 1 1 0 0 1-1 1z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="svg-container-outer second-svg-container-outer">
-                                        <div class="svg-container-inner">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                                                viewBox="0 0 24 24" class="eva eva-arrow-downward-outline"
-                                                fill="currentColor">
-                                                <path
-                                                    d="M18.77 13.36a1 1 0 0 0-1.41-.13L13 16.86V5a1 1 0 0 0-2 0v11.86l-4.36-3.63a1 1 0 1 0-1.28 1.54l6 5 .15.09.13.07a1 1 0 0 0 .72 0l.13-.07.15-.09 6-5a1 1 0 0 0 .13-1.41z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="upper-division__left-side">
-                                <div class="left-side-div">
-                                    <div class="left-side-div__color background-red"></div>
-                                    <div class="left-side-div__text">
-                                        <h3 class="color-in-text">אדום</h3>
-                                        <h4 class="grading-text">ציון 7.5 ומעלה</h4>
-                                    </div>
-                                </div>
-                                <div class="left-side-div">
-                                    <div class="left-side-div__color background-orange"></div>
-                                    <div class="left-side-div__text">
-                                        <h3 class="color-in-text">כתום</h3>
-                                        <h4 class="grading-text">ציון בין 6 ל - 7.5</h4>
-                                    </div>
-                                </div>
-                                <div class="left-side-div">
-                                    <div class="left-side-div__color background-yellow"></div>
-                                    <div class="left-side-div__text">
-                                        <h3 class="color-in-text">צהוב</h3>
-                                        <h4 class="grading-text">ציון בין 4.5 ל - 6</h4>
-                                    </div>
-                                </div>
-                                <div class="left-side-div">
-                                    <div class="left-side-div__color background-light-green"></div>
-                                    <div class="left-side-div__text">
-                                        <h3 class="color-in-text">ירוק</h3>
-                                        <h4 class="grading-text">ציון עד 4.5</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid first-grid">
-                            <div class="grid-cell">
-                                <button class="traffic-light-grid-button" name="settlement">
-                                    <div class="grid-cell__text">ישוב</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display-none"></i>
-                                </button>
-                            </div>
-                            <div class="grid-cell">
-                                <button class="traffic-light-grid-button" name="dailyCalculatedGrade">
-                                    <div class="grid-cell__text">ציון וצבע יומי</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display"></i>
-                                </button>
-                            </div>
-                            <div class="grid-cell">
-                                <button class="traffic-light-grid-button" name="newSickPerTenThousand">
-                                    <div class="grid-cell__text">חולים חדשים לכל 10,000 נפש *</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display-none"></i>
-                                </button>
-                            </div>
-                            <div class="grid-cell">
-                                <button class="traffic-light-grid-button" name="positiveTestsPercantage">
-                                    <div class="grid-cell__text">% הבדיקות החיוביות *</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display-none"></i>
-                                </button>
-                            </div>
-                            <div class="grid-cell">
-                                <button class="traffic-light-grid-button" name="verifiedChangeRatio">
-                                    <div class="grid-cell__text">שיעור שינוי מאומתים *</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display-none"></i>
-                                </button>
-                            </div>
-                            <div class="grid-cell">
-                                <button class="traffic-light-grid-button" name="activeSick">
-                                    <div class="grid-cell__text">חולים פעילים</div>
-                                    <i class="fa-solid fa-sort-up display-none"></i>
-                                    <i class="fa-solid fa-sort-down display-none"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="grid-ltr-container">
-                            <div id="traffic-light-table" class="grid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div id="world-of-data" class="section-container">
-                <h1 class="overview__header">עולם הדאטה</h1>
-                <div class="info-square-container">
-                    <div class="info-squares-container">
-                        <div class="info-square-container main-info-square">
-                            <div class="info-square">
-                                <div class="chart-placeholder">
-                                    <h1>chart placeholder</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-square-container main-info-square">
-                            <div class="info-square">
-                                <div class="chart-placeholder">
-                                    <h1>chart placeholder</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-square-container main-info-square">
-                            <div class="info-square">
-                                <div class="chart-placeholder">
-                                    <h1>chart placeholder</h1>
+                            <div class="svg-container-outer second-svg-container-outer">
+                                <div class="svg-container-inner">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                                        viewBox="0 0 24 24" class="eva eva-arrow-downward-outline" fill="currentColor">
+                                        <path
+                                            d="M18.77 13.36a1 1 0 0 0-1.41-.13L13 16.86V5a1 1 0 0 0-2 0v11.86l-4.36-3.63a1 1 0 1 0-1.28 1.54l6 5 .15.09.13.07a1 1 0 0 0 .72 0l.13-.07.15-.09 6-5a1 1 0 0 0 .13-1.41z">
+                                        </path>
+                                    </svg>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="upper-division__left-side">
+                        <div class="left-side-div">
+                            <div class="left-side-div__color background-red"></div>
+                            <div class="left-side-div__text">
+                                <h3 class="color-in-text">אדום</h3>
+                                <h4 class="grading-text">ציון 7.5 ומעלה</h4>
+                            </div>
+                        </div>
+                        <div class="left-side-div">
+                            <div class="left-side-div__color background-orange"></div>
+                            <div class="left-side-div__text">
+                                <h3 class="color-in-text">כתום</h3>
+                                <h4 class="grading-text">ציון בין 6 ל - 7.5</h4>
+                            </div>
+                        </div>
+                        <div class="left-side-div">
+                            <div class="left-side-div__color background-yellow"></div>
+                            <div class="left-side-div__text">
+                                <h3 class="color-in-text">צהוב</h3>
+                                <h4 class="grading-text">ציון בין 4.5 ל - 6</h4>
+                            </div>
+                        </div>
+                        <div class="left-side-div">
+                            <div class="left-side-div__color background-light-green"></div>
+                            <div class="left-side-div__text">
+                                <h3 class="color-in-text">ירוק</h3>
+                                <h4 class="grading-text">ציון עד 4.5</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid first-grid">
+                    <div class="grid-cell">
+                        <button class="traffic-light-grid-button" name="settlement">
+                            <div class="grid-cell__text">ישוב</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display-none"></i>
+                        </button>
+                    </div>
+                    <div class="grid-cell">
+                        <button class="traffic-light-grid-button" name="dailyCalculatedGrade">
+                            <div class="grid-cell__text">ציון וצבע יומי</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display"></i>
+                        </button>
+                    </div>
+                    <div class="grid-cell">
+                        <button class="traffic-light-grid-button" name="newSickPerTenThousand">
+                            <div class="grid-cell__text">חולים חדשים לכל 10,000 נפש *</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display-none"></i>
+                        </button>
+                    </div>
+                    <div class="grid-cell">
+                        <button class="traffic-light-grid-button" name="positiveTestsPercantage">
+                            <div class="grid-cell__text">% הבדיקות החיוביות *</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display-none"></i>
+                        </button>
+                    </div>
+                    <div class="grid-cell">
+                        <button class="traffic-light-grid-button" name="verifiedChangeRatio">
+                            <div class="grid-cell__text">שיעור שינוי מאומתים *</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display-none"></i>
+                        </button>
+                    </div>
+                    <div class="grid-cell">
+                        <button class="traffic-light-grid-button" name="activeSick">
+                            <div class="grid-cell__text">חולים פעילים</div>
+                            <i class="fa-solid fa-sort-up display-none"></i>
+                            <i class="fa-solid fa-sort-down display-none"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid-ltr-container">
+                    <div id="traffic-light-table" class="grid">
+                    </div>
                 </div>
             </div>
-        </main>
+        </div>
+    </div>
+
+
+
+    <div id="world-of-data" class="section-container">
+        <h1 class="overview__header">עולם הדאטה</h1>
+        <div class="info-square-container">
+            <div class="info-squares-container">
+                <div class="info-square-container main-info-square">
+                    <div class="info-square">
+                        <div class="chart-placeholder">
+                            <h1>chart placeholder</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-square-container main-info-square">
+                    <div class="info-square">
+                        <div class="chart-placeholder">
+                            <h1>chart placeholder</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-square-container main-info-square">
+                    <div class="info-square">
+                        <div class="chart-placeholder">
+                            <h1>chart placeholder</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
     </div>
 </body>
 

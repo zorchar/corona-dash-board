@@ -102,6 +102,10 @@ body {
     background: red; //temp
 }
 
+.background-special-red {
+    background: #ff7d67;
+}
+
 .background-red {
     background: #fa9e8f;
 }
@@ -266,6 +270,19 @@ svg {
 }
 
 #main5 {
+    // width: 300px;
+    // height: 300px;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--secondary-bg-color);
+
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+#chartDiv {
     // width: 300px;
     // height: 300px;
     width: 100% !important;
