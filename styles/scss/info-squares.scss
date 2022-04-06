@@ -68,6 +68,20 @@
         min-width: 20px;
         height: 20px;
         background: var(--secondary-bg-color);
+
+        &:hover {
+            +div {
+                display: block;
+            }
+        }
+
+        +div {
+            display: none;
+            position: absolute;
+            left: 5%;
+            top: 25%;
+        }
+
     }
 
     @media (min-width: 768px) {
@@ -95,7 +109,7 @@
 
 .info-square__secondary-info {
     display: flex;
-    align-items: center;
+    align-items: top;
     width: 100%;
     background: var(--secondary-bg-color);
 

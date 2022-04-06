@@ -289,7 +289,6 @@ const option5 = {
                 padding: 18,
                 fontSize: 14,
             },
-            boundaryGap: true,
             axisLabel: {
                 formatter: function (value, index) {
                     return Math.abs(parseFloat(value));

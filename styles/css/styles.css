@@ -196,6 +196,15 @@ header {
   height: 20px;
   background: var(--secondary-bg-color);
 }
+.info-square__main-header svg:hover + div {
+  display: block;
+}
+.info-square__main-header svg + div {
+  display: none;
+  position: absolute;
+  left: 5%;
+  top: 25%;
+}
 @media (min-width: 768px) {
   .info-square__main-header {
     margin-bottom: 8px;
@@ -219,7 +228,7 @@ header {
 
 .info-square__secondary-info {
   display: flex;
-  align-items: center;
+  align-items: top;
   width: 100%;
   background: var(--secondary-bg-color);
 }
