@@ -317,6 +317,18 @@ themeButtonLight.addEventListener('click', () => {
     themeButtonDark.classList.remove('display-none')
     themeButtonLight.classList.add('display-none')
     document.querySelector('html').classList.add('dark-mode')
+    option.backgroundColor = '#384f5f'
+    myChart.setOption(option);
+    option2.backgroundColor = '#384f5f'
+    myChart2.setOption(option2);
+    option3.backgroundColor = '#384f5f'
+    myChart3.setOption(option3);
+    option4.backgroundColor = '#384f5f'
+    myChart4.setOption(option4);
+    option5.backgroundColor = '#384f5f'
+    myChart5.setOption(option5);
+
+
     // document.documentElement.style.setProperty
     //     ('--main-bg-color', '#486579')
     // document.documentElement.style.setProperty
@@ -344,6 +356,17 @@ themeButtonDark.addEventListener('click', () => {
     themeButtonDark.classList.add('display-none')
     themeButtonLight.classList.remove('display-none')
     document.querySelector('html').classList.remove('dark-mode')
+    option.backgroundColor = '#ffffff'
+    myChart.setOption(option);
+    option2.backgroundColor = '#ffffff'
+    myChart2.setOption(option2);
+    option3.backgroundColor = '#ffffff'
+    myChart3.setOption(option3);
+    option4.backgroundColor = '#ffffff'
+    myChart4.setOption(option4);
+    option5.backgroundColor = '#ffffff'
+    myChart5.setOption(option5);
+
     // document.documentElement.style.setProperty
     //     ('--main-bg-color', '#edf1f7')
     // document.documentElement.style.setProperty
@@ -366,10 +389,50 @@ themeButtonDark.addEventListener('click', () => {
     //     ('--theme-button-bg-cqqqqqqqqqolor', '#39475d')
 })
 
-
+//init
 sortByParam('firstShotPercentage', settlementsDataVaccination, false)
 sortByParam('dailyCalculatedGrade', settlementsDataTrafficLight, false)
 fillVaccinationTable()
 fillTrafficLightTable()
 addGridButtonsEventListener()
 addGradeStyle()
+
+removeSeriesData(option, 'קשה')
+removeSeriesData(option, 'בינוני')
+removeSeriesData(option, 'קל')
+clearAxisData(option, 'xAxis')
+insertSeriesData(option, 'קשה', createMockDataArray(150, 350, 1000))
+insertSeriesData(option, 'בינוני', createMockDataArray(150, 350, 1000))
+insertSeriesData(option, 'קל', createMockDataArray(150, 350, 1000))
+insertAxisData(option, 'xAxis', createConsecutiveDatesArray(), 969, 999)
+myChart.setOption(option);
+clearAxisData(option2, 'xAxis')
+insertAxisData(option2, 'xAxis', createConsecutiveDatesArray(), 969, 999)
+removeSeriesData(option2, 'לא מחוסנים')
+removeSeriesData(option2, 'מחוסנים')
+removeSeriesData(option2, 'מחוסנים ללא תוקף')
+insertSeriesData(option2, 'לא מחוסנים', createMockDataArray(9150, 20050, 1000))
+insertSeriesData(option2, 'מחוסנים ללא תוקף', createMockDataArray(150, 550, 1000))
+insertSeriesData(option2, 'מחוסנים', createMockDataArray(2150, 5350, 1000))
+myChart2.setOption(option2);
+removeSeriesData(option3, 'לא מחוסנים')
+removeSeriesData(option3, 'מחוסנים')
+removeSeriesData(option3, 'מחוסנים ללא תוקף')
+insertSeriesData(option3, 'לא מחוסנים', createMockDataArray(9150, 20050, 12))
+insertSeriesData(option3, 'מחוסנים ללא תוקף', createMockDataArray(150, 550, 12))
+insertSeriesData(option3, 'מחוסנים', createMockDataArray(2150, 5350, 12))
+myChart3.setOption(option3);
+clearAxisData(option4, 'xAxis')
+removeSeriesData(option4, 'נפטרים')
+removeSeriesData(option4, 'ממוצע נע נפטרים')
+insertSeriesData(option4, 'ממוצע נע נפטרים', createMockDataArray(250, 350, 1000))
+insertSeriesData(option4, 'נפטרים', createMockDataArray(150, 550, 1000))
+insertAxisData(option4, 'xAxis', createConsecutiveDatesArray(), 969, 999)
+myChart4.setOption(option4);
+removeSeriesData(option5, 'גברים')
+removeSeriesData(option5, 'נשים')
+insertSeriesData(option5, 'גברים', createMockDataArrayPercents(12))
+insertSeriesData(option5, 'נשים', createMockDataArrayPercents(12, true))
+myChart5.setOption(option5);
+
+

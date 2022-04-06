@@ -245,6 +245,10 @@
     margin: 2px;
     margin-bottom: 10px;
 
+    i {
+        background: var(--secondary-bg-color);
+    }
+
     >div {
         background: var(--secondary-bg-color);
     }
@@ -284,10 +288,11 @@
     cursor: default;
     position: absolute;
     color: #4a6799;
+    background: var(--secondary-bg-color);
     font-weight: 700;
     left: 0;
     top: 0;
-    padding-left: 25px;
-    padding-top: 4px;
+    margin-left: 25px;
+    margin-top: 4px;
     font-size: 1rem;
 }

@@ -14,6 +14,11 @@ const getInputLabelsAsString = (elScope, elClass) => {
 
 const dropdownButtons = document.querySelectorAll('.dropdown-button')
 dropdownButtons.forEach(el => {
+    el.addEventListener('click', () => {
+        el.children[1].classList.toggle('display-none')
+        el.children[2].classList.toggle('display-none')
+    })
+
     if (el.id !== "" && el.id !== "vaccine-by-settlement-button") {
         const button = document.querySelector('#' + el.id)
         const searchContainer = el.nextElementSibling

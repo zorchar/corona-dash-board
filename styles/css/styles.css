@@ -513,11 +513,12 @@ header {
   cursor: default;
   position: absolute;
   color: #4a6799;
+  background: var(--secondary-bg-color);
   font-weight: 700;
   left: 0;
   top: 0;
-  padding-left: 15px;
-  padding-top: 8px;
+  margin-left: 15px;
+  margin-top: 8px;
   font-size: 1rem;
 }
 
@@ -608,12 +609,15 @@ header {
   text-align: right;
   text-overflow: ellipsis;
 }
-
-.angle-down {
+.dropdown-button .angle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0.3;
   height: 20px;
   width: 20px;
-  color: var(--input-border-and-angle-color);
+  color: var(--angle-color);
+  background: transparent;
 }
 
 .accept-cancel-container {
@@ -882,6 +886,9 @@ px .svg-container-outer:hover {
   margin: 2px;
   margin-bottom: 10px;
 }
+#traffic-light-search-bar i {
+  background: var(--secondary-bg-color);
+}
 #traffic-light-search-bar > div {
   background: var(--secondary-bg-color);
 }
@@ -917,11 +924,12 @@ px .svg-container-outer:hover {
   cursor: default;
   position: absolute;
   color: #4a6799;
+  background: var(--secondary-bg-color);
   font-weight: 700;
   left: 0;
   top: 0;
-  padding-left: 25px;
-  padding-top: 4px;
+  margin-left: 25px;
+  margin-top: 4px;
   font-size: 1rem;
 }
 
@@ -1112,6 +1120,7 @@ body {
   --bar-bg-color: #eff5f9;
   --different-grid-cell-bg-color: #daeaee;
   --input-border-and-angle-color: #e4e9f2;
+  --angle-color: #222b45;
   --border-bottom-color: #eaf3f5;
   --theme-button-bg-color: #39475d;
 }

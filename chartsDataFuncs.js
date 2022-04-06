@@ -63,7 +63,7 @@ const createMockDataArrayPercents = (length, isNegative = false) => {
     for (let i = 0; i < length; i++) {
         const afterDot = Math.floor(Math.random() * (100 - 0) + 0) / 100
         const beforeDot = Math.floor(Math.random() * (9 - 0) + 0) + afterDot
-        newArray.push(isNegative ? beforeDot * (-1) : beforeDot)
+        newArray.push((isNegative ? beforeDot * (-1) : beforeDot).toFixed(2))
     }
 
     return newArray

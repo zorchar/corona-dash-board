@@ -5,6 +5,7 @@ const tabs = navBar.querySelectorAll('a')
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         highlightNavBarTab(tab)
+        navBar.scrollLeft = tab.offsetLeft - 220
     })
 })
 // const sections = document.querySelectorAll('.section-container')
@@ -18,6 +19,7 @@ scroollBar.addEventListener('scroll', () => {
     tabs.forEach(tab => {
         if (scroollBarPosition >= document.querySelector(tab.hash).offsetTop && scroollBarPosition <= document.querySelector(tab.hash).offsetTop + 100) {
             highlightNavBarTab(tab)
+            navBar.scrollLeft = tab.offsetLeft - 220
         }
     })
 })

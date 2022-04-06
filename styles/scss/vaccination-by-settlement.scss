@@ -56,11 +56,12 @@
     cursor: default;
     position: absolute;
     color: #4a6799;
+    background: var(--secondary-bg-color);
     font-weight: 700;
     left: 0;
     top: 0;
-    padding-left: 15px;
-    padding-top: 8px;
+    margin-left: 15px;
+    margin-top: 8px;
     font-size: 1rem;
 }
 
@@ -161,14 +162,29 @@
         text-align: right;
         text-overflow: ellipsis;
     }
+
+    .angle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.3;
+        height: 20px;
+        width: 20px;
+        color: var(--angle-color);
+        background: transparent;
+    }
+
 }
 
-.angle-down {
-    opacity: 0.3;
-    height: 20px;
-    width: 20px;
-    color: var(--input-border-and-angle-color);
-}
+// .angle {
+//     display: flex;
+//     align-items: center;
+//     opacity: 0.3;
+//     height: 20px;
+//     width: 20px;
+//     color: var(--angle-color);
+//     background: transparent;
+// }
 
 .accept-cancel-container {
     position: absolute;
