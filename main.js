@@ -326,6 +326,8 @@ themeButtonLight.addEventListener('click', () => {
     option4.backgroundColor = '#384f5f'
     myChart4.setOption(option4);
     option5.backgroundColor = '#384f5f'
+    option5.yAxis[0].splitLine.lineStyle.color = '#7f8a93'
+    option5.xAxis[0].splitLine.lineStyle.color = '#7f8a93'
     myChart5.setOption(option5);
 
 
@@ -365,6 +367,8 @@ themeButtonDark.addEventListener('click', () => {
     option4.backgroundColor = '#ffffff'
     myChart4.setOption(option4);
     option5.backgroundColor = '#ffffff'
+    option5.yAxis[0].splitLine.lineStyle.color = '#ededed'
+    option5.xAxis[0].splitLine.lineStyle.color = '#ededed'
     myChart5.setOption(option5);
 
     // document.documentElement.style.setProperty

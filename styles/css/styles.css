@@ -591,6 +591,7 @@ header {
   justify-content: space-between;
   border-radius: 10px;
   max-width: 100%;
+  min-width: 200px;
   overflow: visible;
   border: solid 2px var(--input-border-and-angle-color);
   background: var(--fourth-bg-color);
@@ -605,7 +606,7 @@ header {
   border-radius: 10px;
   overflow: hidden;
   white-space: nowrap;
-  min-width: 200px;
+  width: calc(100% - 20px);
   text-align: right;
   text-overflow: ellipsis;
 }
@@ -858,6 +859,9 @@ px .svg-container-outer:hover {
   padding-right: 5px;
   padding-left: 5px;
   align-items: center;
+}
+.upper-division__right-side .data-date svg {
+  background: transparent;
 }
 @media (min-width: 550px) and (max-width: 650px) {
   .upper-division__right-side .data-date {
@@ -1247,7 +1251,7 @@ svg {
 
 .search-bar-options {
   width: 100%;
-  height: 240px;
+  max-height: 240px;
   overflow-y: scroll;
   overflow-x: hidden;
 }

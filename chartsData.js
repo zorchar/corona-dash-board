@@ -270,12 +270,17 @@ const option5 = {
         left: '3%',
         right: '4%',
         bottom: '10%',
-        containLabel: true
+        containLabel: true,
     },
     xAxis: [
         {
             name: '% סה"כ',
             type: 'value',
+            splitLine: {
+                lineStyle: {
+                    color: '#7f8a93'
+                }
+            },
             min: -30,
             max: 30,
             nameLocation: 'center',
@@ -296,6 +301,12 @@ const option5 = {
         {
             name: 'קבוצת גיל',
             type: 'category',
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    color: '#7f8a93'
+                }
+            },
             axisTick: {
                 show: false
             },

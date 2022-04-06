@@ -140,7 +140,7 @@
     justify-content: space-between;
     border-radius: 10px;
     max-width: 100%; // chekc no probs
-    // min-width: 200px;
+    min-width: 200px;
     overflow: visible;
     // width: 200px; // check no probs
     border: solid 2px var(--input-border-and-angle-color);
@@ -157,8 +157,7 @@
         border-radius: 10px;
         overflow: hidden;
         white-space: nowrap;
-        // max-width: 85%;
-        min-width: 200px;
+        width: calc(100% - 20px);
         text-align: right;
         text-overflow: ellipsis;
     }
