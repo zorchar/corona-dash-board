@@ -14,10 +14,12 @@ header {
     // height: 77px;
     height: max-content;
     width: 100vw;
-    background: var(--secondary-bg-color);
+    background: #ffffff;
+
     @media (max-width: 690px) {
         height: 125px;
     }
+
     @media (max-width: 490px) {
         height: 121px;
     }
@@ -29,7 +31,7 @@ header {
     padding: 12px 24px;
     max-width: 80%;
     min-width: 327px;
-    background: var(--secondary-bg-color);
+    background: #ffffff;
 }
 
 .hamburger-container {
@@ -38,7 +40,7 @@ header {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: var(--secondary-bg-color);
+    background: #ffffff;
     // i {
     //     width: 100%;
     //     height: 100%;
@@ -49,26 +51,30 @@ header {
     width: 217px;
     max-width: 217px;
     height: 50px;
+
     img {
-        background: var(--secondary-bg-color);
+        background: #ffffff;
         width: 100%;
         height: 100%;
     }
 }
+
 .header-and-update-container {
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
     min-width: 60%;
     align-items: center;
-    background: var(--secondary-bg-color);
+    background: #ffffff;
     padding: 0 24px;
+
     .header {
-        background: var(--secondary-bg-color);
+        background: #ffffff;
         font-size: 1rem;
     }
+
     .update {
-        background: var(--secondary-bg-color);
+        background: #ffffff;
         font-size: 0.75rem;
     }
 }
@@ -92,9 +98,11 @@ header {
     background: var(--theme-button-bg-color);
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
+
     &:hover {
         cursor: pointer;
     }
+
     img {
         background: none;
         width: 32px;
@@ -111,6 +119,7 @@ header {
     width: fit-content;
     background: #374f60;
     padding: 10px 0;
+
     div {
         display: flex;
         align-items: center;
@@ -119,6 +128,7 @@ header {
         font-size: 1rem;
         padding: 16px;
         margin: 0 16px;
+
         a {
             text-decoration: none;
             background: inherit;

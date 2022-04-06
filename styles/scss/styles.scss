@@ -16,6 +16,18 @@
     color: var(--main-color);
     background: var(--main-bg-color);
     font-family: "Open Sans Hebrew", serif;
+
+    header {
+        i {
+            color: #000000;
+            background: #ffffff;
+        }
+
+        h4,
+        h3 {
+            color: #000000;
+        }
+    }
 }
 
 body {
