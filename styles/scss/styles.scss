@@ -5,16 +5,6 @@
 @use "./vaccination-by-settlement.scss";
 @use "./traffic-light-in-settlements";
 @use "./main-indexes.scss";
-@use "./general-sickness-indexes.scss";
-@use "./children-sickness.scss";
-@use "./sickness-from-abroad";
-@use "./vaccination-influence-on-sickness";
-@use "./severely-sick-and-hospitalized";
-@use "./passed-away.scss";
-@use "./check-ups.scss";
-@use "./further-inquiry.scss";
-@use "./recurring-sickness-and-recovery.scss";
-@use "./high-charts.scss";
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
 
@@ -319,6 +309,7 @@ svg {
 // }
 
 .legend-container {
+    max-width: 75%;
     position: absolute;
     top: 23%;
     z-index: 10;

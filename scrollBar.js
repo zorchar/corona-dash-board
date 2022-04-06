@@ -8,11 +8,6 @@ tabs.forEach(tab => {
         navBar.scrollLeft = tab.offsetLeft - 220
     })
 })
-// const sections = document.querySelectorAll('.section-container')
-// const sectionsIDs = []
-// sections.forEach(section => {
-//     sectionsIDs.push(section.id)
-// })
 
 scroollBar.addEventListener('scroll', () => {
     const scroollBarPosition = scroollBar.scrollTop;

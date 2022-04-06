@@ -258,6 +258,7 @@ const myChart5 = echarts.init(document.getElementById('main5'));
 
 // Specify the configuration items and data for the chart
 const option5 = {
+    backgroundColor: '#ffffff',
     color: ["#50cbfd", "#b6ca51",],
     tooltip: {
         trigger: 'axis',
@@ -268,7 +269,7 @@ const option5 = {
     grid: {
         left: '3%',
         right: '4%',
-        bottom: '3%',
+        bottom: '10%',
         containLabel: true
     },
     xAxis: [
@@ -277,6 +278,13 @@ const option5 = {
             type: 'value',
             min: -30,
             max: 30,
+            nameLocation: 'center',
+            nameTextStyle: {
+                verticalAlign: 'top',
+                padding: 18,
+                fontSize: 14,
+            },
+            boundaryGap: true,
             axisLabel: {
                 formatter: function (value, index) {
                     return Math.abs(parseFloat(value));
