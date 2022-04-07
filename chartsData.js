@@ -275,20 +275,20 @@ const option5 = {
     xAxis: [
         {
             name: '% סה"כ',
-            type: 'value',
-            splitLine: {
-                lineStyle: {
-                    color: '#7f8a93'
-                }
-            },
-            min: -30,
-            max: 30,
             nameLocation: 'center',
             nameTextStyle: {
                 verticalAlign: 'top',
                 padding: 18,
                 fontSize: 14,
             },
+            type: 'value',
+            splitLine: {
+                lineStyle: {
+                    color: '#ededed'
+                }
+            },
+            min: -30,
+            max: 30,
             axisLabel: {
                 formatter: function (value, index) {
                     return Math.abs(parseFloat(value));
@@ -298,20 +298,25 @@ const option5 = {
     ],
     yAxis: [
         {
-            name: 'קבוצת גיל',
+            name: 'קבוצת\nגיל',
             type: 'category',
             splitLine: {
                 show: true,
                 lineStyle: {
-                    color: '#7f8a93'
+                    color: '#ededed'
                 }
             },
             axisTick: {
                 show: false
             },
             nameTextStyle: {
-                align: 'right'
+                align: 'right',
+                borderColor: 'red',
+                boderWidth: 1,
+                borderType: 'solid',
+                padding: [0, 0, 0, 0]
             },
+            nameGap: 5,
             data: ['0-9', '9-19', '20-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80-89', '90+']
         }
     ],
@@ -319,13 +324,11 @@ const option5 = {
         {
             name: 'גברים',
             type: 'bar',
+            barWidth: '40%',
             stack: 'Total',
             label: {
                 show: true,
                 position: 'right'
-            },
-            emphasis: {
-                focus: 'series'
             },
             data: [320, 302, 341, 374, 390, 450, 420]
         },
@@ -339,9 +342,6 @@ const option5 = {
                 formatter: function (value, index) {
                     return Math.abs(parseFloat(value.value));
                 },
-            },
-            emphasis: {
-                focus: 'series'
             },
             data: [-120, -132, -101, -134, -190, -230, -210]
         }

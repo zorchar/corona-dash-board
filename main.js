@@ -437,6 +437,7 @@ removeSeriesData(option5, 'גברים')
 removeSeriesData(option5, 'נשים')
 insertSeriesData(option5, 'גברים', createMockDataArrayPercents(12))
 insertSeriesData(option5, 'נשים', createMockDataArrayPercents(12, true))
+option5.yAxis[0].nameTextStyle.padding = [0, ((document.querySelector('#main5').clientWidth) / 2.25), 0, 0]
 myChart5.setOption(option5);
 
 
