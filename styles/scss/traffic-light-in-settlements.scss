@@ -102,8 +102,6 @@
     }
 }
 
-// .traffic-light-search-bar {
-// }
 
 #traffic-light-in-settlements {
     .info-square>.grid {
@@ -162,17 +160,10 @@
         row-gap: 5px;
     }
 
-    // .first-grid {
-    //     min-width: calc(100% + 16px);
-    //     margin-right: -8px;
-    // }
     .grid-ltr-container {
         min-width: calc(100% + 16px);
         margin-right: -8px;
 
-        // @media (min-width: 365px) {
-        //     max-height: 20%;
-        // }
         @media (max-width: 850px) {
             max-height: 56%;
         }
@@ -269,7 +260,6 @@
         padding: 5px 0;
         padding-right: 5px;
         border-radius: 10px;
-        // padding: 7px;
         font-size: 0.75rem;
         background: var(--secondary-bg-color);
         margin: 2px;

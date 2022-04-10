@@ -2,15 +2,19 @@
     width: 100%;
     direction: ltr;
     overflow-y: scroll;
+
     @media (max-width: 650px) {
         max-height: 11%;
     }
+
     @media (max-width: 550px) {
         max-height: 30%;
     }
+
     @media (min-width: 651px) {
         max-height: 40%;
     }
+
     @media (min-width: 854px) {
         max-height: 56%;
     }
@@ -31,10 +35,11 @@
     grid-template-columns: 1.25fr repeat(5, 1fr);
 }
 
-.info-square > .grid {
-    > div:nth-child(-n + 6) {
+.info-square>.grid {
+    >div:nth-child(-n + 6) {
         background: var(--third-bg-color);
     }
+
     @media (max-width: 550px) {
         padding: 0;
     }
@@ -54,28 +59,34 @@
         justify-content: start;
         font-weight: 700;
     }
+
     button {
         display: flex;
         align-items: center;
         background: var(--third-bg-color);
         font-size: 15px;
         border: transparent solid 2px;
+
         &:active,
         &:focus {
             border: solid #000000 2px;
             border-radius: 4px;
         }
+
         &:hover {
             cursor: pointer;
         }
+
         i {
             color: #308bf6;
             background: var(--third-bg-color);
             padding-left: 5px;
         }
+
         .fa-sort-up {
             padding-top: 11px;
         }
+
         .fa-sort-down {
             padding-bottom: 6px;
         }
@@ -84,20 +95,17 @@
 
 .grid-cell {
     display: flex;
-    flex-wrap: wrap; // make sure doesn't cause problems
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: 2px;
     background: var(--secondary-bg-color);
-    // @media (min-width: 550px) {
-    //     @media (max-width: 650px) {
-    //         max-width: 106px;
-    //     }
-    // }
+
     @media (max-width: 685px) {
         font-size: 11px;
         padding-right: 0;
     }
+
     border-bottom: solid 1px var(--border-bottom-color);
 }
 
@@ -111,6 +119,7 @@
     margin: 4px 0;
     padding-left: 5px;
     background: var(--secondary-bg-color);
+
     @media (max-width: 685px) {
         font-size: 11px;
     }
@@ -125,6 +134,7 @@
 .first-grid {
     min-width: calc(100% + 16px);
     margin-right: -8px;
+
     .grid-cell__text {
         margin: 0;
         background: var(--third-bg-color);

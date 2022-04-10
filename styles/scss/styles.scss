@@ -102,7 +102,7 @@ body {
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: red; //temp
+    background: red;
 }
 
 .background-special-red {
@@ -222,8 +222,6 @@ svg {
 }
 
 #main {
-    // width: 300px;
-    // height: 300px;
     width: 100% !important;
     height: 100% !important;
     background: var(--secondary-bg-color);
@@ -235,8 +233,6 @@ svg {
 }
 
 #main2 {
-    // width: 300px;
-    // height: 300px;
     width: 100% !important;
     height: 100% !important;
     background: var(--secondary-bg-color);
@@ -248,8 +244,6 @@ svg {
 }
 
 #main3 {
-    // width: 300px;
-    // height: 300px;
     width: 100% !important;
     height: 100% !important;
     background: var(--secondary-bg-color);
@@ -261,8 +255,6 @@ svg {
 }
 
 #main4 {
-    // width: 300px;
-    // height: 300px;
     width: 100% !important;
     height: 100% !important;
     background: var(--secondary-bg-color);
@@ -274,8 +266,6 @@ svg {
 }
 
 #main5 {
-    // width: 300px;
-    // height: 300px;
     width: 100% !important;
     height: 100% !important;
     background: var(--secondary-bg-color);
@@ -287,8 +277,6 @@ svg {
 }
 
 #chartDiv {
-    // width: 300px;
-    // height: 300px;
     width: 100% !important;
     height: 100% !important;
     background: var(--secondary-bg-color);
@@ -298,27 +286,6 @@ svg {
         height: 100% !important;
     }
 }
-
-
-// .graph-top-row-container {
-//     width: 100%;
-//     display: flex;
-//     position: relative;
-//     top: 10%;
-//     z-index: 100;
-//     justify-content: space-between;
-
-//     >h4 {
-//         background: transparent;
-//         font-size: 0.8rem;
-//         font-weight: 400;
-//         padding: 10px;
-//         word-wrap: break-word;
-//         // width: 10%;
-//         // text-overflow: clip;
-//     }
-
-// }
 
 .legend-container {
     max-width: 75%;
@@ -350,11 +317,10 @@ svg {
 }
 
 .search-bar-options {
-    // background: var(--secondary-bg-color);
     width: 100%;
-    max-height: 240px; //check no probs
+    max-height: 240px;
     overflow-y: scroll;
-    overflow-x: hidden; // leave for finishing
+    overflow-x: hidden;
 
     h4 {
         padding: 5px;

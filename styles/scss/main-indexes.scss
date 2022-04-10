@@ -1,10 +1,12 @@
 .main-info-square {
     padding: 8px;
     width: 33.3%;
+
     @media (max-width: 768px) {
         width: 100%;
         padding: 0;
     }
+
     button {
         span {
             font-size: 15px;
@@ -12,29 +14,8 @@
     }
 }
 
-// .legend-item-container {
-//     display: flex;
-//     align-items: center;
-//     background: var(--secondary-bg-color);
-//     padding-left: 16px;
-//     h4 {
-//         font-size: 0.8rem;
-//         font-weight: 400;
-//         background: var(--secondary-bg-color);
-//     }
-// }
-
 #main-indexes {
-    > .info-square-container {
+    >.info-square-container {
         width: 100%;
     }
 }
-
-// #main-indexes::before {
-//     display: block;
-//     content: " ";
-//     margin-top: -140px;
-//     height: 140px;
-//     visibility: hidden;
-//     pointer-events: none;
-// }

@@ -4,7 +4,6 @@
     padding-right: 16px;
     padding-top: 16px;
     padding-bottom: 16px;
-    // margin-top: 25px;
 
     @media (max-width: 768px) {
         padding-right: 5px;
@@ -14,10 +13,6 @@
 }
 
 #overview {
-    // .overview__header {
-    //     border-top: 0;
-    //     margin-top: 0;
-    // }
 
     .info-square-container.last-7-days {
         height: fit-content;
@@ -27,7 +22,6 @@
 
         >.info-square {
             box-shadow: 0px 0px 11px -7px;
-            // height: 150px;
             min-height: 150px;
             height: 218px;
 
@@ -37,7 +31,6 @@
 
             .info-square {
                 box-shadow: 0px 0px 11px -7px;
-                // height: 150px;
                 min-height: 150px;
                 height: 150px;
             }

@@ -1,7 +1,7 @@
 header {
-    height: fit-content; // maybe
+    height: fit-content;
     display: flex;
-    flex-wrap: wrap; //maybe
+    flex-wrap: wrap;
     width: 100vw;
     z-index: 10;
     position: sticky;
@@ -11,7 +11,6 @@ header {
 .main-header__container {
     display: flex;
     flex-wrap: wrap;
-    // height: 77px;
     height: max-content;
     width: 100vw;
     background: #ffffff;
@@ -41,10 +40,6 @@ header {
     width: 40px;
     height: 40px;
     background: #ffffff;
-    // i {
-    //     width: 100%;
-    //     height: 100%;
-    // }
 }
 
 .logo-container {
@@ -115,7 +110,6 @@ header {
     overflow-x: scroll;
     overflow-y: hidden;
     height: 57px;
-    // width: fit-content; //check if needed later
     width: fit-content;
     background: #374f60;
     padding: 10px 0;

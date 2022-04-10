@@ -94,7 +94,6 @@
 #vaccination-of-population {
     .grid-ltr-container {
 
-        // max-height: 55%;
         @media (max-width: 1500px) {
             max-height: 72%;
         }
@@ -139,10 +138,9 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
-    max-width: 100%; // chekc no probs
+    max-width: 100%;
     min-width: 200px;
     overflow: visible;
-    // width: 200px; // check no probs
     border: solid 2px var(--input-border-and-angle-color);
     background: var(--fourth-bg-color);
 
@@ -174,16 +172,6 @@
     }
 
 }
-
-// .angle {
-//     display: flex;
-//     align-items: center;
-//     opacity: 0.3;
-//     height: 20px;
-//     width: 20px;
-//     color: var(--angle-color);
-//     background: transparent;
-// }
 
 .accept-cancel-container {
     position: absolute;
